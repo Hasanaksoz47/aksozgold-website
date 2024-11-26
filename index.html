@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksoz Gold</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .header-container {
+            background-color: #0a2342;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 90px;
+        }
+
+        /* Modern buton stilleri */
+        .common-button {
+            background-color: transparent;
+            border: 2px solid #d4af37;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #d4af37;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        .common-button:hover {
+            background-color: #d4af37;
+            color: white;
+        }
+
+        .common-button:active {
+            transform: translateY(4px);
+        }
+
+        /* Buton zıplama animasyonu */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-6px);
+            }
+
+            50% {
+                transform: translateY(0);
+            }
+
+            75% {
+                transform: translateY(-4px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .common-button:hover {
+            animation: bounce 0.6s ease infinite;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        /* Responsive buton düzenlemeleri */
+        @media (max-width: 450px) {
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .common-button {
+                padding: 10px 20px;
+                font-size: 14px;
+                width: 100%;
+                /* Butonları tam genişlikte yap */
+            }
+        }
+
+        main {
+            padding: 10px;
+            flex: 1;
+            background-color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        main h2 {
+            margin-bottom: 15px;
+            font-size: 38px;
+            font-weight: 600;
+            text-align: center;
+            background: linear-gradient(90deg, #f9a602, #0a2342);
+            /* İki renkli geçiş */
+            background-size: 200% 100%;
+            /* Arka planın büyüklüğü */
+            animation: slideColor 5s ease-in-out infinite;
+            /* Animasyon */
+            background-clip: text;
+            /* Yazının üzerine uygulama */
+            color: transparent;
+            /* Yazı rengini şeffaf yap */
+        }
+
+        /* Renk kayması animasyonu */
+        @keyframes slideColor {
+            0% {
+                background-position: 200% 0;
+            }
+
+            50% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .product-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            background-color: white;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .product-item {
+            position: relative;
+            text-align: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-infobir {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+        }
+
+        .product-item:hover .product-infobir {
+            opacity: 1;
+        }
+
+
+        footer {
+            background-color: #0a2342;
+            text-align: center;
+            padding: 5px 0;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        footer p,
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f9a602;
+        }
+
+        .social-media {
+            margin-top: 5px;
+        }
+
+        .social-media a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #f9a602;
+            transform: scale(1.1);
+        }
+
+        /* Medya sorguları */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu li {
+                margin-bottom: 15px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #f0f0f0;
+            }
+
+            main {
+                background-color: #444;
+            }
+
+            .product-item {
+                background-color: #555;
+            }
+
+            .footer-container {
+                background-color: #111;
+            }
+
+            main h2 {
+                color: #f9a602;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #uruntanitimbir,
+        #uruntanitimiki,
+        #uruntanitimuc,
+        #uruntanitimdort,
+        #uruntanitimbes,
+        #uruntanitimalti,
+        #uruntanitimyedi,
+        #uruntanitimsekiz,
+        #uruntanitimdokuz,
+        #uruntanitimon,
+        #uruntanitimonbir,
+        #uruntanitimoniki,
+        #uruntanitimonuc,
+        #uruntanitimondort,
+        #uruntanitimonbes,
+        #uruntanitimonalti,
+        #uruntanitimonyedi,
+        #uruntanitimonsekiz {
+            display: none;
+            font-family: 'Poppins', sans-serif;
+            background-color: #d6d6d3;
+            color: #020d2b;
+            line-height: 1.6;
+        }
+
+        .containerbir {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #d6d6d3;
+            color: #020d2b;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin-bottom: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 66px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .main-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .thumb-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .thumb-images img {
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumb-images img:hover {
+            transform: scale(1.12);
+        }
+
+        .product-info {
+            flex: 1;
+            max-width: 500px;
+            padding: 20px;
+            border-left: 2px solid #ececec;
+        }
+
+        .product-info h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #020d2b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info .description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .return-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #020d2b;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .return-button:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .containerbir {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .product-gallery,
+            .product-info {
+                width: 100%;
+                max-width: 100%;
+                border-left: none;
+            }
+
+            .thumb-images img {
+                width: 60px;
+            }
+
+            .product-info h1 {
+                font-size: 26px;
+            }
+
+            .product-info .description {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-image {
+                max-width: 90%;
+            }
+
+            .thumb-images img {
+                width: 50px;
+            }
+
+            .product-info h1 {
+                font-size: 22px;
+            }
+
+            .product-info .description {
+                font-size: 14px;
+            }
+        }
+
+
+
+        #blog {
+            display: none;
+            background-color: #0a2342;
+            color: white;
+        }
+
+        /* Header Stilleri */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #b88a2d;
+            margin-top: 20px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        /* Modern Anasayfaya Dön Butonu */
+        .back-to-home {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #b88a2d, #0a2342);
+            /* Gradient arka plan */
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 50px;
+            /* Yuvarlatılmış köşeler */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            /* Gölge efekti */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            /* Animasyon ekleme */
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(45deg, #0a2342, #b88a2d);
+            /* Hoverda renk değişimi */
+            transform: translateY(-5px);
+            /* Hoverda butonun yukarı kayması */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            /* Hoverda gölge büyümesi */
+        }
+
+        .back-btn:focus {
+            outline: none;
+            /* Odaklanıldığında kenarlık yok */
+        }
+
+        /* Blog Konteyneri */
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Blog Yazısı Stili */
+        .blog-post {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h2 {
+            font-size: 1.5em;
+            color: #0a2342;
+            margin-bottom: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .blog-post .date {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .blog-post p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        /* 'Devamını Oku' Bağlantısı */
+        .read-more {
+            color: #b88a2d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="ana">
+
+        <header class="header-container">
+            <div class="container">
+                <div class="logo">
+                    <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                        target="_blank"> <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.png" alt="Logo"></a>
+                </div>
+                <div class="buttons-container">
+                    <button class="common-button" onclick="blog()">Blog</button>
+                    <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                        target="_blank"><button class="common-button">İletişim</button></a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container-iki">
+                <h2>Beğenilen Ürünler</h2>
+                <div class="product-grid-container">
+                    <div class="product-item" onclick="setbir()">
+                        <a href=".product-grid-container"><img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg"
+                                alt="Ürün 1"></a>
+                        <div class="product-infobir">
+                            Gözde Altın Set
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setiki()">
+                        <img src="images/69d1d5fd-174c-4160-8a46-d1aba00d39c8.jpg" alt="Ürün 2">
+                        <div class="product-infobir">
+                            Altın Bilezik Seti
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setuc()">
+                        <img src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" alt="Ürün 3">
+                        <div class="product-infobir">
+                            Altın İşlemeli Bileklik
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setdort()">
+                        <img src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Zarafetin Altın Hâli
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setbes()">
+                        <img src="images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Göz Alıcı Gerdanlık
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setalti()">
+                        <img src="images/7954d8e1-8a30-4c47-9d90-a8cb89d7d4f5.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Özel Tasarım Hint İşi Kolye
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setyedi()">
+                        <img src="images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Çeyrekli Halep İşi Kolye
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setsekiz()">
+                        <img src="images/591266bf-fb62-41b6-b243-51da2e38b2af.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Özel Kolye ve Bileklik Seti
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setdokuz()">
+                        <img src="images/ac77087e-234a-461a-8f5b-94b1856c35cc.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Çeyrek Pullu Kolye
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="seton()">
+                        <img src="images/940dd4e2-4688-42bd-a54f-9f78dd16ae88.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Dubai Altın Set
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setonbir()">
+                        <img src="images/725f581a-da8e-46c3-9d04-e8f8fe081f22.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Pul Tuğralı Altın Kolye
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setoniki()">
+                        <img src="images/a76348b9-714c-40fe-b49c-8a931de989a1.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Hint İşi Kolye
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setonuc()">
+                        <img src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Halkalı Altın Zincir
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setondort()">
+                        <img src="images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Bileklikli Altın Gerdanlık
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setonbes()">
+                        <img src="images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Su Yolu Gerdanlık
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setonalti()">
+                        <img src="images/e9d815b1-43a6-4848-ae91-094966318efe.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Çeyrekli Kolye
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setonyedi()">
+                        <img src="images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Nohut Kolye ve Bileklik
+                        </div>
+                    </div>
+                    <div class="product-item" onclick="setonsekiz()">
+                        <img src="images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg" alt="Ürün 4">
+                        <div class="product-infobir">
+                            Hasır Altın Set
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+
+
+
+        <footer>
+            <p>Adres: Yeni Mahalle Seyfettin Güneştan Cad. No: 2E, 47500 Midyat/Mardin - Tel: 0538 055 8440</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/groups/1602328290046215" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/aksozgold/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                    target="_blank"> <i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@aksozgold" target="_blank"> <i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.google.com/maps?q=37.42493858262182,41.33930773939413" target="_blank">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </a>
+
+                <a href="https://www.haremaltin.com/" target="_blank">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="uruntanitimbir">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagebir" src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagebir('images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg')">
+                    <img src="images/b8db5e61-5a1b-4b1a-a58a-c0d1e138c5c3.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagebir('images/b8db5e61-5a1b-4b1a-a58a-c0d1e138c5c3.jpg')">
+                    <img src="images/b8f747d6-7cce-4189-9b8a-edc2e6946826.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagebir('images/b8f747d6-7cce-4189-9b8a-edc2e6946826.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Gözde Altın Set</h1>
+                <p class="description">
+                    Zarif tasarımı ve altının göz alıcı parlaklığıyla hem şıklığı hem de zarafeti bir araya getiriyor.
+                    Ürün, modern çizgilerle bezenmiş olup, özel işçiliği sayesinde dikkat çeken bir duruş sergiliyor.
+                    Gözde Altın Set, hem günlük kullanımda hem de özel günlerde kıyafetlerinize asil bir dokunuş
+                    katacak. Geleneksel ve modern çizgileri buluşturan bu özel parça, tarzını cesurca ifade etmek
+                    isteyenler için ideal bir seçim.
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="uruntanitimiki">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageiki" src="images/69d1d5fd-174c-4160-8a46-d1aba00d39c8.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/69d1d5fd-174c-4160-8a46-d1aba00d39c8.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageiki('images/69d1d5fd-174c-4160-8a46-d1aba00d39c8.jpg')">
+                    <img src="images/9c8bd324-9aca-4e5e-89ce-f4f928ed47ce.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageiki('images/9c8bd324-9aca-4e5e-89ce-f4f928ed47ce.jpg')">
+                    <img src="images/5052d690-9a5b-4d4d-813b-69633b9c131d.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageiki('images/5052d690-9a5b-4d4d-813b-69633b9c131d.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Altın Bilezik Seti</h1>
+                <p class="description">
+                    Kendinizi özel hissetmek veya sevdiklerinize unutulmaz bir hediye vermek için mükemmel bir seçim! Bu
+                    zarif altın bilezik seti, klasik tasarımıyla her tarza uyum sağlarken, ince işçiliği ve parlaklığı
+                    ile göz kamaştırıyor. Günlük kombinlerinize ışıltı katmak veya özel anlarınızı daha da unutulmaz
+                    kılmak için bu şık bilezik setini keşfedin. Şıklığınızı bir adım öteye taşıyın!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimuc">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageuc" src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageuc('images/1be22878-0823-4367-8143-322dea222ed3.jpg')">
+                    <img src="images/c1b427b8-74b0-4eb5-8098-4bb4d811d2f5.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageuc('images/c1b427b8-74b0-4eb5-8098-4bb4d811d2f5.jpg')">
+                    <img src="images/9a752d73-9bc1-4b79-800c-167536420b6d.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageuc('images/9a752d73-9bc1-4b79-800c-167536420b6d.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Geleneksel Zarafetin Simgesi: Altın İşlemeli Bileklik</h1>
+                <p class="description">
+                    Geleneksel motiflerin ince işçilikle buluştuğu bu altın işlemeli bileklik, göz alıcı detaylarıyla
+                    adeta bir sanat eseri. Özel tasarımı ve zarif detaylarıyla dikkat çeken bu bileklik, geçmişin ruhunu
+                    modern bir dokunuşla yeniden yorumluyor. Düğünlerden özel davetlere kadar her ortamda stilinizi öne
+                    çıkaracak bu şık aksesuar, hem kendiniz için hem de sevdiklerinize unutulmaz bir hediye seçeneği
+                    sunuyor. Bu eşsiz parçayla geleneksel zarafeti tarzınıza yansıtın!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="uruntanitimdort">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagedort" src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagedort('images/38e86fe1-990c-4487-8151-40e399a147ae.jpg')">
+                    <img src="images/0812a8d5-d395-4ac7-a6c9-2fc40234f87d.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagedort('images/0812a8d5-d395-4ac7-a6c9-2fc40234f87d.jpg')">
+                    <img src="images/a8d63369-33e1-46b5-8842-0a4ab9266340.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagedort('images/a8d63369-33e1-46b5-8842-0a4ab9266340.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Zarafetin Altın Hâli: Işıltılı Bileziklerle Tarzınıza Değer Katın</h1>
+                <p class="description">Her anınıza zarafet katacak bir dokunuş arıyorsanız, bu eşsiz altın bilezik tam
+                    size göre! Modern işçiliği ve zarif tasarımıyla dikkat çeken bu bilezik, her kombinle uyum
+                    sağlayacak özel bir aksesuar. Göz alıcı parlaklığı ve sağlam yapısıyla ömür boyu sürecek bir değer
+                    sunuyor. Kendinizi ödüllendirmek veya sevdiklerinize unutulmaz bir hediye vermek için ideal olan bu
+                    altın bilezik, stilinize asalet katmaya hazır!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="uruntanitimbes">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagebes" src="images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagebes('images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg')">
+                    <img src="images/151304bb-bf03-42d5-9c3a-332c8b791d3f.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagebes('images/151304bb-bf03-42d5-9c3a-332c8b791d3f.jpg')">
+                    <img src="images/e89a50c8-f443-4ac6-bbde-44bceb8bedab.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagebes('images/e89a50c8-f443-4ac6-bbde-44bceb8bedab.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Göz Alıcı Gerdanlıkla Fark Yaratın</h1>
+                <p class="description">Doğunun mistik zarafetini üzerinizde taşıyın! El işçiliğiyle hayat bulan bu Hint
+                    işi gerdanlık, gösterişli detayları ve sanatsal dokusuyla özel günlerin vazgeçilmezi olmaya aday.
+                    Zengin desenleri ve taş süslemeleriyle büyüleyici bir etki yaratan bu gerdanlık, her ortamda
+                    şıklığınızı tamamlayacak. Geleneksel çizgilerle modernliği buluşturan bu değerli aksesuar, özgün
+                    tarzınızı yansıtmanın en göz alıcı yolu. Kendinizi Hint kültürünün büyüsüyle sarmak istiyorsanız, bu
+                    gerdanlık tam size göre!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="uruntanitimalti">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagealti" src="images/7954d8e1-8a30-4c47-9d90-a8cb89d7d4f5.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/7954d8e1-8a30-4c47-9d90-a8cb89d7d4f5.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagealti('images/7954d8e1-8a30-4c47-9d90-a8cb89d7d4f5.jpg')">
+                    <img src="images/c63ec1ba-25c0-4652-a800-d45dbd2135b0.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagealti('images/c63ec1ba-25c0-4652-a800-d45dbd2135b0.jpg')">
+                    <img src="images/d58b3c1f-0682-45bf-a94d-d501b2c14297.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagealti('images/d58b3c1f-0682-45bf-a94d-d501b2c14297.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Hint Kültürünün Işıltısı: Özel Tasarım Hint İşi Kolye</h1>
+                <p class="description">Stilinizde egzotik bir dokunuş arıyorsanız, bu Hint işi kolye tam size göre!
+                    Zarif detaylarla süslenen bu eşsiz kolye, Hint kültürünün ihtişamını yansıtan ince işçiliği ve özgün
+                    tasarımıyla dikkat çekiyor. Parlak taşlarla bezenmiş ve sanatsal bir görünüm kazandırılmış bu
+                    aksesuar, her ortamda dikkatleri üzerinize çekecek. Geleneksel esintilerle modernliği buluşturan bu
+                    kolye, şıklığınızı taçlandıracak ideal bir parça. Göz kamaştırıcı bir zarafet sunan bu Hint işi
+                    kolyeyle stilinize benzersiz bir hava katın!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimyedi">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageyedi" src="images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageyedi('images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg')">
+                    <img src="images/3c13150f-edb1-47c3-b7fc-269b4d6b27eb.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageyedi('images/3c13150f-edb1-47c3-b7fc-269b4d6b27eb.jpg')">
+                    <img src="images/e7e9587b-28dd-42f7-9d0a-1c9070279f65.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageyedi('images/e7e9587b-28dd-42f7-9d0a-1c9070279f65.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Çeyrekli Halep İşi Kolye: Gelenekten Gelen Işıltı ve Asalet</h1>
+                <p class="description">Özel günlerinizde zarafetinizi ve geleneksel tarzınızı ön plana çıkaracak bir
+                    takı arıyorsanız, çeyrekli Halep işi kolye tam size göre! Ustalıkla işlenmiş Halep motifleri ve
+                    çeyrek altın detaylarıyla bu kolye, hem klasik bir görünüme hem de modern bir şıklığa sahip. Eşsiz
+                    işçiliğiyle dikkat çeken bu kolye, geleneksel takıların zarafetini günümüze taşıyor. Düğünlerde,
+                    özel davetlerde veya günlük kullanımda şıklığınızı artırmak için ideal olan bu kolyeyle tarzınıza
+                    unutulmaz bir dokunuş katın!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="uruntanitimsekiz">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagesekiz" src="images/591266bf-fb62-41b6-b243-51da2e38b2af.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/591266bf-fb62-41b6-b243-51da2e38b2af.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagesekiz('images/591266bf-fb62-41b6-b243-51da2e38b2af.jpg')">
+                    <img src="images/85e67cb7-3664-4270-ab8f-539c102565a7.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagesekiz('images/85e67cb7-3664-4270-ab8f-539c102565a7.jpg')">
+                    <img src="images/d4206c04-2280-4b60-b875-64871e6ceefc.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagesekiz('images/d4206c04-2280-4b60-b875-64871e6ceefc.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Mardin’in El İşçiliği ile Yansıyan Altın Zarafet: Özel Kolye ve Bileklik Seti</h1>
+                <p class="description">Mardin’in köklü geleneklerinden ilham alan bu el işi altın kolye ve bileklik
+                    seti, her detayında ustalığı ve zarafeti barındırıyor. Özgün tasarımı ve ince işçiliği ile göz
+                    kamaştıran bu özel set, altının asaletini taşıyan sanatsal bir dokunuş sunuyor. Hem günlük hayatta
+                    hem de özel davetlerde stilinize zenginlik katmak için ideal. Mardin’in sıcak ruhunu, kültürel
+                    mirasını ve el işçiliğinin ihtişamını üzerinizde taşımak istiyorsanız, bu kolye ve bileklik seti tam
+                    size göre!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="uruntanitimdokuz">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagedokuz" src="images/ac77087e-234a-461a-8f5b-94b1856c35cc.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/ac77087e-234a-461a-8f5b-94b1856c35cc.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagedokuz('images/ac77087e-234a-461a-8f5b-94b1856c35cc.jpg')">
+                    <img src="images/5feab05f-d376-499f-88a7-7854653f8d0f.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagedokuz('images/5feab05f-d376-499f-88a7-7854653f8d0f.jpg')">
+                    <img src="images/ac77087e-234a-461a-8f5b-94b1856c35cc.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagedokuz('images/ac77087e-234a-461a-8f5b-94b1856c35cc.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Çeyrek Pullu Kolye: Işıltısıyla Gelen Geleneksel Şıklık</h1>
+                <p class="description">Altının zarafetini çeyrek pulların eşsiz parıltısıyla buluşturan bu kolye, hem
+                    klasik hem de göz alıcı bir stil sunuyor. Her bir çeyrek pul, ustalıkla işlenmiş ve kolyeye zarif
+                    bir hareket kazandıracak şekilde dizilmiş. Düğünler, özel davetler ve günlük kullanımlarda
+                    şıklığınızı tamamlayacak bu çeyrek pullu kolye, geleneksel motifleri modern bir yorumla sunuyor.
+                    Kendinize veya sevdiklerinize unutulmaz bir hediye vermek istiyorsanız, bu kolye mükemmel bir seçim!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimon">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageon" src="images/940dd4e2-4688-42bd-a54f-9f78dd16ae88.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/940dd4e2-4688-42bd-a54f-9f78dd16ae88.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageon('images/940dd4e2-4688-42bd-a54f-9f78dd16ae88.jpg')">
+                    <img src="images/488d4252-0ae4-4297-8633-ef7ee54264af.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageon('images/488d4252-0ae4-4297-8633-ef7ee54264af.jpg')">
+                    <img src="images/652e6e61-bc77-4f19-a813-fd22e32deef7.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageon('images/652e6e61-bc77-4f19-a813-fd22e32deef7.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Dubai Altın Set: İhtişamın ve Lüksün Simgesi</h1>
+                <p class="description">Dubai’nin göz kamaştıran lüksünü ve ihtişamını yansıtan bu altın set, özel
+                    tasarımı ve zarif detaylarıyla benzersiz bir şıklık sunuyor. Bilezik, kolye, küpe ve yüzükten oluşan
+                    bu set, zengin dokunuşları ve kusursuz işçiliğiyle her bakışta fark yaratıyor. Göz alıcı parlaklığı
+                    ile düğünlerde, davetlerde ve özel anlarınızda size eşlik edecek bu Dubai altın set, sofistike bir
+                    stil arayanlar için mükemmel bir seçenek. Stilinize ışıltı katmak ve dikkatleri üzerinize çekmek
+                    istiyorsanız, bu set tam size göre!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimonbir">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageonbir" src="images/725f581a-da8e-46c3-9d04-e8f8fe081f22.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/725f581a-da8e-46c3-9d04-e8f8fe081f22.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageonbir('images/725f581a-da8e-46c3-9d04-e8f8fe081f22.jpg')">
+                    <img src="images/b58fcab1-61eb-46e4-afb7-1133b1970663.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageonbir('images/b58fcab1-61eb-46e4-afb7-1133b1970663.jpg')">
+                    <img src="images/a05fa5f1-810f-409f-927f-6a97ad45a3be.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageonbir('images/a05fa5f1-810f-409f-927f-6a97ad45a3be.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Pul Tuğralı Altın Kolye: Geleneksel Asaletin Işıltılı Yansıması</h1>
+                <p class="description">Osmanlı’nın zarafetini günümüze taşıyan pul tuğralı altın kolye, tarihî bir
+                    dokunuşla modern şıklığı buluşturuyor. Ustalıkla işlenmiş tuğra motifi ve zarif pul detaylarıyla göz
+                    alıcı bir parıltı sunan bu kolye, hem özel günlerinizde hem de günlük kullanımda stilinizi
+                    taçlandıracak. Geleneksel çizgilerle tasarlanan bu özel parça, asalet ve zarafeti bir araya
+                    getirerek tarzınıza anlam katıyor. Kültürel bir mirası üzerinizde taşımak ve şıklığınızla fark
+                    yaratmak istiyorsanız, pul tuğralı altın kolye tam size göre!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimoniki">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageoniki" src="images/a76348b9-714c-40fe-b49c-8a931de989a1.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/a76348b9-714c-40fe-b49c-8a931de989a1.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageoniki('images/a76348b9-714c-40fe-b49c-8a931de989a1.jpg')">
+                    <img src="images/6722a77b-eda6-42e0-b2c6-72a993d9cc59.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageoniki('images/6722a77b-eda6-42e0-b2c6-72a993d9cc59.jpg')">
+                    <img src="images/5a37af8c-b256-4059-a9aa-4035a9f5ad93.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageoniki('images/5a37af8c-b256-4059-a9aa-4035a9f5ad93.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Hint İşi Kolye: Efsanevi Zarafetin Sanatsal Buluşması</h1>
+                <p class="description">Hint el işçiliğinin zarif ve ince detaylarıyla bezenmiş bu kolye, geleneksel
+                    tasarımları modern dokunuşlarla harmanlıyor. Her bir taşın ve desenin özel olarak işlenmesiyle
+                    ortaya çıkan bu eşsiz parça, mistik bir hava yaratıyor. Işıltılı taşlar ve zarif figürler, kolyeyi
+                    her bakışta hayranlık uyandıran bir sanat eserine dönüştürüyor. Hint kültürünün derinliklerinden
+                    ilham alan bu kolye, stilinize sofistike bir zarafet katmak ve özgün bir görünüm elde etmek
+                    isteyenler için mükemmel bir tercih!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimonuc">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageonuc" src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageonuc('images/349639a5-4e16-473b-82ed-f9843f90e573.jpg')">
+                    <img src="images/ad1e3b44-d800-4e39-935d-e74fb7468ce4.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageonuc('images/ad1e3b44-d800-4e39-935d-e74fb7468ce4.jpg')">
+                    <img src="images/6ad2c24a-5538-4675-abf8-63bc443c2e44.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageonuc('images/6ad2c24a-5538-4675-abf8-63bc443c2e44.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Halkalı Altın Zincir: Zarif ve Modern Tasarımın Buluşması</h1>
+                <p class="description">Zarif ve modern bir tasarım arayanlar için ideal bir tercih olan bu halkalı altın
+                    zincir, her detayıyla şıklığınızı ön plana çıkarır. İnce işçilikle tasarlanmış halkalar, altının
+                    doğal parlaklığıyla birleşerek göz alıcı bir görünüm oluşturur. Hem günlük hayatta hem de özel
+                    günlerde kullanabileceğiniz bu zincir, sade ama etkileyici bir tarz yaratır. Minimalist ama şık bir
+                    aksesuar arayışında olanlar için mükemmel bir seçim olan bu halkalı altın zincir, stilinize
+                    sofistike bir dokunuş katacak!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimondort">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageondort" src="images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg"
+                        alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageondort('images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg')">
+                    <img src="images/63be2a10-fc2a-4b88-951c-ddddb4fd0615.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageondort('images/63be2a10-fc2a-4b88-951c-ddddb4fd0615.jpg')">
+                    <img src="images/5478a96f-f247-405b-8d27-0650c235366e.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageondort('images/5478a96f-f247-405b-8d27-0650c235366e.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Bileklikli Altın Gerdanlık: Şıklığın ve Fonksiyonelliğin Mükemmel Uyumu</h1>
+                <p class="description">Özel tasarımı ve zarif işçiliğiyle dikkat çeken bu bileklikli altın gerdanlık,
+                    stilinizi taçlandıran eşsiz bir aksesuardır. Hem gerdanlık hem de bileklik olarak kullanılabilen bu
+                    şık parça, altının zarafetini modern bir dokunuşla sunar. Özel anlarınızda dikkatleri üzerinize
+                    çekecek, günlük kullanımda ise şıklığınızı her an yansıtacak bir seçenek. Sade ve şık detaylarıyla
+                    her kombine uyum sağlayan bu bileklikli altın gerdanlık, zarafeti ve fonksiyonelliği bir arada
+                    sunuyor. Şıklığınızı iki katına çıkarmak için ideal!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimonbes">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageonbes" src="images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageonbes('images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg')">
+                    <img src="images/d3984dea-f244-4c61-86bc-4ea032613594.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageonbes('images/d3984dea-f244-4c61-86bc-4ea032613594.jpg')">
+                    <img src="images/78903618-9992-4004-8bab-6d4748005678.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageonbes('images/78903618-9992-4004-8bab-6d4748005678.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Su Yolu Gerdanlık - Zarafetin Suyundan İlham Alın</h1>
+                <p class="description">Su yolu gerdanlık, zarafeti ve doğanın kusursuz akışını bir araya getiriyor.
+                    Özenle işlenmiş ince detaylarıyla, suyun huzur veren akışını boynunuzda taşıyın. Hem günlük
+                    şıklığınızda hem de özel anlarınızda rahatlıkla kullanabileceğiniz bu zarif takı, altın ve değerli
+                    taşların ışıltısı ile ışıldar. Su yolu gerdanlık, size sadece estetik değil, aynı zamanda özgün bir
+                    tarz da sunar. Aksoz Gold'un özenle seçtiği bu gerdanlık, zarif dokusu ve modern tasarımıyla her
+                    kadının koleksiyonunda olması gereken bir parça.
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimonalti">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageonalti" src="images/e9d815b1-43a6-4848-ae91-094966318efe.jpg"
+                        alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/e9d815b1-43a6-4848-ae91-094966318efe.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageonalti('images/e9d815b1-43a6-4848-ae91-094966318efe.jpg')">
+                    <img src="images/b5136904-742e-489f-9db1-95caeaa49436.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageonalti('images/b5136904-742e-489f-9db1-95caeaa49436.jpg')">
+                    <img src="images/2f3104ad-c3d1-41e2-88d7-b5b91fcae6e8.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageonalti('images/2f3104ad-c3d1-41e2-88d7-b5b91fcae6e8.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Çeyrekli Kolye - Gelenekten Modern Zarafete</h1>
+                <p class="description">Çeyrekli kolye, gelenekselin zarafetini modern bir dokunuşla buluşturuyor. Her
+                    bir çeyrek parçasının ustaca yerleştirilmesiyle tasarlanan bu şık kolye, tarihî bir anlam taşırken
+                    aynı zamanda zamansız bir zarafet sunuyor. Hem özel günlerde hem de günlük şıklığınızda rahatlıkla
+                    kullanabileceğiniz bu eşsiz takı, altın işçiliğiyle göz kamaştırıyor. Aksoz Gold’un özenle
+                    hazırladığı çeyrekli kolye, size hem anlamlı hem de stil sahibi bir aksesuar sunuyor. Geleneksel
+                    değerlerle modern tasarımın buluştuğu bu kolye, her anınıza özgün bir dokunuş katacak.
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uruntanitimonyedi">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageonyedi" src="images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg"
+                        alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageonyedi('images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg')">
+                    <img src="images/95f3266d-4dbf-48b6-89ea-5115b3e19b77.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageonyedi('images/95f3266d-4dbf-48b6-89ea-5115b3e19b77.jpg')">
+                    <img src="images/69aa6f79-36dd-4316-92ce-1af3f6a7ee2a.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageonyedi('images/69aa6f79-36dd-4316-92ce-1af3f6a7ee2a.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Nohut Kolye ve Bileklik - Altının Zarif Dokunuşu</h1>
+                <p class="description">Nohut kolye ve bileklik, altının ışıltısıyla zarafeti en şık şekilde
+                    birleştiriyor. İnce işçilikle tasarlanmış, nohut formundaki detaylarıyla dikkat çeken bu takılar,
+                    her kadının koleksiyonunda yer alması gereken modern ve zarif parçalardır. Günlük kullanımda
+                    şıklığı, özel anlarda ise zarafetiyle öne çıkan bu altın kolye ve bileklik seti, her kombine uyum
+                    sağlayarak stilinize sofistike bir dokunuş katacak. Aksoz Gold’un zarif tasarımıyla nohut kolye ve
+                    bileklik, altının zamansız değerini ve estetiğini her an yanınızda taşır.
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+------------------------------------
+    <div id="uruntanitimonsekiz">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageonsekiz" src="images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg"
+                        alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageonsekiz('images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg')">
+                    <img src="images/40d19578-d396-4f3c-b086-2fad7d699e57.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageonsekiz('images/40d19578-d396-4f3c-b086-2fad7d699e57.jpg')">
+                    <img src="images/8f6d2c05-b3aa-4fcf-99f4-bade349876bb.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageonsekiz('images/8f6d2c05-b3aa-4fcf-99f4-bade349876bb.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Hasır Altın Set - Zarafetin İncelikli Dokunuşu</h1>
+                <p class="description">Hasır altın set, altının eşsiz ışıltısını modern bir dokunuşla sunuyor. Zarif
+                    hasır örgü tasarımı, bu takıyı hem göz alıcı hem de şık kılıyor. Kolye, bilezik ve küpe
+                    kombinasyonuyla tamamlanan set, her anınıza zarafet katmak için özenle tasarlandı. Özel günlerden
+                    günlük kullanıma kadar her tarzda şıklığı yakalamanıza yardımcı olacak bu set, altın işçiliğinin en
+                    zarif örneklerinden biridir. Aksoz Gold’un ustalığıyla işlenen hasır altın set, her kadının takı
+                    koleksiyonunda bulunması gereken modern bir klasik haline geliyor.
+                </p>
+                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="blog">
+        <!-- Header Bölümü -->
+        <header>
+            <h1>Aksoz Gold Blog ve Haberler</h1>
+            <p>Kuyumculuk ve Döviz Dünyasından Güncel Bilgiler ve Fiyatlar</p>
+            <!-- Anasayfaya Dön Butonu -->
+            <div class="back-to-home">
+                <a href="#" class="back-btn" onclick="anasayfayadon()">Anasayfaya Dön</a>
+            </div>
+        </header>
+
+        <!-- Blog ve Haberler Bölümü -->
+        <section class="blog-container">
+            <!-- İlk Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Altın Fiyatlarında Son Durum: 2024 Kasım</h2>
+                <p class="date">10 Kasım 2024</p>
+                <p>Altın fiyatları, küresel ekonomik belirsizlikler ve faiz oranlarındaki değişikliklerle birlikte
+                    önemli
+                    bir yükseliş göstermeye devam ediyor. İşte güncel altın fiyatları ve yatırımcılar için öne çıkan
+                    ipuçları.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- İkinci Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Gümüş ve Altın Arasındaki Fark: Hangisi Daha Karlı?</h2>
+                <p class="date">8 Kasım 2024</p>
+                <p>Gümüş, altına göre daha düşük fiyatlarda işlem görmekle birlikte, son yıllarda artan talep ve
+                    endüstriyel
+                    kullanımıyla değer kazanıyor. Hangi metal yatırımcılar için daha avantajlı?</p>
+
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Üçüncü Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Döviz Kurları ve Türkiye'deki Son Durum</h2>
+                <p class="date">5 Kasım 2024</p>
+                <p>Türk Lirası, dolar ve euro karşısında değer kaybederken, döviz piyasası üzerindeki dalgalanmalara
+                    dair
+                    uzman görüşleri ve günlük analizler. İşte döviz kurlarındaki son gelişmeler.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Dördüncü Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Harem Altın Fiyatları ile Yatırım Yapın: Hangi Altın Türü Daha Karlı?</h2>
+                <p class="date">2 Kasım 2024</p>
+                <p>Harem Altın'dan aldığımız güncel verilerle, yatırımcılar için en karlı altın türünü keşfedin. Yatırım
+                    yapmadan önce bilmeniz gerekenler ve altın fiyatlarındaki güncel değişiklikler hakkında detaylı
+                    bilgi.
+                </p>
+
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Beşinci Blog Yazısı -->
+            <article class="blog-post">
+                <h2>2024 Yılında Altın ve Döviz Yatırımının Avantajları</h2>
+                <p class="date">1 Kasım 2024</p>
+                <p>2024 yılı itibarıyla altın ve döviz yatırımının getirileri hakkında detaylı bir analiz. Yatırımcılar
+                    için
+                    hangi enstrümanın daha kazançlı olabileceğine dair önemli bilgiler.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Altın Piyasasında Gelişen Yeni Yatırım Trendleri -->
+            <article class="blog-post">
+                <h2>Altın Piyasasında Gelişen Yeni Yatırım Trendleri</h2>
+                <p class="date">30 Ekim 2024</p>
+                <p>Altın piyasasında yeni yatırım stratejileri ve gelişen trendler. Yatırımcıların 2024 yılında altına
+                    nasıl
+                    yaklaşması gerektiği konusunda önemli ipuçları.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+        </section>
+    </div>
+
+
+    <script>
+        function changeImagebir(imageUrl) {
+            document.getElementById("mainImagebir").src = imageUrl;
+        }
+        function changeImageiki(imageUrl) {
+            document.getElementById("mainImageiki").src = imageUrl;
+        }
+        function changeImageuc(imageUrl) {
+            document.getElementById("mainImageuc").src = imageUrl;
+        }
+        function changeImagedort(imageUrl) {
+            document.getElementById("mainImagedort").src = imageUrl;
+        }
+        function changeImagebes(imageUrl) {
+            document.getElementById("mainImagebes").src = imageUrl;
+        }
+        function changeImagealti(imageUrl) {
+            document.getElementById("mainImagealti").src = imageUrl;
+        }
+        function changeImageyedi(imageUrl) {
+            document.getElementById("mainImageyedi").src = imageUrl;
+        }
+        function changeImagesekiz(imageUrl) {
+            document.getElementById("mainImagesekiz").src = imageUrl;
+        }
+        function changeImagedokuz(imageUrl) {
+            document.getElementById("mainImagedokuz").src = imageUrl;
+        }
+        function changeImageon(imageUrl) {
+            document.getElementById("mainImageon").src = imageUrl;
+        }
+        function changeImageonbir(imageUrl) {
+            document.getElementById("mainImageonbir").src = imageUrl;
+        }
+        function changeImageoniki(imageUrl) {
+            document.getElementById("mainImageoniki").src = imageUrl;
+        }
+        function changeImageonuc(imageUrl) {
+            document.getElementById("mainImageonuc").src = imageUrl;
+        }
+        function changeImageondort(imageUrl) {
+            document.getElementById("mainImageondort").src = imageUrl;
+        }
+        function changeImageonbes(imageUrl) {
+            document.getElementById("mainImageonbes").src = imageUrl;
+        }
+        function changeImageonalti(imageUrl) {
+            document.getElementById("mainImageonalti").src = imageUrl;
+        }
+        function changeImageonyedi(imageUrl) {
+            document.getElementById("mainImageonyedi").src = imageUrl;
+        }
+        function changeImageonsekiz(imageUrl) {
+            document.getElementById("mainImageonsekiz").src = imageUrl;
+        }
+
+
+
+
+
+
+
+
+        function setbir() {
+            document.getElementById("uruntanitimbir").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+
+        function setiki() {
+            document.getElementById("uruntanitimiki").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+
+        function setuc() {
+            document.getElementById("uruntanitimuc").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+
+        function setdort() {
+            document.getElementById("uruntanitimdort").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setbes() {
+            document.getElementById("uruntanitimbes").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setalti() {
+            document.getElementById("uruntanitimalti").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setyedi() {
+            document.getElementById("uruntanitimyedi").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setsekiz() {
+            document.getElementById("uruntanitimsekiz").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setdokuz() {
+            document.getElementById("uruntanitimdokuz").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function seton() {
+            document.getElementById("uruntanitimon").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setonbir() {
+            document.getElementById("uruntanitimonbir").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setoniki() {
+            document.getElementById("uruntanitimoniki").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setonuc() {
+            document.getElementById("uruntanitimonuc").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setondort() {
+            document.getElementById("uruntanitimondort").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setonbes() {
+            document.getElementById("uruntanitimonbes").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setonalti() {
+            document.getElementById("uruntanitimonalti").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setonyedi() {
+            document.getElementById("uruntanitimonyedi").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+        function setonsekiz() {
+            document.getElementById("uruntanitimonsekiz").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function anasayfayadon() {
+            document.getElementById("ana").style.display = "block";
+            document.getElementById("uruntanitimbir").style.display = "none";
+            document.getElementById("uruntanitimiki").style.display = "none";
+            document.getElementById("uruntanitimuc").style.display = "none";
+            document.getElementById("uruntanitimdort").style.display = "none";
+            document.getElementById("uruntanitimbes").style.display = "none";
+            document.getElementById("uruntanitimalti").style.display = "none";
+            document.getElementById("uruntanitimyedi").style.display = "none";
+            document.getElementById("uruntanitimsekiz").style.display = "none";
+            document.getElementById("uruntanitimdokuz").style.display = "none";
+            document.getElementById("uruntanitimon").style.display = "none";
+            document.getElementById("uruntanitimonbir").style.display = "none";
+            document.getElementById("uruntanitimoniki").style.display = "none";
+            document.getElementById("uruntanitimonuc").style.display = "none";
+            document.getElementById("uruntanitimondort").style.display = "none";
+            document.getElementById("uruntanitimonbes").style.display = "none";
+            document.getElementById("uruntanitimonalti").style.display = "none";
+            document.getElementById("uruntanitimonyedi").style.display = "none";
+            document.getElementById("uruntanitimonsekiz").style.display = "none";
+            document.getElementById("blog").style.display = "none";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function blog() {
+            document.getElementById("ana").style.display = "none";
+            document.getElementById("blog").style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>
