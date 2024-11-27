@@ -132,7 +132,9 @@
             display: none;
             flex-direction: column;
             gap: 10px;
-            margin-top: 20px;
+            margin-bottom: 10px;
+            background-color: #0a2342;
+            justify-content: center;
         }
 
         .nav-links a {
@@ -155,12 +157,15 @@
 
             .nav-links.active {
                 display: flex;
+                background-color: #0a2342;
+                align-items: center;
+                justify-content: center;
             }
 
             .common-button {
                 padding: 10px 20px;
                 font-size: 14px;
-                width: 100%;
+                width: 96%;
                 /* Butonları tam genişlikte yap */
             }
         }
@@ -880,15 +885,17 @@
                     <div></div>
                 </div>
             </div>
+            <!-- Navigation Links (Burger Menü Açıldığında Görünecek) -->
+            <div class="nav-links">
+                <br>
+                <button class="common-button"><a
+                        href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                        target="_blank">İletişim</a></button>
+                <button class="common-button" onclick="blogiki()">Blog</button>
+                <button class="common-button" onclick="yorumiki()">Yorumlar</button>
+                <br>
+            </div>
         </header>
-        <!-- Navigation Links (Burger Menü Açıldığında Görünecek) -->
-        <div class="nav-links">
-            <button class="common-button"><a
-                    href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    target="_blank">İletişim</a></button>
-            <button class="common-button" onclick="blog()">Blog</button>
-            <button class="common-button" onclick="yorum()">Yorumlar</button>
-        </div>
 
         <main>
             <div class="container-iki">
@@ -2085,15 +2092,32 @@
 
 
 
+
         function blog() {
             document.getElementById("ana").style.display = "none";
             document.getElementById("blog").style.display = "block";
         }
+        function blogiki() {
+            document.getElementById("ana").style.display = "none";
+            document.getElementById("blog").style.display = "block";
+        }
 
-        function yorum(){
+
+
+        function yorum() {
             document.getElementById("yorum").style.display = "block";
             document.getElementById("ana").style.display = "none";
         }
+        function yorumiki() {
+            document.getElementById("yorum").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
+
+
+
+
+
+
 
 
 
