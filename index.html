@@ -25,8 +25,8 @@
             transition: background-color 0.3s ease-in-out;
         }
 
+
         .container {
-            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -101,12 +101,60 @@
             gap: 10px;
         }
 
+        /* Burger Menü Stillendirme */
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .burger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: #d4af37;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .burger-menu.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger-menu.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
         /* Responsive buton düzenlemeleri */
-        @media (max-width: 450px) {
+        @media (max-width: 580px) {
             .buttons-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+                display: none;
+            }
+
+            .burger-menu {
+                display: flex;
+                cursor: pointer;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .common-button {
@@ -590,6 +638,177 @@
 
 
 
+
+
+
+
+
+
+        #yorum {
+            display: none;
+            font-family: 'Arial', sans-serif;
+            background-color: #0a2342;
+            /* Yeni arka plan rengi */
+            color: #fff;
+            /* Yazı rengi beyaz */
+            line-height: 1.6;
+        }
+
+        /* Logo Stili */
+        .logoiki {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .logoiki img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        section.reviews {
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+
+
+
+        .logoiki h1 {
+            margin-bottom: 15px;
+            font-size: 35px;
+            font-weight: 600;
+            text-align: center;
+            background: linear-gradient(90deg, #f9a602, #0a2342);
+            /* İki renkli geçiş */
+            background-size: 200% 100%;
+            /* Arka planın büyüklüğü */
+            animation: slideColor 5s ease-in-out infinite;
+            /* Animasyon */
+            background-clip: text;
+            /* Yazının üzerine uygulama */
+            color: transparent;
+            /* Yazı rengini şeffaf yap */
+        }
+
+        @keyframes slideColor {
+            0% {
+                background-position: 200% 0;
+            }
+
+            50% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .review-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .review-item .user-profile,
+        .review-item .business-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-item .user-profile img,
+        .review-item .business-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .review-item .user-profile .user-name,
+        .review-item .business-profile .business-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .review-item .user-profile .user-role,
+        .review-item .business-profile .business-role {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .review-item .comment {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .review-item .response {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f8b400;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .response p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section.reviews {
+                padding: 20px;
+            }
+
+            section.reviews h1 {
+                font-size: 28px;
+            }
+
+            .review-item .comment {
+                font-size: 14px;
+            }
+
+            .review-item .response {
+                font-size: 14px;
+            }
+
+            .review-item .user-profile,
+            .review-item .business-profile {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .review-item .user-profile .user-role,
+            .review-item .business-profile .business-role {
+                font-size: 12px;
+            }
+        }
+
+
+
+
+
+
+
+
+
         /* Reklam Modalı Stili */
         .reklam-modal {
             position: fixed;
@@ -641,6 +860,7 @@
 <body>
     <div id="ana">
 
+
         <header class="header-container">
             <div class="container">
                 <div class="logo">
@@ -649,11 +869,26 @@
                 </div>
                 <div class="buttons-container">
                     <button class="common-button" onclick="blog()">Blog</button>
+                    <button class="common-button" onclick="yorum()">Yorumlar</button>
                     <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
                         target="_blank"><button class="common-button">İletişim</button></a>
                 </div>
+                <!-- Burger Menü -->
+                <div class="burger-menu" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </header>
+        <!-- Navigation Links (Burger Menü Açıldığında Görünecek) -->
+        <div class="nav-links">
+            <button class="common-button"><a
+                    href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                    target="_blank">İletişim</a></button>
+            <button class="common-button">Blog</button>
+            <button class="common-button">Yorumlar</button>
+        </div>
 
         <main>
             <div class="container-iki">
@@ -1483,6 +1718,156 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="yorum">
+        <!-- Logo Bölümü -->
+        <div class="logoiki">
+            <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Aksoz Kuyumculuk Logo">
+            <!-- Logo ekleniyor -->
+            <h1>Kullanıcı Yorumları</h1>
+            <div class="back-to-home">
+                <a href="#" class="back-btn" onclick="anasayfayadon()">Anasayfaya Dön</a>
+            </div>
+        </div>
+
+        <section class="reviews">
+
+
+            <div class="review-container">
+                <!-- Yorum 1 -->
+                <div class="review-item">
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="User">
+                        <div>
+                            <div class="user-name">Ali K.</div>
+                            <div class="user-role">Müşteri</div>
+                        </div>
+                    </div>
+                    <div class="comment">Ürün çok kaliteli, tam istediğim gibi. Teşekkürler Aksoz Kuyumculuk!</div>
+                    <div class="business-profile">
+                        <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Business">
+                        <div>
+                            <div class="business-name">Aksoz Kuyumculuk</div>
+                            <div class="business-role">İşletme Sahibi</div>
+                        </div>
+                    </div>
+                    <div class="response">
+                        <p>Aksoz Kuyumculuk: Değerli yorumunuz için teşekkür ederiz, memnuniyetiniz bizim için çok
+                            önemli!
+                        </p>
+                    </div>
+                </div>
+                <!-- Yorum 2 -->
+                <div class="review-item">
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="User">
+                        <div>
+                            <div class="user-name">Ayşe G.</div>
+                            <div class="user-role">Müşteri</div>
+                        </div>
+                    </div>
+                    <div class="comment">Hızlı teslimat ve kaliteli hizmet. Çok memnun kaldım.</div>
+                    <div class="business-profile">
+                        <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Business">
+                        <div>
+                            <div class="business-name">Aksoz Kuyumculuk</div>
+                            <div class="business-role">İşletme Sahibi</div>
+                        </div>
+                    </div>
+                    <div class="response">
+                        <p>Aksoz Kuyumculuk: Hizmetimizden memnun kalmanıza sevindik, her zaman en iyisini sunmak için
+                            çalışıyoruz!</p>
+                    </div>
+                </div>
+                <!-- Yorum 3 -->
+                <div class="review-item">
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="User">
+                        <div>
+                            <div class="user-name">Mehmet T.</div>
+                            <div class="user-role">Müşteri</div>
+                        </div>
+                    </div>
+                    <div class="comment">Takılar harika, ancak teslimat biraz geç geldi.</div>
+                    <div class="business-profile">
+                        <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Business">
+                        <div>
+                            <div class="business-name">Aksoz Kuyumculuk</div>
+                            <div class="business-role">İşletme Sahibi</div>
+                        </div>
+                    </div>
+                    <div class="response">
+                        <p>Aksoz Kuyumculuk: Geri bildiriminiz için teşekkür ederiz, teslimat süreçlerimizi iyileştirmek
+                            için çalışıyoruz.</p>
+                    </div>
+                </div>
+                <!-- Yorum 4 -->
+                <div class="review-item">
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="User">
+                        <div>
+                            <div class="user-name">Seda A.</div>
+                            <div class="user-role">Müşteri</div>
+                        </div>
+                    </div>
+                    <div class="comment">Müşteri hizmetleriniz çok yardımcı oldu. Çok teşekkür ederim.</div>
+                    <div class="business-profile">
+                        <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Business">
+                        <div>
+                            <div class="business-name">Aksoz Kuyumculuk</div>
+                            <div class="business-role">İşletme Sahibi</div>
+                        </div>
+                    </div>
+                    <div class="response">
+                        <p>Aksoz Kuyumculuk: Yardımcı olabildiysek ne mutlu bize! Her zaman desteğe hazırız.</p>
+                    </div>
+                </div>
+                <!-- Yorum 5 -->
+                <div class="review-item">
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="User">
+                        <div>
+                            <div class="user-name">Hakan B.</div>
+                            <div class="user-role">Müşteri</div>
+                        </div>
+                    </div>
+                    <div class="comment">Harika bir deneyimdi, takıların kalitesi çok yüksek!</div>
+                    <div class="business-profile">
+                        <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Business">
+                        <div>
+                            <div class="business-name">Aksoz Kuyumculuk</div>
+                            <div class="business-role">İşletme Sahibi</div>
+                        </div>
+                    </div>
+                    <div class="response">
+                        <p>Aksoz Kuyumculuk: Geri bildiriminiz için teşekkür ederiz. En iyisini sunmak için buradayız!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
     <!-- Reklam Modalı -->
     <div id="reklamModal" class="reklam-modal">
         <div class="reklam-icerik">
@@ -1496,6 +1881,24 @@
 
 
     <script>
+
+
+
+        // Burger Menü Açma/Kapama
+        function toggleMenu() {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navLinks = document.querySelector('.nav-links');
+            burgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+
+
+
+
+
+
+
         function changeImagebir(imageUrl) {
             document.getElementById("mainImagebir").src = imageUrl;
         }
@@ -1667,6 +2070,7 @@
             document.getElementById("uruntanitimonyedi").style.display = "none";
             document.getElementById("uruntanitimonsekiz").style.display = "none";
             document.getElementById("blog").style.display = "none";
+            document.getElementById("yorum").style.display = "none";
         }
 
 
@@ -1686,6 +2090,10 @@
             document.getElementById("blog").style.display = "block";
         }
 
+        function yorum(){
+            document.getElementById("yorum").style.display = "block";
+            document.getElementById("ana").style.display = "none";
+        }
 
 
 
