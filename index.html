@@ -586,6 +586,54 @@
         .read-more:hover {
             text-decoration: underline;
         }
+
+
+
+
+        /* Reklam Modalı Stili */
+        .reklam-modal {
+            position: fixed;
+            bottom: -300px;
+            right: 10px;
+            width: 350px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 1000;
+            transition: all 0.5s ease;
+        }
+
+        .reklam-icerik {
+            text-align: center;
+        }
+
+        .reklam-icerik h2 {
+            font-size: 18px;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .reklam-icerik a {
+            font-size: 38px;
+            color: #00ff22;
+        }
+
+        .reklam-kapat {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .reklam-kapat:hover {
+            color: #d4af37;
+        }
     </style>
 </head>
 
@@ -1433,6 +1481,20 @@
     </div>
 
 
+
+
+    <!-- Reklam Modalı -->
+    <div id="reklamModal" class="reklam-modal">
+        <div class="reklam-icerik">
+            <button class="reklam-kapat" onclick="kapatModal()">×</button>
+            <h2>hemen iletişime geçin!</h2>
+            <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+
+
     <script>
         function changeImagebir(imageUrl) {
             document.getElementById("mainImagebir").src = imageUrl;
@@ -1624,6 +1686,24 @@
             document.getElementById("blog").style.display = "block";
         }
 
+
+
+
+        // Modal otomatik gösterim ve kaydırma
+        function reklamModalGoster() {
+            const modal = document.getElementById("reklamModal");
+            modal.style.bottom = "10px";
+        }
+
+        function kapatModal() {
+            const modal = document.getElementById("reklamModal");
+            modal.style.display = "none";
+        }
+
+        // 20 saniye sonra modalı göster
+        window.onload = function () {
+            setTimeout(reklamModalGoster, 10000);
+        };
     </script>
 </body>
 
