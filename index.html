@@ -61,7 +61,6 @@
             font-weight: bold;
             color: #d4af37;
             cursor: pointer;
-            border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
 
@@ -87,18 +86,10 @@
             50% {
                 transform: translateY(0);
             }
-
-            75% {
-                transform: translateY(-4px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
         }
 
         .common-button:hover {
-            animation: bounce 0.6s ease infinite;
+            animation: bounce 0.6s ease;
         }
 
         .buttons-container {
@@ -227,7 +218,6 @@
         .product-item {
             position: relative;
             text-align: center;
-            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -237,6 +227,7 @@
         .product-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
 
         .product-item img {
@@ -260,7 +251,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 12px;
         }
 
         .product-item:hover .product-infobir {
@@ -389,22 +379,20 @@
         #uruntanitimonsekiz {
             display: none;
             font-family: 'Poppins', sans-serif;
-            background-color: #d6d6d3;
+            background-color: white;
             color: #020d2b;
-            line-height: 1.6;
+            margin-top: 20px;
         }
+
 
         .containerbir {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             max-width: 1200px;
-            margin: 0 auto;
-            background-color: #d6d6d3;
-            color: #020d2b;
+            margin: 30px auto;
             padding: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .product-gallery {
@@ -421,7 +409,6 @@
             height: auto;
             margin-bottom: 18px;
             overflow: hidden;
-            box-shadow: 0 8px 66px rgba(0, 0, 0, 0.2);
         }
 
         .main-image img {
@@ -431,7 +418,8 @@
         }
 
         .main-image img:hover {
-            transform: scale(1.05);
+            transform: scale(1.50);
+            cursor: zoom-in;
         }
 
         .thumb-images {
@@ -455,9 +443,9 @@
 
         .product-info {
             flex: 1;
+            text-align: center;
             max-width: 500px;
             padding: 20px;
-            border-left: 2px solid #ececec;
         }
 
         .product-info h1 {
@@ -475,35 +463,22 @@
             line-height: 1.8;
         }
 
-        .return-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #020d2b;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
+        .return-button i {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 38px;
+            color: rgb(0, 0, 0);
         }
 
-        .return-button:hover {
-            background-color: #333;
+        .return-button i:hover {
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
             .containerbir {
                 flex-direction: column;
-                text-align: center;
                 padding: 20px;
-            }
-
-            .product-gallery,
-            .product-info {
-                width: 100%;
-                max-width: 100%;
-                border-left: none;
             }
 
             .thumb-images img {
@@ -550,7 +525,6 @@
 
 
 
-
         #blog {
             display: none;
             background-color: #0a2342;
@@ -558,12 +532,13 @@
         }
 
         /* Header Stilleri */
-        header {
+        .headerblog {
             text-align: center;
             margin-bottom: 20px;
+            margin-top: 70px;
         }
 
-        header h1 {
+        .headerblog h1 {
             margin-bottom: 15px;
             font-size: 38px;
             font-weight: 600;
@@ -596,46 +571,14 @@
         }
 
 
-        header p {
+        .headerblog  p {
             font-size: 1.2em;
             color: white;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
-        /* Modern Anasayfaya Dön Butonu */
-        .back-to-home {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #b88a2d, #0a2342);
-            /* Gradient arka plan */
+        #blog .return-button i,#yorum .return-button i  {
             color: white;
-            font-size: 1.2em;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 50px;
-            /* Yuvarlatılmış köşeler */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            /* Gölge efekti */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            /* Animasyon ekleme */
-        }
-
-        .back-btn:hover {
-            background: linear-gradient(45deg, #0a2342, #b88a2d);
-            /* Hoverda renk değişimi */
-            transform: translateY(-5px);
-            /* Hoverda butonun yukarı kayması */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            /* Hoverda gölge büyümesi */
-        }
-
-        .back-btn:focus {
-            outline: none;
-            /* Odaklanıldığında kenarlık yok */
         }
 
         /* Blog Konteyneri */
@@ -803,17 +746,20 @@
         }
 
         .review-item .comment {
-            margin-top: 10px;
+            margin-top: 5px;
             font-size: 16px;
             color: #555;
         }
-
+        .business-profile{
+            margin-top: 10px;
+            margin-left: 35px;
+        }
         .review-item .response {
-            margin-top: 15px;
+            margin-top: 5px;
+            margin-left: 25px;
             padding: 10px;
-            background-color: #f8b400;
             border-radius: 8px;
-            color: white;
+            color: #555;
             font-weight: bold;
         }
 
@@ -944,7 +890,6 @@
 
         <main>
             <div class="container-iki">
-                <h2>Beğenilen Ürünler</h2>
                 <div class="product-grid-container">
                     <div class="product-item" onclick="setbir()">
                         <a href=".product-grid-container"><img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg"
@@ -1122,7 +1067,7 @@
                     katacak. Geleneksel ve modern çizgileri buluşturan bu özel parça, tarzını cesurca ifade etmek
                     isteyenler için ideal bir seçim.
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1152,7 +1097,7 @@
                     ile göz kamaştırıyor. Günlük kombinlerinize ışıltı katmak veya özel anlarınızı daha da unutulmaz
                     kılmak için bu şık bilezik setini keşfedin. Şıklığınızı bir adım öteye taşıyın!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1185,7 +1130,7 @@
                     çıkaracak bu şık aksesuar, hem kendiniz için hem de sevdiklerinize unutulmaz bir hediye seçeneği
                     sunuyor. Bu eşsiz parçayla geleneksel zarafeti tarzınıza yansıtın!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1216,7 +1161,7 @@
                     sunuyor. Kendinizi ödüllendirmek veya sevdiklerinize unutulmaz bir hediye vermek için ideal olan bu
                     altın bilezik, stilinize asalet katmaya hazır!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1248,7 +1193,7 @@
                     tarzınızı yansıtmanın en göz alıcı yolu. Kendinizi Hint kültürünün büyüsüyle sarmak istiyorsanız, bu
                     gerdanlık tam size göre!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1280,7 +1225,7 @@
                     kolye, şıklığınızı taçlandıracak ideal bir parça. Göz kamaştırıcı bir zarafet sunan bu Hint işi
                     kolyeyle stilinize benzersiz bir hava katın!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1313,7 +1258,7 @@
                     özel davetlerde veya günlük kullanımda şıklığınızı artırmak için ideal olan bu kolyeyle tarzınıza
                     unutulmaz bir dokunuş katın!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1345,7 +1290,7 @@
                     mirasını ve el işçiliğinin ihtişamını üzerinizde taşımak istiyorsanız, bu kolye ve bileklik seti tam
                     size göre!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1376,7 +1321,7 @@
                     şıklığınızı tamamlayacak bu çeyrek pullu kolye, geleneksel motifleri modern bir yorumla sunuyor.
                     Kendinize veya sevdiklerinize unutulmaz bir hediye vermek istiyorsanız, bu kolye mükemmel bir seçim!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1409,7 +1354,7 @@
                     stil arayanlar için mükemmel bir seçenek. Stilinize ışıltı katmak ve dikkatleri üzerinize çekmek
                     istiyorsanız, bu set tam size göre!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1442,7 +1387,7 @@
                     getirerek tarzınıza anlam katıyor. Kültürel bir mirası üzerinizde taşımak ve şıklığınızla fark
                     yaratmak istiyorsanız, pul tuğralı altın kolye tam size göre!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1475,7 +1420,7 @@
                     ilham alan bu kolye, stilinize sofistike bir zarafet katmak ve özgün bir görünüm elde etmek
                     isteyenler için mükemmel bir tercih!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1508,7 +1453,7 @@
                     aksesuar arayışında olanlar için mükemmel bir seçim olan bu halkalı altın zincir, stilinize
                     sofistike bir dokunuş katacak!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1542,7 +1487,7 @@
                     her kombine uyum sağlayan bu bileklikli altın gerdanlık, zarafeti ve fonksiyonelliği bir arada
                     sunuyor. Şıklığınızı iki katına çıkarmak için ideal!
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1575,7 +1520,7 @@
                     tarz da sunar. Aksoz Gold'un özenle seçtiği bu gerdanlık, zarif dokusu ve modern tasarımıyla her
                     kadının koleksiyonunda olması gereken bir parça.
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1609,7 +1554,7 @@
                     hazırladığı çeyrekli kolye, size hem anlamlı hem de stil sahibi bir aksesuar sunuyor. Geleneksel
                     değerlerle modern tasarımın buluştuğu bu kolye, her anınıza özgün bir dokunuş katacak.
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1643,7 +1588,7 @@
                     sağlayarak stilinize sofistike bir dokunuş katacak. Aksoz Gold’un zarif tasarımıyla nohut kolye ve
                     bileklik, altının zamansız değerini ve estetiğini her an yanınızda taşır.
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1675,7 +1620,7 @@
                     zarif örneklerinden biridir. Aksoz Gold’un ustalığıyla işlenen hasır altın set, her kadının takı
                     koleksiyonunda bulunması gereken modern bir klasik haline geliyor.
                 </p>
-                <button class="return-button" onclick="anasayfayadon()">Anasayfaya Dön</button>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
             </div>
         </div>
     </div>
@@ -1690,14 +1635,12 @@
 
     <div id="blog">
         <!-- Header Bölümü -->
-        <header>
+        <div class="headerblog ">
             <h1>Aksoz Gold Blog ve Haberler</h1>
             <p>Kuyumculuk ve Döviz Dünyasından Güncel Bilgiler ve Fiyatlar</p>
             <!-- Anasayfaya Dön Butonu -->
-            <div class="back-to-home">
-                <a href="#" class="back-btn" onclick="anasayfayadon()">Anasayfaya Dön</a>
-            </div>
-        </header>
+            <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
+        </div>
 
         <!-- Blog ve Haberler Bölümü -->
         <section class="blog-container">
@@ -1792,9 +1735,7 @@
             <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Aksoz Kuyumculuk Logo">
             <!-- Logo ekleniyor -->
             <h1>Kullanıcı Yorumları</h1>
-            <div class="back-to-home">
-                <a href="#" class="back-btn" onclick="anasayfayadon()">Anasayfaya Dön</a>
-            </div>
+            <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
         </div>
 
         <section class="reviews">
