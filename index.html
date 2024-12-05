@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="Aksoz Gold, kuyumculuk, altın takılar, Mardin kuyumculuk, değerli takılar, kaliteli altın, güvenilir kuyumcu, altın, takı, Mardin">
     <meta name="robots" content="index, follow">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" type="image/x-icon">
@@ -38,6 +38,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px;
+            width: 100%;
         }
 
         .header-container {
@@ -143,7 +144,9 @@
         }
 
         /* Responsive buton düzenlemeleri */
-        @media (max-width: 580px) {
+        @media (max-width:995px) {
+
+
             .buttons-container {
                 display: none;
             }
@@ -159,20 +162,187 @@
                 align-items: center;
                 justify-content: center;
             }
+        }
 
-            .common-button {
-                padding: 10px 20px;
-                font-size: 14px;
-                width: 96%;
-                /* Butonları tam genişlikte yap */
+
+
+
+
+
+
+
+
+        /* Üstbilgi */
+        .ustbilgi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid white;
+            color: rgb(0, 0, 0);
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: transparent;
+            padding: 5px 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #d4af37;
+            color: #000000;
+        }
+
+
+
+
+        /* Kaydırma Menüsü */
+        .kaydirma-menusu {
+            position: fixed;
+            top: 90px;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #0a2342;
+            z-index: 1000;
+            transition: left 0.3s ease;
+        }
+
+        .kaydirma-menusu ul {
+            list-style: none;
+        }
+
+        .kaydirma-menusu li {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+        }
+
+        .kaydirma-menusu li a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 22px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+
+        .kaydirma-menusu li a:hover {
+            color: #f1c40f;
+        }
+
+        /* Mobil Ayarlar */
+        .menu-dugmesi {
+            display: none;
+        }
+
+        .kaydirma-menusu {
+            display: none;
+        }
+
+        @media (max-width: 995px) {
+            .ustbilgi {
+                display: none;
+            }
+
+            .ustbilgi nav {
+                display: none;
+            }
+
+            .menu-dugmesi {
+                display: flex;
+            }
+
+            .kaydirma-menusu {
+                display: block;
             }
         }
+
+        .kaydirma-menusu.acik {
+            left: 0;
+        }
+
+        .kaplama {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .kaplama.acik {
+            display: block;
+        }
+
+
+
+
+
+
+
+        .carouselExampleana {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carouselExampleanaic {
+            width: 95%;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 50vh;
+        }
+
+        .carousel-caption {
+            bottom: 20%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         main {
             padding: 10px;
             flex: 1;
             background-color: white;
             transition: background-color 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+        }
+
+        .containeriki {
+            width: 98%;
         }
 
         main h2 {
@@ -896,40 +1066,137 @@
 <body>
     <div id="ana">
 
+        <div class="header-containerana">
+            <header class="header-container">
+                <div class="container">
+                    <div class="logo">
+                        <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                            target="_blank"> <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="common-button" onclick="blog()">Blog</button>
+                        <button class="common-button" onclick="yorum()">Yorumlar</button>
+                        <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
+                            target="_blank"><button class="common-button">İletişim</button></a>
+                    </div>
+                    <!-- Burger Menü -->
+                    <div class="burger-menu" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </header>
 
-        <header class="header-container">
-            <div class="container">
-                <div class="logo">
-                    <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                        target="_blank"> <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
-                </div>
-                <div class="buttons-container">
-                    <button class="common-button" onclick="blog()">Blog</button>
-                    <button class="common-button" onclick="yorum()">Yorumlar</button>
-                    <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                        target="_blank"><button class="common-button">İletişim</button></a>
-                </div>
-                <!-- Burger Menü -->
-                <div class="burger-menu" onclick="toggleMenu()">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+            <header class="ustbilgi">
+                <nav>
+                    <div class="nav-links">
+                    </div>
+                    <a href="/alyans">Alyans</a>
+                    <a href="/yuzuk">Yüzük</a>
+                    <a href="/kupe">Küpe</a>
+                    <a href="/kolye">Kolye</a>
+                    <a href="/bileklik">Bileklik</a>
+                    <a href="/bilezik">Bilezik</a>
+                    <a href="/set">Düğün Seti</a>
+                    <a href="/altin">Altın Çeşitleri</a>
+                    <a href="/gumus">Gümüş Takılar</a>
+                    <a href="/pirlanta">Pırlanta</a>
+                    <a href="/tespih">Tesbih</a>
+                </nav>
+            </header>
+
+            <div class="kaydirma-menusu">
+                <ul>
+                    <li><a href="/alyans">Alyans</a></li>
+                    <li><a href="/yuzuk">Yüzük</a></li>
+                    <li><a href="/kupe">Küpe</a></li>
+                    <li><a href="/kolye">Kolye</a></li>
+                    <li><a href="/bileklik">Bileklik</a></li>
+                    <li><a href="/bilezik">Bilezik</a></li>
+                    <li><a href="/set">Düğün Seti</a></li>
+                    <li><a href="/altin">Altın Çeşitleri</a></li>
+                    <li><a href="/gumus">Gümüş Takılar</a></li>
+                    <li><a href="/pirlanta">Pırlanta</a></li>
+                    <li><a href="/tespih">Tesbih</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <br>
+
+
+        <div class="carouselExampleana">
+            <div class="carouselExampleanaic">
+                <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/2f3104ad-c3d1-41e2-88d7-b5b91fcae6e8.jpg" class="d-block w-100"
+                                alt="Resim 1">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Değerli anlar, değerli takılarla başlar. Her parça, zarafetin ve özenin simgesidir.
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" class="d-block w-100"
+                                alt="Resim 2">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Altının parlaklığı, sizin gibi özel müşterilerle daha da değerleniyor. Aksoz Gold,
+                                    her
+                                    zaman
+                                    en
+                                    iyisi!</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/151304bb-bf03-42d5-9c3a-332c8b791d3f.jpg" class="d-block w-100"
+                                alt="Resim 3">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Büyüleyici takılar, unutulmaz anılar yaratır. Sizi şıklığınızla taçlandırmak için
+                                    buradayız!
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Önceki buton -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Önceki</span>
+                    </button>
+
+                    <!-- Sonraki buton -->
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Sonraki</span>
+                    </button>
                 </div>
             </div>
-            <!-- Navigation Links (Burger Menü Açıldığında Görünecek) -->
-            <div class="nav-links">
-                <br>
-                <button class="common-button"><a
-                        href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                        target="_blank">İletişim</a></button>
-                <button class="common-button" onclick="blogiki()">Blog</button>
-                <button class="common-button" onclick="yorumiki()">Yorumlar</button>
-                <br>
-            </div>
-        </header>
+        </div>
+
+
+
+
+
+
+        <br><br><br>
+
+
+
+
+
+
+
 
         <main>
             <div class="container-iki">
+                <h2>Beğenilen Ürünler</h2>
                 <div class="product-grid-container">
                     <div class="product-item" onclick="setbir()">
                         <a href=".product-grid-container"><img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg"
@@ -1071,7 +1338,7 @@
     </div>
 
 
-
+    </div>
 
 
 
@@ -1913,8 +2180,22 @@
 
 
 
-    <script>
 
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
 
 
         // Burger Menü Açma/Kapama
@@ -1923,6 +2204,13 @@
             const navLinks = document.querySelector('.nav-links');
             burgerMenu.classList.toggle('active');
             navLinks.classList.toggle('active');
+            const menu = document.querySelector('.kaydirma-menusu');
+            const kaplama = document.querySelector('.kaplama');
+            const menuDugmesi = document.querySelector('.menu-dugmesi');
+
+            menu.classList.toggle('acik');
+            kaplama.classList.toggle('acik');
+            menuDugmesi.classList.toggle('aktif');
         }
 
 
