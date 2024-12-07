@@ -23,7 +23,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: white;
+            background-color: #f4f4f9;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -31,89 +31,88 @@
             transition: background-color 0.3s ease-in-out;
         }
 
-
         .container {
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
+            padding: 10px 20px;
             width: 100%;
         }
 
         .header-container {
-            background-color: #0a2342;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #0a2342, #1a436b);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: fixed;
-            top: 0px;
+            top: 0;
             width: 100%;
             z-index: 1000;
         }
 
         .logo img {
-            width: 90px;
+            width: 100px;
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
         }
 
-        /* Modern buton stilleri */
         .common-button {
-            background-color: transparent;
-            border: 2px solid #d4af37;
-            padding: 12px 30px;
+            background: none;
+            border: none;
+            color: #d4af37;
             font-size: 16px;
             font-weight: bold;
-            color: #d4af37;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            padding: 10px 20px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .common-button::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #d4af37;
+            transition: width 0.4s ease;
         }
 
         .common-button:hover {
-            background-color: #d4af37;
             color: white;
         }
 
-        .common-button:active {
-            transform: translateY(4px);
-        }
-
-        /* Buton zıplama animasyonu */
-        @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-
-            25% {
-                transform: translateY(-6px);
-            }
-
-            50% {
-                transform: translateY(0);
-            }
-        }
-
-        .common-button:hover {
-            animation: bounce 0.6s ease;
+        .common-button:hover::after {
+            width: 100%;
         }
 
         .buttons-container {
             display: flex;
-            justify-content: flex-end;
-            gap: 10px;
+            gap: 15px;
         }
 
-        /* Burger Menü Stillendirme */
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        /* Burger Menü */
         .burger-menu {
-            margin-right: 10px;
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
+            cursor: pointer;
         }
 
         .burger-menu div {
             width: 30px;
-            height: 3px;
-            background-color: #d4af37;
-            border-radius: 5px;
-            transition: all 0.3s;
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .burger-menu.active div:nth-child(1) {
@@ -131,37 +130,38 @@
         .nav-links {
             display: none;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 10px;
-            background-color: #0a2342;
-            justify-content: center;
+            background-color: #1a436b;
+            padding: 20px;
+            border-radius: 8px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #d4af37;
-            font-size: 18px;
-            font-weight: bold;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
         }
 
-        /* Responsive buton düzenlemeleri */
-        @media (max-width:995px) {
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
 
-
+        /* Responsive Düzen */
+        @media (max-width: 995px) {
             .buttons-container {
                 display: none;
             }
 
             .burger-menu {
                 display: flex;
-                cursor: pointer;
             }
 
             .nav-links.active {
                 display: flex;
-                background-color: #0a2342;
-                align-items: center;
-                justify-content: center;
+                background: linear-gradient(90deg, #0a2342, #1a436b);
             }
         }
 
@@ -213,6 +213,7 @@
 
         /* Kaydırma Menüsü */
         .kaydirma-menusu {
+            display: none;
             position: fixed;
             top: 93px;
             left: -250px;
@@ -233,7 +234,7 @@
         }
 
         .kaydirma-menusu li a {
-            color: #d4af37;
+            color: #ffffff;
             text-decoration: none;
             font-size: 22px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -254,9 +255,10 @@
         }
 
         @media (max-width: 995px) {
-            .carouselExampleana{
+            .carouselExampleana {
                 margin-top: 100px;
             }
+
             .ustbilgi {
                 display: none;
             }
@@ -299,6 +301,13 @@
 
 
 
+
+
+
+
+
+
+
         .carouselExampleana {
             display: flex;
             justify-content: center;
@@ -321,6 +330,73 @@
         .carousel-control-next-icon {
             background-color: rgba(0, 0, 0, 0.5);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .firsatlar-bolumu {
+            background-color: #f8f8f8;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .firsat-kutulari {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .firsat-kutu {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .firsat-kutu h3 {
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .firsat-kutu p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .firsat-kutulari {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+
+
 
 
 
@@ -383,7 +459,7 @@
 
         .product-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             background-color: white;
             gap: 30px;
             padding: 0 20px;
@@ -515,6 +591,144 @@
                 color: #f9a602;
             }
         }
+
+
+
+
+
+
+
+        .kesfet-bolumu {
+            padding: 0px 20px;
+            background-color: #0a2342;
+            color: #d4af37;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+
+        .bolum-baslik {
+            letter-spacing: 2px;
+            font-size: 38px;
+            font-weight: 600;
+            text-align: center;
+            background: linear-gradient(90deg, #f9a602, #0a2342);
+            /* İki renkli geçiş */
+            background-size: 200% 100%;
+            /* Arka planın büyüklüğü */
+            animation: slideColor 5s ease-in-out infinite;
+            /* Animasyon */
+            background-clip: text;
+            /* Yazının üzerine uygulama */
+            color: transparent;
+            /* Yazı rengini şeffaf yap */
+        }
+
+        /* Renk kayması animasyonu */
+        @keyframes slideColor {
+            0% {
+                background-position: 200% 0;
+            }
+
+            50% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .kesfet-izgara {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .kesfet-urun {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .kesfet-urun img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .kesfet-urun:hover img {
+            transform: scale(1.1);
+        }
+
+        .kesfet-katman {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .kesfet-urun:hover .kesfet-katman {
+            opacity: 1;
+        }
+
+        .kesfet-katman h3 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .kesfet-dugme {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #0a2342;
+            background-color: #d4af37;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .kesfet-dugme:hover {
+            background-color: #fff;
+            color: #0a2342;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .kesfet-izgara {
+                grid-template-columns: 1fr;
+            }
+
+            .kesfet-dugme {
+                width: 80%;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -721,6 +935,71 @@
                 font-size: 14px;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .hakkimizda-bolumu {
+            margin-top: 50px;
+            margin-bottom: 10px;
+            background-color: #f4f4f4;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .bolum-baslikhakkimizda {
+            font-size: 36px;
+            color: #0a2342;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hakkimizda-metin {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .hakkimizda-bolumu {
+                padding: 40px 20px;
+            }
+
+            .hakkimizda-metin {
+                font-size: 16px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1078,10 +1357,12 @@
                             target="_blank"> <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
                     </div>
                     <div class="buttons-container">
-                        <button class="common-button" onclick="blog()">Blog</button>
-                        <button class="common-button" onclick="yorum()">Yorumlar</button>
+                        <li class="common-button" onclick="blog()">Blog</li>
+                        <li class="common-button" onclick="yorum()">Yorumlar</li>
                         <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                            target="_blank"><button class="common-button">İletişim</button></a>
+                            target="_blank">
+                            <li class="common-button">İletişim</li>
+                        </a>
                     </div>
                     <!-- Burger Menü -->
                     <div class="burger-menu" onclick="toggleMenu()">
@@ -1165,6 +1446,39 @@
                                 </h5>
                             </div>
                         </div>
+                        <div class="carousel-item">
+                            <img src="images/488d4252-0ae4-4297-8633-ef7ee54264af.jpg" class="d-block w-100"
+                                alt="Resim 4">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Geleceğinize Altın Bir Yatırım: Aksoz Kuyumculuk Farkıyla Şıklığa Dokunun!
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" class="d-block w-100"
+                                alt="Resim 5">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Zerafet ve Değerin Buluştuğu Yer: Her Anınızda Yanınızda Parlayan Takılar!
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/d4206c04-2280-4b60-b875-64871e6ceefc.jpg" class="d-block w-100"
+                                alt="Resim 6">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Mükemmelliği Şimdi Keşfedin: Tarzınıza Işık Tutacak Özel Koleksiyonlar Bizde!
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" class="d-block w-100"
+                                alt="Resim 7">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Hayatınızın En Özel Anları İçin Işıltılı Dokunuşlar: Aksoz Kuyumculuk ile Her Zaman
+                                    Parlayın!
+                                </h5>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Önceki buton -->
@@ -1189,7 +1503,98 @@
 
 
 
-        <br><br><br>
+
+
+
+
+
+
+
+
+
+        <section class="firsatlar-bolumu" id="firsatlar-bolumu">
+            <div class="container">
+                <div class="firsat-kutulari">
+                    <div class="firsat-kutu">
+                        <h3>Fırsatları Kaçırmayın!</h3>
+                        <p>Bu hafta %10 indirim fırsatını kaçırmayın. Hemen keşfedin!</p>
+                    </div>
+                    <div class="firsat-kutu">
+                        <h3>Fırsatları Kaçırmayın!</h3>
+                        <p>Seçili ürünlerde %30'a varan indirimler! Bu fırsatlar tükenmeden hemen inceleyin.</p>
+                    </div>
+                    <div class="firsat-kutu">
+                        <h3>Fırsatları Kaçırmayın!</h3>
+                        <p>Yılbaşı indirimleri başladı! Tüm koleksiyonlar %20 indirimli fiyatlarla sizleri bekliyor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="kesfet-bolumu" id="kesfet-bolumu">
+            <div class="kapsayici">
+                <br>
+                <h1 class="bolum-baslik">Keşfet</h1>
+                <div class="kesfet-izgara">
+                    <div class="kesfet-urun">
+                        <img src="https://www.altinplaza.com/images/kategoriler/Klasik-Duz---Bombeli-Alyans-sets-5741.jpg"
+                            alt="Altın Yüzük">
+                        <div class="kesfet-katman">
+                            <h3>Altın Yüzükler</h3>
+                            <a href="#" class="kesfet-dugme">Keşfet</a>
+                        </div>
+                    </div>
+                    <div class="kesfet-urun">
+                        <img src="https://img.bluediamond.com.tr/resim/urun_orta/pirlanta-kolyeler/safir-yakut-zumrut-kolyeler/bluediamond--9500207347-1733383778-2.jpg?v=3334"
+                            alt="Pırlanta Kolye">
+                        <div class="kesfet-katman">
+                            <h3>Pırlanta Kolyeler</h3>
+                            <a href="#" class="kesfet-dugme">Keşfet</a>
+                        </div>
+                    </div>
+                    <div class="kesfet-urun">
+                        <img src="https://www.altinplaza.com/images/kategoriler/Mega-Bilezik-Modelleri-sets-5607.jpg"
+                            alt="Bilezik">
+                        <div class="kesfet-katman">
+                            <h3>Bilezikler</h3>
+                            <a href="#" class="kesfet-dugme">Keşfet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </section>
+
+        <br><br>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1275,45 +1680,63 @@
                             Hint İşi Kolye
                         </div>
                     </div>
-                    <div class="product-item" onclick="setonuc()">
-                        <img src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" alt="Ürün 4">
-                        <div class="product-infobir">
-                            Halkalı Altın Zincir
-                        </div>
-                    </div>
-                    <div class="product-item" onclick="setondort()">
-                        <img src="images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg" alt="Ürün 4">
-                        <div class="product-infobir">
-                            Bileklikli Altın Gerdanlık
-                        </div>
-                    </div>
-                    <div class="product-item" onclick="setonbes()">
-                        <img src="images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg" alt="Ürün 4">
-                        <div class="product-infobir">
-                            Su Yolu Gerdanlık
-                        </div>
-                    </div>
-                    <div class="product-item" onclick="setonalti()">
-                        <img src="images/e9d815b1-43a6-4848-ae91-094966318efe.jpg" alt="Ürün 4">
-                        <div class="product-infobir">
-                            Çeyrekli Kolye
-                        </div>
-                    </div>
-                    <div class="product-item" onclick="setonyedi()">
-                        <img src="images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg" alt="Ürün 4">
-                        <div class="product-infobir">
-                            Nohut Kolye ve Bileklik
-                        </div>
-                    </div>
-                    <div class="product-item" onclick="setonsekiz()">
-                        <img src="images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg" alt="Ürün 4">
-                        <div class="product-infobir">
-                            Hasır Altın Set
-                        </div>
-                    </div>
                 </div>
             </div>
         </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="hakkimizda-bolumu">
+            <div class="containerhakkimizda">
+                <h2 class="bolum-baslikhakkimizda">Hakkımızda</h2>
+                <p class="hakkimizda-metin">
+                    Aksoz Gold, Mardin Midyat'ta 20 yılı aşkın süredir kuyumculuk sektöründe faaliyet göstermektedir.
+                    Altın, gümüş, pırlanta ve diğer değerli taşlarla üretilen takılar, her bir detayında zarafeti ve
+                    kaliteyi ön planda tutarak, müşterilerimize mükemmel bir alışveriş deneyimi sunmayı hedefliyoruz.
+                </p>
+                <p class="hakkimizda-metin">
+                    Yüksek kaliteyi uygun fiyatlarla birleştirerek, müşteri memnuniyetini her zaman önceliğimiz haline
+                    getirdik. Modaya uygun tasarımlarımız, özel koleksiyonlarımız ve mücevherlerimizle her türlü
+                    ihtiyaca hitap ediyoruz.
+                </p>
+                <p class="hakkimizda-metin">
+                    Aksoz Gold, müşteri odaklı yaklaşımı ve uzman kadrosuyla, sektördeki yenilikçi anlayışını her geçen
+                    gün geliştiriyor. Müşterilerimize sağladığımız güven ve kaliteli hizmetle, sektördeki lider
+                    markalardan biri olmayı sürdürüyoruz.
+                </p>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1343,6 +1766,11 @@
 
 
     </div>
+
+
+
+
+
 
 
 
@@ -1739,202 +2167,10 @@
 
 
 
-    <div id="uruntanitimonuc">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImageonuc" src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImageonuc('images/349639a5-4e16-473b-82ed-f9843f90e573.jpg')">
-                    <img src="images/ad1e3b44-d800-4e39-935d-e74fb7468ce4.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImageonuc('images/ad1e3b44-d800-4e39-935d-e74fb7468ce4.jpg')">
-                    <img src="images/6ad2c24a-5538-4675-abf8-63bc443c2e44.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImageonuc('images/6ad2c24a-5538-4675-abf8-63bc443c2e44.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Halkalı Altın Zincir: Zarif ve Modern Tasarımın Buluşması</h1>
-                <p class="description">Zarif ve modern bir tasarım arayanlar için ideal bir tercih olan bu halkalı altın
-                    zincir, her detayıyla şıklığınızı ön plana çıkarır. İnce işçilikle tasarlanmış halkalar, altının
-                    doğal parlaklığıyla birleşerek göz alıcı bir görünüm oluşturur. Hem günlük hayatta hem de özel
-                    günlerde kullanabileceğiniz bu zincir, sade ama etkileyici bir tarz yaratır. Minimalist ama şık bir
-                    aksesuar arayışında olanlar için mükemmel bir seçim olan bu halkalı altın zincir, stilinize
-                    sofistike bir dokunuş katacak!
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
 
 
 
 
-    <div id="uruntanitimondort">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImageondort" src="images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg"
-                        alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImageondort('images/7a18bd99-5a07-4fa6-8632-3c9a83e861ad.jpg')">
-                    <img src="images/63be2a10-fc2a-4b88-951c-ddddb4fd0615.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImageondort('images/63be2a10-fc2a-4b88-951c-ddddb4fd0615.jpg')">
-                    <img src="images/5478a96f-f247-405b-8d27-0650c235366e.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImageondort('images/5478a96f-f247-405b-8d27-0650c235366e.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Bileklikli Altın Gerdanlık: Şıklığın ve Fonksiyonelliğin Mükemmel Uyumu</h1>
-                <p class="description">Özel tasarımı ve zarif işçiliğiyle dikkat çeken bu bileklikli altın gerdanlık,
-                    stilinizi taçlandıran eşsiz bir aksesuardır. Hem gerdanlık hem de bileklik olarak kullanılabilen bu
-                    şık parça, altının zarafetini modern bir dokunuşla sunar. Özel anlarınızda dikkatleri üzerinize
-                    çekecek, günlük kullanımda ise şıklığınızı her an yansıtacak bir seçenek. Sade ve şık detaylarıyla
-                    her kombine uyum sağlayan bu bileklikli altın gerdanlık, zarafeti ve fonksiyonelliği bir arada
-                    sunuyor. Şıklığınızı iki katına çıkarmak için ideal!
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div id="uruntanitimonbes">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImageonbes" src="images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg" alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImageonbes('images/2dc65abc-e256-46bf-9d6d-ec72c705aa3c.jpg')">
-                    <img src="images/d3984dea-f244-4c61-86bc-4ea032613594.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImageonbes('images/d3984dea-f244-4c61-86bc-4ea032613594.jpg')">
-                    <img src="images/78903618-9992-4004-8bab-6d4748005678.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImageonbes('images/78903618-9992-4004-8bab-6d4748005678.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Su Yolu Gerdanlık - Zarafetin Suyundan İlham Alın</h1>
-                <p class="description">Su yolu gerdanlık, zarafeti ve doğanın kusursuz akışını bir araya getiriyor.
-                    Özenle işlenmiş ince detaylarıyla, suyun huzur veren akışını boynunuzda taşıyın. Hem günlük
-                    şıklığınızda hem de özel anlarınızda rahatlıkla kullanabileceğiniz bu zarif takı, altın ve değerli
-                    taşların ışıltısı ile ışıldar. Su yolu gerdanlık, size sadece estetik değil, aynı zamanda özgün bir
-                    tarz da sunar. Aksoz Gold'un özenle seçtiği bu gerdanlık, zarif dokusu ve modern tasarımıyla her
-                    kadının koleksiyonunda olması gereken bir parça.
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div id="uruntanitimonalti">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImageonalti" src="images/e9d815b1-43a6-4848-ae91-094966318efe.jpg"
-                        alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/e9d815b1-43a6-4848-ae91-094966318efe.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImageonalti('images/e9d815b1-43a6-4848-ae91-094966318efe.jpg')">
-                    <img src="images/b5136904-742e-489f-9db1-95caeaa49436.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImageonalti('images/b5136904-742e-489f-9db1-95caeaa49436.jpg')">
-                    <img src="images/2f3104ad-c3d1-41e2-88d7-b5b91fcae6e8.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImageonalti('images/2f3104ad-c3d1-41e2-88d7-b5b91fcae6e8.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Çeyrekli Kolye - Gelenekten Modern Zarafete</h1>
-                <p class="description">Çeyrekli kolye, gelenekselin zarafetini modern bir dokunuşla buluşturuyor. Her
-                    bir çeyrek parçasının ustaca yerleştirilmesiyle tasarlanan bu şık kolye, tarihî bir anlam taşırken
-                    aynı zamanda zamansız bir zarafet sunuyor. Hem özel günlerde hem de günlük şıklığınızda rahatlıkla
-                    kullanabileceğiniz bu eşsiz takı, altın işçiliğiyle göz kamaştırıyor. Aksoz Gold’un özenle
-                    hazırladığı çeyrekli kolye, size hem anlamlı hem de stil sahibi bir aksesuar sunuyor. Geleneksel
-                    değerlerle modern tasarımın buluştuğu bu kolye, her anınıza özgün bir dokunuş katacak.
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div id="uruntanitimonyedi">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImageonyedi" src="images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg"
-                        alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImageonyedi('images/c1a44fab-9e42-466d-a289-9d728b85d480.jpg')">
-                    <img src="images/95f3266d-4dbf-48b6-89ea-5115b3e19b77.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImageonyedi('images/95f3266d-4dbf-48b6-89ea-5115b3e19b77.jpg')">
-                    <img src="images/69aa6f79-36dd-4316-92ce-1af3f6a7ee2a.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImageonyedi('images/69aa6f79-36dd-4316-92ce-1af3f6a7ee2a.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Nohut Kolye ve Bileklik - Altının Zarif Dokunuşu</h1>
-                <p class="description">Nohut kolye ve bileklik, altının ışıltısıyla zarafeti en şık şekilde
-                    birleştiriyor. İnce işçilikle tasarlanmış, nohut formundaki detaylarıyla dikkat çeken bu takılar,
-                    her kadının koleksiyonunda yer alması gereken modern ve zarif parçalardır. Günlük kullanımda
-                    şıklığı, özel anlarda ise zarafetiyle öne çıkan bu altın kolye ve bileklik seti, her kombine uyum
-                    sağlayarak stilinize sofistike bir dokunuş katacak. Aksoz Gold’un zarif tasarımıyla nohut kolye ve
-                    bileklik, altının zamansız değerini ve estetiğini her an yanınızda taşır.
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="uruntanitimonsekiz">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImageonsekiz" src="images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg"
-                        alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImageonsekiz('images/fa9a4a19-3dee-4f47-a021-45643d57c30d.jpg')">
-                    <img src="images/40d19578-d396-4f3c-b086-2fad7d699e57.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImageonsekiz('images/40d19578-d396-4f3c-b086-2fad7d699e57.jpg')">
-                    <img src="images/8f6d2c05-b3aa-4fcf-99f4-bade349876bb.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImageonsekiz('images/8f6d2c05-b3aa-4fcf-99f4-bade349876bb.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Hasır Altın Set - Zarafetin İncelikli Dokunuşu</h1>
-                <p class="description">Hasır altın set, altının eşsiz ışıltısını modern bir dokunuşla sunuyor. Zarif
-                    hasır örgü tasarımı, bu takıyı hem göz alıcı hem de şık kılıyor. Kolye, bilezik ve küpe
-                    kombinasyonuyla tamamlanan set, her anınıza zarafet katmak için özenle tasarlandı. Özel günlerden
-                    günlük kullanıma kadar her tarzda şıklığı yakalamanıza yardımcı olacak bu set, altın işçiliğinin en
-                    zarif örneklerinden biridir. Aksoz Gold’un ustalığıyla işlenen hasır altın set, her kadının takı
-                    koleksiyonunda bulunması gereken modern bir klasik haline geliyor.
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -2260,24 +2496,8 @@
         function changeImageoniki(imageUrl) {
             document.getElementById("mainImageoniki").src = imageUrl;
         }
-        function changeImageonuc(imageUrl) {
-            document.getElementById("mainImageonuc").src = imageUrl;
-        }
-        function changeImageondort(imageUrl) {
-            document.getElementById("mainImageondort").src = imageUrl;
-        }
-        function changeImageonbes(imageUrl) {
-            document.getElementById("mainImageonbes").src = imageUrl;
-        }
-        function changeImageonalti(imageUrl) {
-            document.getElementById("mainImageonalti").src = imageUrl;
-        }
-        function changeImageonyedi(imageUrl) {
-            document.getElementById("mainImageonyedi").src = imageUrl;
-        }
-        function changeImageonsekiz(imageUrl) {
-            document.getElementById("mainImageonsekiz").src = imageUrl;
-        }
+
+
 
 
 
@@ -2337,30 +2557,7 @@
             document.getElementById("uruntanitimoniki").style.display = "block";
             document.getElementById("ana").style.display = "none";
         }
-        function setonuc() {
-            document.getElementById("uruntanitimonuc").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setondort() {
-            document.getElementById("uruntanitimondort").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setonbes() {
-            document.getElementById("uruntanitimonbes").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setonalti() {
-            document.getElementById("uruntanitimonalti").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setonyedi() {
-            document.getElementById("uruntanitimonyedi").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setonsekiz() {
-            document.getElementById("uruntanitimonsekiz").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
+
 
 
 
@@ -2388,14 +2585,10 @@
             document.getElementById("uruntanitimon").style.display = "none";
             document.getElementById("uruntanitimonbir").style.display = "none";
             document.getElementById("uruntanitimoniki").style.display = "none";
-            document.getElementById("uruntanitimonuc").style.display = "none";
-            document.getElementById("uruntanitimondort").style.display = "none";
-            document.getElementById("uruntanitimonbes").style.display = "none";
-            document.getElementById("uruntanitimonalti").style.display = "none";
-            document.getElementById("uruntanitimonyedi").style.display = "none";
-            document.getElementById("uruntanitimonsekiz").style.display = "none";
             document.getElementById("blog").style.display = "none";
             document.getElementById("yorum").style.display = "none";
+            document.getElementById("kesfet-bolumu").style.display = "none";
+            document.getElementById("firsatlar-bolumu").style.display = "none";
         }
 
 
