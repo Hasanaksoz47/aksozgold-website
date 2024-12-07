@@ -215,11 +215,12 @@
         .kaydirma-menusu {
             display: none;
             position: fixed;
-            top: 93px;
+            top: 100px;
             left: -250px;
             width: 250px;
             height: 100%;
-            background-color: #0a2342;
+            background: linear-gradient(95deg, #0a2342, #1a436b);
+
             z-index: 1000;
             transition: left 0.3s ease;
         }
@@ -1334,7 +1335,7 @@
             right: 10px;
             background: none;
             border: none;
-            font-size: 18px;
+            font-size: 34px;
             cursor: pointer;
             color: #333;
         }
@@ -1701,7 +1702,7 @@
 
 
 
-        <section class="hakkimizda-bolumu">
+        <section class="hakkimizda-bolumu" id="hakkimizda-bolumu">
             <div class="containerhakkimizda">
                 <h2 class="bolum-baslikhakkimizda">Hakkımızda</h2>
                 <p class="hakkimizda-metin">
@@ -2589,6 +2590,7 @@
             document.getElementById("yorum").style.display = "none";
             document.getElementById("kesfet-bolumu").style.display = "none";
             document.getElementById("firsatlar-bolumu").style.display = "none";
+            document.getElementById("hakkimizda-bolumu").style.display = "none";
         }
 
 
