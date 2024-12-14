@@ -192,7 +192,7 @@
             /* Tam genişlik için */
         }
 
-        nav a {
+        nav span {
             text-decoration: none;
             background-color: transparent;
             padding: 5px 5px;
@@ -203,10 +203,20 @@
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
 
-        nav a:hover {
+        nav span:hover {
             background-color: #d4af37;
             color: #000000;
         }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -219,7 +229,6 @@
             width: 250px;
             height: 100%;
             background: linear-gradient(95deg, #0a2342, #1a436b);
-
             z-index: 1000;
             transition: left 0.3s ease;
         }
@@ -229,19 +238,15 @@
         }
 
         .kaydirma-menusu li {
-            padding: 15px;
             border-bottom: 1px solid #444;
-        }
-
-        .kaydirma-menusu li a {
             color: #ffffff;
-            text-decoration: none;
             font-size: 22px;
+            margin: 20px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: bold;
         }
 
-        .kaydirma-menusu li a:hover {
+        .kaydirma-menusu li:hover {
             color: #f1c40f;
         }
 
@@ -294,6 +299,16 @@
         .kaplama.acik {
             display: block;
         }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -870,7 +885,6 @@
 
 
 
-
         .return-button i {
             position: absolute;
             top: 20px;
@@ -1128,6 +1142,51 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #yorum {
             display: none;
             font-family: 'Arial', sans-serif;
@@ -1158,6 +1217,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
+
 
 
 
@@ -1298,6 +1358,127 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #containeryuzukana {
+            display: none;
+        }
+
+        .containeryuzuk {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin-top: 150px;
+
+        }
+
+        .containeryuzuk .product {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .containeryuzuk .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background-color: #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+
+        .containeryuzuk .product:hover img {
+            transform: scale(4.5);
+            cursor: zoom-in;
+        }
+
+        .containeryuzuk .product-name {
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .containeryuzuk {
+                padding: 15px;
+            }
+
+            .containeryuzuk .product img {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .containeryuzuk .product img {
+                height: 140px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /* Reklam Modalı Stili */
         .reklam-modal {
             position: fixed;
@@ -1376,34 +1557,36 @@
                 <nav>
                     <div class="nav-links">
                     </div>
-                    <a href="/alyans">Alyans</a>
-                    <a href="/yuzuk">Yüzük</a>
-                    <a href="/kupe">Küpe</a>
-                    <a href="/kolye">Kolye</a>
-                    <a href="/bileklik">Bileklik</a>
-                    <a href="/bilezik">Bilezik</a>
-                    <a href="/set">Düğün Seti</a>
-                    <a href="/altin">Altın Çeşitleri</a>
-                    <a href="/gumus">Gümüş Takılar</a>
-                    <a href="/pirlanta">Pırlanta</a>
-                    <a href="/tespih">Tesbih</a>
+                    <span>Alyans</span>
+                    <span onclick="yuzuk()">Yüzük</span>
+                    <span>Küpe</span>
+                    <span>Kolye</span>
+                    <span>Bileklik</span>
+                    <span>Bilezik</span>
+                    <span>Düğün Seti</span>
+                    <span>Altın Çeşitleri</span>
+                    <span>Gümüş Takılar</span>
+                    <span>Pırlanta</span>
+                    <span>Tespih</span>
+
                 </nav>
             </header>
 
             <div class="kaydirma-menusu">
                 <ul>
-                    <li><a href="/alyans">Alyans</a></li>
-                    <li><a href="/yuzuk">Yüzük</a></li>
-                    <li><a href="/kupe">Küpe</a></li>
-                    <li><a href="/kolye">Kolye</a></li>
-                    <li><a href="/bileklik">Bileklik</a></li>
-                    <li><a href="/bilezik">Bilezik</a></li>
-                    <li><a href="/set">Düğün Seti</a></li>
-                    <li><a href="/altin">Altın Çeşitleri</a></li>
-                    <li><a href="/gumus">Gümüş Takılar</a></li>
-                    <li><a href="/pirlanta">Pırlanta</a></li>
-                    <li><a href="/tespih">Tesbih</a></li>
+                    <li>Alyans</li>
+                    <li onclick="yuzuk()">Yüzük</li>
+                    <li>Küpe</li>
+                    <li>Kolye</li>
+                    <li>Bileklik</li>
+                    <li>Bilezik</li>
+                    <li>Düğün Seti</li>
+                    <li>Altın Çeşitleri</li>
+                    <li>Gümüş Takılar</li>
+                    <li>Pırlanta</li>
+                    <li>Tespih</li>
                 </ul>
+
             </div>
         </div>
 
@@ -2179,6 +2362,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div id="blog">
         <!-- Header Bölümü -->
         <div class="headerblog ">
@@ -2255,6 +2466,29 @@
             </article>
         </section>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2401,6 +2635,251 @@
             </div>
         </section>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="containeryuzukana">
+        <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
+        <div class="containeryuzuk">
+            <div class="product">
+                <img src="images/c9c583ec-c472-475b-bd91-11e0d0a03455.jpg" alt="Ürün 1">
+                <div class="product-name">Dorika Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/547ad05e-6ffa-4144-a99e-6394565a6fc0.jpg" alt="Ürün 2">
+                <div class="product-name">Hint İşi Tasarımlı Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/7f69386b-7b12-4b69-925a-f804a2c5796f.jpg" alt="Ürün 3">
+                <div class="product-name">Mekik Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/a04a3fc3-e1fe-45c7-8a2f-6a821904cc6a.jpg" alt="Ürün 4">
+                <div class="product-name">6 Sıra Kumlu Dorika Toplu Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/b03187c8-37c1-48d0-af6b-0fac87c048cc.jpg" alt="Ürün 5">
+                <div class="product-name">5 Sıralı Dorika Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/690797e9-9778-4d32-aba6-160f08052f35.jpg" alt="Ürün 6">
+                <div class="product-name">5 Sıralı Dorika Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/f21edaf1-7341-481d-9d57-be66319db602.jpg" alt="Ürün 7">
+                <div class="product-name">Dorika Çiçekli Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/93ad9973-bb2d-4248-b1b3-7c5d585f2296.jpg" alt="Ürün 8">
+                <div class="product-name">Zarif Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/c2b09d52-2b40-4f70-a721-c2e42b9caf17.jpg" alt="Ürün 9">
+                <div class="product-name">10 Sıra Dorika Toplu Kaburga Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/852e2546-0f8d-4aca-a0e4-ff25f553e726.jpg" alt="Ürün 10">
+                <div class="product-name">Klasik Model Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/cd7de819-6fcb-4619-be1c-87937a215b8a.jpg" alt="Ürün 11">
+                <div class="product-name">Dorika Spor Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/4b52686c-fe3f-4fd5-a449-792f85b5778c.jpg" alt="Ürün 12">
+                <div class="product-name">Dorika Topları İle Süslenmiş Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/fbfcf193-9cc3-43b7-a467-7f00b05e24d6.jpg" alt="Ürün 13">
+                <div class="product-name">Sarı İşlemeli Yuvarlak Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/1415d9e8-bff4-46b2-b509-7816bbad0067.jpg" alt="Ürün 14">
+                <div class="product-name">Dorikalı Fantazi Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/dfc1ba93-85b1-4eef-9e5e-658004f59d98.jpg" alt="Ürün 15">
+                <div class="product-name">Rolex Model Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/aa2d6e7c-da7d-4c7c-84fc-d4b7c4192894.jpg" alt="Ürün 16">
+                <div class="product-name">Mekik Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/a0b28d4e-88c5-4246-b976-e8a16b1894e8.jpg" alt="Ürün 17">
+                <div class="product-name">Dorika Şık Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/291b0449-027c-48db-89e9-4bfe4ff8d11a.jpg" alt="Ürün 18">
+                <div class="product-name">Altın Kaburga Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/bad708f2-c05d-456c-8526-31613c5652dc.jpg" alt="Ürün 19">
+                <div class="product-name">Taşsız Kaburga Yüzük </div>
+            </div>
+            <div class="product">
+                <img src="images/166c9357-da6e-460f-979f-385e8e8cce9f.jpg" alt="Ürün 20">
+                <div class="product-name">Arap Dubai Tasarım Altın Yüzük </div>
+            </div>
+            <div class="product">
+                <img src="images/b177489e-96f7-4518-837f-c763adf98e6d.jpg" alt="Ürün 21">
+                <div class="product-name">Şık Taşlı Kaburga Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/351953c8-5c48-4584-85d3-40b519924178.jpg" alt="Ürün 22">
+                <div class="product-name">Dorika Toplu Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/04d2cb7a-5670-4d67-b729-718fb69ada40.jpg" alt="Ürün 23">
+                <div class="product-name">Dorika Toplu Yüzük ikili</div>
+            </div>
+            <div class="product">
+                <img src="images/933c7050-0d17-4e5b-90b3-71c6ce34d413.jpg" alt="Ürün 24">
+                <div class="product-name">Yöresel İkili Çeyrek Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/d014ce53-8b38-4b26-b566-31361aec5937.jpg" alt="Ürün 25">
+                <div class="product-name">Yöresel Şık Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/0ff9acbc-1b7c-4c23-bbd3-e718bad86be2.jpg" alt="Ürün 26">
+                <div class="product-name">Dorika Toplu Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/b6b9fb9c-1cf4-432b-a961-eadad2c7d1f5.jpg" alt="Ürün 27">
+                <div class="product-name">Lüks Dubai Zirkon Arap Tasarım Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/c34009f0-d8bb-4458-a84e-a09ebff31e32.jpg" alt="Ürün 28">
+                <div class="product-name">Altın Dorika Toplu Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/309ff5db-08cb-48f2-aa54-7113337ffc7c.jpg" alt="Ürün 29">
+                <div class="product-name">Taşsız Dorika Toplu Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/00a27dc3-7fed-4878-92cd-17b587e69404.jpg" alt="Ürün 30">
+                <div class="product-name">Dorika Topları İle Süsleniş Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/86905307-3fcd-4594-9fd8-2ae7744e90ba.jpg" alt="Ürün 31">
+                <div class="product-name">Dorikalı Şık Tasarım Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/3598293d-cf1c-4a02-9fa7-74c3757f5c33.jpg" alt="Ürün 32">
+                <div class="product-name">Özel Tasarım Şık Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/34460ded-5e5c-4e64-9ce7-f1f372de48bc.jpg" alt="Ürün 33">
+                <div class="product-name">Özel Tasarım Eşsiz Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/ef60ca10-899c-42d1-a025-412713ea7321.jpg" alt="Ürün 34">
+                <div class="product-name">Varsaceli Dorika Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/3def7d08-8ef7-4413-a1db-84f5060f2b52.jpg" alt="Ürün 35">
+                <div class="product-name">Eşsiz Tasarım Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/2171781d-9d5e-4083-8370-fbba8963ad0d.jpg" alt="Ürün 36">
+                <div class="product-name">Dorika Toplu Mekik Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/1f50a011-9b82-4950-9db4-dabb34fadea5.jpg" alt="Ürün 37">
+                <div class="product-name">Taşsız Dorika Toplu Altın Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/3c41d869-2814-4358-aaf9-f88a16b7ea2e.jpg" alt="Ürün 38">
+                <div class="product-name">Dorika Toplu Yöresel Şık Altın Yüzük</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2556,6 +3035,38 @@
             document.getElementById("uruntanitimoniki").style.display = "block";
             document.getElementById("ana").style.display = "none";
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function yuzuk() {
+            document.getElementById("ana").style.display = "none";
+            document.getElementById("containeryuzukana").style.display = "block";
+        }
+
+
+
+
+
+
 
 
 
