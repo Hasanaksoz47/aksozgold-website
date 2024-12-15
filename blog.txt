@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #blog {
+            background-color: #0a2342;
+            color: white;
+        }
+
+        /* Header Stilleri */
+        .headerblog {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .headerblog h1 {
+            margin-bottom: 15px;
+            font-size: 38px;
+            font-weight: 600;
+            text-align: center;
+            background: linear-gradient(90deg, #f9a602, #0a2342);
+            /* İki renkli geçiş */
+            background-size: 200% 100%;
+            /* Arka planın büyüklüğü */
+            animation: slideColor 5s ease-in-out infinite;
+            /* Animasyon */
+            background-clip: text;
+            /* Yazının üzerine uygulama */
+            color: transparent;
+            /* Yazı rengini şeffaf yap */
+        }
+
+        /* Renk kayması animasyonu */
+        @keyframes slideColor {
+            0% {
+                background-position: 200% 0;
+            }
+
+            50% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+
+        .headerblog p {
+            font-size: 1.2em;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #blog .return-button i,
+        #yorum .return-button i {
+            color: white;
+        }
+
+        /* Blog Konteyneri */
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Blog Yazısı Stili */
+        .blog-post {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h2 {
+            font-size: 1.5em;
+            color: #0a2342;
+            margin-bottom: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .blog-post .date {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .blog-post p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        /* 'Devamını Oku' Bağlantısı */
+        .read-more {
+            color: #b88a2d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div id="blog">
+        <!-- Header Bölümü -->
+        <div class="headerblog ">
+            <h1>Aksoz Gold Blog ve Haberler</h1>
+            <p>Kuyumculuk ve Döviz Dünyasından Güncel Bilgiler ve Fiyatlar</p>
+            <!-- Anasayfaya Dön Butonu -->
+            <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
+        </div>
+
+        <!-- Blog ve Haberler Bölümü -->
+        <section class="blog-container">
+            <!-- İlk Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Altın Fiyatlarında Son Durum: 2024 Kasım</h2>
+                <p class="date">10 Kasım 2024</p>
+                <p>Altın fiyatları, küresel ekonomik belirsizlikler ve faiz oranlarındaki değişikliklerle birlikte
+                    önemli
+                    bir yükseliş göstermeye devam ediyor. İşte güncel altın fiyatları ve yatırımcılar için öne çıkan
+                    ipuçları.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- İkinci Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Gümüş ve Altın Arasındaki Fark: Hangisi Daha Karlı?</h2>
+                <p class="date">8 Kasım 2024</p>
+                <p>Gümüş, altına göre daha düşük fiyatlarda işlem görmekle birlikte, son yıllarda artan talep ve
+                    endüstriyel
+                    kullanımıyla değer kazanıyor. Hangi metal yatırımcılar için daha avantajlı?</p>
+
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Üçüncü Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Döviz Kurları ve Türkiye'deki Son Durum</h2>
+                <p class="date">5 Kasım 2024</p>
+                <p>Türk Lirası, dolar ve euro karşısında değer kaybederken, döviz piyasası üzerindeki dalgalanmalara
+                    dair
+                    uzman görüşleri ve günlük analizler. İşte döviz kurlarındaki son gelişmeler.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Dördüncü Blog Yazısı -->
+            <article class="blog-post">
+                <h2>Harem Altın Fiyatları ile Yatırım Yapın: Hangi Altın Türü Daha Karlı?</h2>
+                <p class="date">2 Kasım 2024</p>
+                <p>Harem Altın'dan aldığımız güncel verilerle, yatırımcılar için en karlı altın türünü keşfedin. Yatırım
+                    yapmadan önce bilmeniz gerekenler ve altın fiyatlarındaki güncel değişiklikler hakkında detaylı
+                    bilgi.
+                </p>
+
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Beşinci Blog Yazısı -->
+            <article class="blog-post">
+                <h2>2024 Yılında Altın ve Döviz Yatırımının Avantajları</h2>
+                <p class="date">1 Kasım 2024</p>
+                <p>2024 yılı itibarıyla altın ve döviz yatırımının getirileri hakkında detaylı bir analiz. Yatırımcılar
+                    için
+                    hangi enstrümanın daha kazançlı olabileceğine dair önemli bilgiler.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+
+            <!-- Altın Piyasasında Gelişen Yeni Yatırım Trendleri -->
+            <article class="blog-post">
+                <h2>Altın Piyasasında Gelişen Yeni Yatırım Trendleri</h2>
+                <p class="date">30 Ekim 2024</p>
+                <p>Altın piyasasında yeni yatırım stratejileri ve gelişen trendler. Yatırımcıların 2024 yılında altına
+                    nasıl
+                    yaklaşması gerektiği konusunda önemli ipuçları.</p>
+                <a href="#" class="read-more">Devamını Oku</a>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>
