@@ -1525,14 +1525,39 @@
             border-radius: 8px;
         }
 
-        .kapsayiciiletisim h1,
-        h2 {
-            text-align: center;
+        .kapsayiciiletisim h2 {
             margin-bottom: 1rem;
-            color: #ffffff;
             margin-top: 70px;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: center;
+            background: linear-gradient(90deg, #f9a602, #0a2342);
+            /* İki renkli geçiş */
+            background-size: 200% 100%;
+            /* Arka planın büyüklüğü */
+            animation: slideColor 5s ease-in-out infinite;
+            /* Animasyon */
+            background-clip: text;
+            /* Yazının üzerine uygulama */
+            color: transparent;
+            /* Yazı rengini şeffaf yap */
         }
 
+        /* Renk kayması animasyonu */
+        @keyframes slideColor {
+            0% {
+                background-position: 200% 0;
+            }
+
+            50% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        
         .iletisim-bilgileri {
             display: flex;
             flex-wrap: wrap;
