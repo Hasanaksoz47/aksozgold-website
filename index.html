@@ -331,6 +331,7 @@
 
         .carouselExampleana h5 {
             color: black;
+            background-color: white;
             font-weight: 900;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
@@ -1408,11 +1409,13 @@
 
 
 
-        #containeryuzukana {
+        #containeryuzukana,
+        #containeralyansana {
             display: none;
         }
 
-        .containeryuzuk {
+        .containeryuzuk,
+        .containeralyans {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 15px;
@@ -1426,7 +1429,7 @@
 
         }
 
-        .containeryuzuk .product {
+        .product {
             position: relative;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -1435,7 +1438,7 @@
             background-color: #f9f9f9;
         }
 
-        .containeryuzuk .product img {
+        .product img {
             width: 100%;
             height: 180px;
             object-fit: contain;
@@ -1443,12 +1446,12 @@
             transition: transform 0.3s ease;
         }
 
-        .containeryuzuk .product:hover img {
+        .product:hover img {
             transform: scale(4.5);
             cursor: zoom-in;
         }
 
-        .containeryuzuk .product-name {
+        .product-name {
             font-size: 1rem;
             font-weight: bold;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -1458,17 +1461,20 @@
 
         /* Responsive Tasarım */
         @media (max-width: 768px) {
-            .containeryuzuk {
+
+            .containeryuzuk,
+            .containeralyans {
                 padding: 15px;
             }
 
-            .containeryuzuk .product img {
+            .product img {
                 height: 160px;
             }
         }
 
         @media (max-width: 480px) {
-            .containeryuzuk .product img {
+
+            .product img {
                 height: 140px;
             }
         }
@@ -1557,7 +1563,7 @@
                 background-position: 200% 0;
             }
         }
-        
+
         .iletisim-bilgileri {
             display: flex;
             flex-wrap: wrap;
@@ -1738,7 +1744,7 @@
                 <nav>
                     <div class="nav-links">
                     </div>
-                    <span>Alyans</span>
+                    <span onclick="alyans()">Alyans</span>
                     <span onclick="yuzuk()">Yüzük</span>
                     <span>Küpe</span>
                     <span>Kolye</span>
@@ -1759,7 +1765,7 @@
                     <li onclick="yorum()">Yorumlar</li>
                     <li onclick="iletisim()">İletişim</li>
                     <br>
-                    <li>Alyans</li>
+                    <li onclick="alyans()">Alyans</li>
                     <li onclick="yuzuk()">Yüzük</li>
                     <li>Küpe</li>
                     <li>Kolye</li>
@@ -2874,7 +2880,7 @@
             <div class="iletisim-karti">
                 <h3>Ömer Aksöz</h3>
                 <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                target="_blank">+90 537 277 04 30</a>
+                    target="_blank">+90 537 277 04 30</a>
             </div>
 
             <div class="iletisim-karti">
@@ -3130,6 +3136,157 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="containeralyansana">
+        <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
+        <div class="containeralyans">
+            <div class="product">
+                <img src="images/18b8d6f8-05ae-4803-acc3-5d51f48787b5.jpg" alt="Ürün 1">
+                <div class="product-name">Yazı Yazılabilen Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/0b9b9797-2830-4095-8a8b-22f0a671d850.jpg" alt="Ürün 2">
+                <div class="product-name">Bombeli Klasik Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/4f4cf571-ae03-49d1-a723-deb254c9d370.jpg" alt="Ürün 3">
+                <div class="product-name">Çizgili Tırtıllı Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/6b1937ef-5c22-4efa-9555-d0244b4e758b.jpg" alt="Ürün 4">
+                <div class="product-name">Çivili Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/6d0f5960-6a1f-41ed-8a63-a3866b29bc0a.jpg" alt="Ürün 5">
+                <div class="product-name">İçi Dolu Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/91fa3fb7-e51f-4213-a5d0-b61408a5f9df.jpg" alt="Ürün 6">
+                <div class="product-name">Adana Burması Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/194cb664-117f-48e7-b231-34a725f5a65b.jpg" alt="Ürün 7">
+                <div class="product-name">Desenli Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/234f4be8-bc1c-4363-b4c7-149356d02f58.jpg" alt="Ürün 8">
+                <div class="product-name">Modern Tasarım Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/502e9b11-4b2b-4e8d-b103-c0eecee19db9.jpg" alt="Ürün 9">
+                <div class="product-name">Klasik Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/702c7a5b-6473-4240-9bc7-176c3973636e.jpg" alt="Ürün 10">
+                <div class="product-name">Taşsız Şık Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/2005fa19-267f-483e-9d36-c6c17ede956a.jpg" alt="Ürün 11">
+                <div class="product-name">Şık Yöresel Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/aa4d3d7c-0a52-420b-9600-3d8518e1b335.jpg" alt="Ürün 12">
+                <div class="product-name">Klasik Görünüm Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/bbc5e7c2-75ae-47ac-a429-9b3a6dea5cb5.jpg" alt="Ürün 13">
+                <div class="product-name">Taşsız Şık Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/bc09eb68-8e19-40d2-8aad-b30e05413d65.jpg" alt="Ürün 14">
+                <div class="product-name">Burma Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/c663edfc-950f-4cc6-b20c-59ad621337aa.jpg" alt="Ürün 15">
+                <div class="product-name">Prizma Altın Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/d35bcbdf-96cb-4ba9-b292-f9a6802a206b.jpg" alt="Ürün 20">
+                <div class="product-name">Şık Tasarım Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/e7fbba73-b4a0-49f6-9c71-b1bb9f1f420e.jpg" alt="Ürün 16">
+                <div class="product-name">Kumlu Desenli Alyans Yüzük</div>
+            </div>
+            <div class="product">
+                <img src="images/f41f1be6-a927-4996-8c58-600c0b1373d7.jpg" alt="Ürün 17">
+                <div class="product-name">Noktalı Desenli Alyans Yüzük</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Reklam Modalı -->
     <div id="reklamModal" class="reklam-modal">
         <div class="reklam-icerik">
@@ -3300,6 +3457,10 @@
 
 
 
+        function alyans() {
+            document.getElementById("ana").style.display = "none";
+            document.getElementById("containeralyansana").style.display = "block";
+        }
 
 
 
@@ -3307,6 +3468,8 @@
             document.getElementById("ana").style.display = "none";
             document.getElementById("containeryuzukana").style.display = "block";
         }
+
+
 
 
 
@@ -3368,21 +3531,13 @@
             document.getElementById("ana").style.display = "none";
             document.getElementById("blog").style.display = "block";
         }
-        function blogiki() {
-            document.getElementById("ana").style.display = "none";
-            document.getElementById("blog").style.display = "block";
-        }
-
 
 
         function yorum() {
             document.getElementById("yorum").style.display = "block";
             document.getElementById("ana").style.display = "none";
         }
-        function yorumiki() {
-            document.getElementById("yorum").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
+
 
 
 
@@ -3471,6 +3626,8 @@
 </body>
 
 </html>
+<script async data-explicit-opt-in="true" data-cookie-opt-in="true"
+    src="https://vercel.live/_next-live/feedback/feedback.js"></script>
 <script async data-explicit-opt-in="true" data-cookie-opt-in="true"
     src="https://vercel.live/_next-live/feedback/feedback.js"></script>
 <script async data-explicit-opt-in="true" data-cookie-opt-in="true"
