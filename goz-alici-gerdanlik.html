@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksoz Gold - Göz Alıcı Gerdanlıkla Fark Yaratın</title>
+    <meta name="description"
+        content="Aksoz Gold, Mardin Midyat'ta en kaliteli kuyumculuk ürünleri ve takılarla hizmet veriyor. Müşteri memnuniyetini ön planda tutarak Pazartesi-Cumartesi 08:00-17:30 saatleri arasında açık.">
+    <meta name="keywords"
+        content="Aksoz Gold, kuyumculuk, altın takılar, Mardin kuyumculuk, değerli takılar, kaliteli altın, güvenilir kuyumcu, altın, takı, Mardin">
+    <meta name="robots" content="index, follow">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" type="image/x-icon">
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #020d2b;
+            overflow-x: hidden;
+            /* Yatay kaydırmayı engeller */
+        }
+
+        .containerbir {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin-top: 10px;
+        }
+
+        .product-gallery {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .main-image img:hover {
+            transform: scale(1.50);
+            cursor: zoom-in;
+        }
+
+        .thumb-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .thumb-images img {
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumb-images img:hover {
+            transform: scale(1.12);
+        }
+
+        .product-info {
+            flex: 1;
+            text-align: center;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .product-info h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #020d2b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info .description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        @media screen and (max-width: 950px) {
+            .containerbir {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .product-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-info h1 {
+                font-size: 24px;
+            }
+
+            .thumb-images img {
+                width: 60px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product-info h1 {
+                font-size: 22px;
+            }
+
+            .product-info .description {
+                font-size: 16px;
+            }
+
+            .thumb-images img {
+                width: 50px;
+            }
+
+            .main-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div id="uruntanitimbes">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagebes" src="images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagebes('images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg')">
+                    <img src="images/151304bb-bf03-42d5-9c3a-332c8b791d3f.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagebes('images/151304bb-bf03-42d5-9c3a-332c8b791d3f.jpg')">
+                    <img src="images/e89a50c8-f443-4ac6-bbde-44bceb8bedab.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagebes('images/e89a50c8-f443-4ac6-bbde-44bceb8bedab.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Göz Alıcı Gerdanlıkla Fark Yaratın</h1>
+                <p class="description">Doğunun mistik zarafetini üzerinizde taşıyın! El işçiliğiyle hayat bulan bu Hint
+                    işi gerdanlık, gösterişli detayları ve sanatsal dokusuyla özel günlerin vazgeçilmezi olmaya aday.
+                    Zengin desenleri ve taş süslemeleriyle büyüleyici bir etki yaratan bu gerdanlık, her ortamda
+                    şıklığınızı tamamlayacak. Geleneksel çizgilerle modernliği buluşturan bu değerli aksesuar, özgün
+                    tarzınızı yansıtmanın en göz alıcı yolu. Kendinizi Hint kültürünün büyüsüyle sarmak istiyorsanız, bu
+                    gerdanlık tam size göre!
+                </p>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function changeImagebes(imageUrl) {
+            document.getElementById("mainImagebes").src = imageUrl;
+        }
+    </script>
+</body>
+
+</html>
