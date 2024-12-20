@@ -1003,37 +1003,12 @@
         }
 
         .bolum-baslikhakkimizda {
-            letter-spacing: 2px;
             font-size: 36px;
-            font-weight: 600;
-            text-align: center;
-            background: linear-gradient(90deg, #f9a602, #0a2342);
-            /* İki renkli geçiş */
-            background-size: 200% 100%;
-            /* Arka planın büyüklüğü */
-            animation: slideColor 5s ease-in-out infinite;
-            /* Animasyon */
-            background-clip: text;
-            /* Yazının üzerine uygulama */
-            color: transparent;
-            /* Yazı rengini şeffaf yap */
+            color: #0a2342;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-
-        /* Renk kayması animasyonu */
-        @keyframes slideColor {
-            0% {
-                background-position: 200% 0;
-            }
-
-            50% {
-                background-position: 0 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
 
         .hakkimizda-metin {
             font-size: 18px;
@@ -1755,13 +1730,13 @@
             <div class="container-iki">
                 <h2>Beğenilen Ürünler</h2>
                 <div class="product-grid-container">
-                    <a href="urun1.html" class="product-item">
+                    <div class="product-item" onclick="setbir()">
                         <a href=".product-grid-container"><img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg"
                                 alt="Ürün 1"></a>
                         <div class="product-infobir">
                             Gözde Altın Set
                         </div>
-                    </a>
+                    </div>
                     <div class="product-item" onclick="setiki()">
                         <img src="images/69d1d5fd-174c-4160-8a46-d1aba00d39c8.jpg" alt="Ürün 2">
                         <div class="product-infobir">
@@ -2022,6 +1997,38 @@
 
 
 
+
+
+
+    <div id="uruntanitimbir">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagebir" src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagebir('images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg')">
+                    <img src="images/b8db5e61-5a1b-4b1a-a58a-c0d1e138c5c3.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagebir('images/b8db5e61-5a1b-4b1a-a58a-c0d1e138c5c3.jpg')">
+                    <img src="images/b8f747d6-7cce-4189-9b8a-edc2e6946826.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagebir('images/b8f747d6-7cce-4189-9b8a-edc2e6946826.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Gözde Altın Set</h1>
+                <p class="description">
+                    Zarif tasarımı ve altının göz alıcı parlaklığıyla hem şıklığı hem de zarafeti bir araya getiriyor.
+                    Ürün, modern çizgilerle bezenmiş olup, özel işçiliği sayesinde dikkat çeken bir duruş sergiliyor.
+                    Gözde Altın Set, hem günlük kullanımda hem de özel günlerde kıyafetlerinize asil bir dokunuş
+                    katacak. Geleneksel ve modern çizgileri buluşturan bu özel parça, tarzını cesurca ifade etmek
+                    isteyenler için ideal bir seçim.
+                </p>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
+            </div>
+        </div>
+    </div>
 
 
     <div id="uruntanitimiki">
