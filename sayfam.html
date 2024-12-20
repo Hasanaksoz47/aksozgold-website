@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #uruntanitimbir{
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #020d2b;
+            margin-top: 65px;
+        }
+
+
+        .containerbir {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+        }
+
+        .product-gallery {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .main-image img:hover {
+            transform: scale(1.50);
+            cursor: zoom-in;
+        }
+
+        .thumb-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .thumb-images img {
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumb-images img:hover {
+            transform: scale(1.12);
+        }
+
+        .product-info {
+            flex: 1;
+            text-align: center;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .product-info h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #020d2b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info .description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="uruntanitimbir">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImagebir" src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImagebir('images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg')">
+                    <img src="images/b8db5e61-5a1b-4b1a-a58a-c0d1e138c5c3.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImagebir('images/b8db5e61-5a1b-4b1a-a58a-c0d1e138c5c3.jpg')">
+                    <img src="images/b8f747d6-7cce-4189-9b8a-edc2e6946826.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImagebir('images/b8f747d6-7cce-4189-9b8a-edc2e6946826.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Gözde Altın Set</h1>
+                <p class="description">
+                    Zarif tasarımı ve altının göz alıcı parlaklığıyla hem şıklığı hem de zarafeti bir araya getiriyor.
+                    Ürün, modern çizgilerle bezenmiş olup, özel işçiliği sayesinde dikkat çeken bir duruş sergiliyor.
+                    Gözde Altın Set, hem günlük kullanımda hem de özel günlerde kıyafetlerinize asil bir dokunuş
+                    katacak. Geleneksel ve modern çizgileri buluşturan bu özel parça, tarzını cesurca ifade etmek
+                    isteyenler için ideal bir seçim.
+                </p>
+                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
