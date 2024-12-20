@@ -1741,11 +1741,11 @@
                             Altın Bilezik Seti
                         </a>
                     </div>
-                    <div class="product-item" onclick="setuc()">
+                    <div class="product-item">
                         <img src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" alt="Ürün 3">
-                        <div class="product-infobir">
+                        <a href="Altin-İslemeli-Bileklik" class="product-infobir">
                             Altın İşlemeli Bileklik
-                        </div>
+                        </a>
                     </div>
                     <div class="product-item" onclick="setdort()">
                         <img src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" alt="Ürün 4">
@@ -1987,66 +1987,6 @@
 
 
 
-    <div id="uruntanitimuc">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImageuc" src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImageuc('images/1be22878-0823-4367-8143-322dea222ed3.jpg')">
-                    <img src="images/c1b427b8-74b0-4eb5-8098-4bb4d811d2f5.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImageuc('images/c1b427b8-74b0-4eb5-8098-4bb4d811d2f5.jpg')">
-                    <img src="images/9a752d73-9bc1-4b79-800c-167536420b6d.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImageuc('images/9a752d73-9bc1-4b79-800c-167536420b6d.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Geleneksel Zarafetin Simgesi: Altın İşlemeli Bileklik</h1>
-                <p class="description">
-                    Geleneksel motiflerin ince işçilikle buluştuğu bu altın işlemeli bileklik, göz alıcı detaylarıyla
-                    adeta bir sanat eseri. Özel tasarımı ve zarif detaylarıyla dikkat çeken bu bileklik, geçmişin ruhunu
-                    modern bir dokunuşla yeniden yorumluyor. Düğünlerden özel davetlere kadar her ortamda stilinizi öne
-                    çıkaracak bu şık aksesuar, hem kendiniz için hem de sevdiklerinize unutulmaz bir hediye seçeneği
-                    sunuyor. Bu eşsiz parçayla geleneksel zarafeti tarzınıza yansıtın!
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div id="uruntanitimdort">
-        <div class="containerbir">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="mainImagedort" src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" alt="Ana Ürün Resmi">
-                </div>
-                <div class="thumb-images">
-                    <img src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" alt="Ürün Küçük Resim 1"
-                        onclick="changeImagedort('images/38e86fe1-990c-4487-8151-40e399a147ae.jpg')">
-                    <img src="images/0812a8d5-d395-4ac7-a6c9-2fc40234f87d.jpg" alt="Ürün Küçük Resim 2"
-                        onclick="changeImagedort('images/0812a8d5-d395-4ac7-a6c9-2fc40234f87d.jpg')">
-                    <img src="images/a8d63369-33e1-46b5-8842-0a4ab9266340.jpg" alt="Ürün Küçük Resim 3"
-                        onclick="changeImagedort('images/a8d63369-33e1-46b5-8842-0a4ab9266340.jpg')">
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>Zarafetin Altın Hâli: Işıltılı Bileziklerle Tarzınıza Değer Katın</h1>
-                <p class="description">Her anınıza zarafet katacak bir dokunuş arıyorsanız, bu eşsiz altın bilezik tam
-                    size göre! Modern işçiliği ve zarif tasarımıyla dikkat çeken bu bilezik, her kombinle uyum
-                    sağlayacak özel bir aksesuar. Göz alıcı parlaklığı ve sağlam yapısıyla ömür boyu sürecek bir değer
-                    sunuyor. Kendinizi ödüllendirmek veya sevdiklerinize unutulmaz bir hediye vermek için ideal olan bu
-                    altın bilezik, stilinize asalet katmaya hazır!
-                </p>
-                <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -3354,27 +3294,6 @@
 
 
 
-        let lastScrollTop = 0; // Sayfa kaydırma başlangıç pozisyonu
-        const stickyKategori = document.querySelector('.sticky-kategori');
-
-        // Sayfa kaydırıldıkça kontrol et
-        window.addEventListener('scroll', function () {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Sayfa yukarı kaydırıldığında menüyü görünür yap
-            if (scrollTop < lastScrollTop) {
-                stickyKategori.style.top = '0'; // Menü yukarı gelir
-            } else {
-                stickyKategori.style.top = '-100px'; // Menü kaybolur
-            }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Scroll pozisyonunu güncelle
-        });
-
-
-
-
-
 
 
 
@@ -3457,17 +3376,6 @@
 
 
 
-
-
-        function setbir() {
-            document.getElementById("uruntanitimbir").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-
-        function setiki() {
-            document.getElementById("uruntanitimiki").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
 
         function setuc() {
             document.getElementById("uruntanitimuc").style.display = "block";
