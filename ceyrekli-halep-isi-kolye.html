@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksoz Gold - Çeyrekli Halep İşi Kolye: Gelenekten Gelen Işıltı ve Asalet</title>
+    <meta name="description"
+        content="Aksoz Gold, Mardin Midyat'ta en kaliteli kuyumculuk ürünleri ve takılarla hizmet veriyor. Müşteri memnuniyetini ön planda tutarak Pazartesi-Cumartesi 08:00-17:30 saatleri arasında açık.">
+    <meta name="keywords"
+        content="Aksoz Gold, kuyumculuk, altın takılar, Mardin kuyumculuk, değerli takılar, kaliteli altın, güvenilir kuyumcu, altın, takı, Mardin">
+    <meta name="robots" content="index, follow">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" type="image/x-icon">
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #020d2b;
+            overflow-x: hidden;
+            /* Yatay kaydırmayı engeller */
+        }
+
+        .containerbir {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin-top: 10px;
+        }
+
+        .product-gallery {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .main-image img:hover {
+            transform: scale(1.50);
+            cursor: zoom-in;
+        }
+
+        .thumb-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .thumb-images img {
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumb-images img:hover {
+            transform: scale(1.12);
+        }
+
+        .product-info {
+            flex: 1;
+            text-align: center;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .product-info h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #020d2b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info .description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        @media screen and (max-width: 950px) {
+            .containerbir {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .product-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-info h1 {
+                font-size: 24px;
+            }
+
+            .thumb-images img {
+                width: 60px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product-info h1 {
+                font-size: 22px;
+            }
+
+            .product-info .description {
+                font-size: 16px;
+            }
+
+            .thumb-images img {
+                width: 50px;
+            }
+
+            .main-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div id="uruntanitimyedi">
+        <div class="containerbir">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImageyedi" src="images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg" alt="Ana Ürün Resmi">
+                </div>
+                <div class="thumb-images">
+                    <img src="images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg" alt="Ürün Küçük Resim 1"
+                        onclick="changeImageyedi('images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg')">
+                    <img src="images/3c13150f-edb1-47c3-b7fc-269b4d6b27eb.jpg" alt="Ürün Küçük Resim 2"
+                        onclick="changeImageyedi('images/3c13150f-edb1-47c3-b7fc-269b4d6b27eb.jpg')">
+                    <img src="images/e7e9587b-28dd-42f7-9d0a-1c9070279f65.jpg" alt="Ürün Küçük Resim 3"
+                        onclick="changeImageyedi('images/e7e9587b-28dd-42f7-9d0a-1c9070279f65.jpg')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Çeyrekli Halep İşi Kolye: Gelenekten Gelen Işıltı ve Asalet</h1>
+                <p class="description">Özel günlerinizde zarafetinizi ve geleneksel tarzınızı ön plana çıkaracak bir
+                    takı arıyorsanız, çeyrekli Halep işi kolye tam size göre! Ustalıkla işlenmiş Halep motifleri ve
+                    çeyrek altın detaylarıyla bu kolye, hem klasik bir görünüme hem de modern bir şıklığa sahip. Eşsiz
+                    işçiliğiyle dikkat çeken bu kolye, geleneksel takıların zarafetini günümüze taşıyor. Düğünlerde,
+                    özel davetlerde veya günlük kullanımda şıklığınızı artırmak için ideal olan bu kolyeyle tarzınıza
+                    unutulmaz bir dokunuş katın!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeImageyedi(imageUrl) {
+            document.getElementById("mainImageyedi").src = imageUrl;
+        }
+    </script>
+</body>
+
+</html>
