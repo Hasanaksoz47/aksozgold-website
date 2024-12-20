@@ -21,6 +21,9 @@
             box-sizing: border-box;
         }
 
+
+
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: white;
@@ -29,6 +32,17 @@
             flex-direction: column;
             min-height: 100vh;
             transition: background-color 0.3s ease-in-out;
+            animation: fadeIn 4s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
         .container {
@@ -45,7 +59,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1000;
+            z-index: 10000000;
         }
 
         .logo img {
@@ -441,9 +455,9 @@
             padding: 10px;
             flex: 1;
             background-color: white;
-            transition: background-color 0.3s ease-in-out;
             display: flex;
             justify-content: center;
+            flex-direction: column;
         }
 
         .containeriki {
@@ -451,23 +465,17 @@
         }
 
         main h2 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 38px;
             font-weight: 600;
             text-align: center;
             background: linear-gradient(90deg, #f9a602, #0a2342);
-            /* İki renkli geçiş */
             background-size: 200% 100%;
-            /* Arka planın büyüklüğü */
             animation: slideColor 5s ease-in-out infinite;
-            /* Animasyon */
             background-clip: text;
-            /* Yazının üzerine uygulama */
             color: transparent;
-            /* Yazı rengini şeffaf yap */
         }
 
-        /* Renk kayması animasyonu */
         @keyframes slideColor {
             0% {
                 background-position: 200% 0;
@@ -482,21 +490,50 @@
             }
         }
 
+        /* Animasyonlu Ürün Geçişleri */
         .product-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            background-color: white;
-            gap: 30px;
-            padding: 0 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
         .product-item {
             position: relative;
             text-align: center;
             overflow: hidden;
+            background-color: #fff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.7s ease forwards;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .product-item:hover {
@@ -509,6 +546,11 @@
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.1);
         }
 
         .product-infobir {
@@ -526,17 +568,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 10px;
         }
 
         .product-item:hover .product-infobir {
             opacity: 1;
         }
 
-
+        /* Footer */
         footer {
             background-color: #0a2342;
             text-align: center;
-            padding: 5px 0;
+            padding: 20px 0;
             color: white;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
@@ -571,49 +614,9 @@
             transform: scale(1.1);
         }
 
-        /* Medya sorguları */
         @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                background-color: #fff;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                padding: 20px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .menu li {
-                margin-bottom: 15px;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #333;
-                color: #f0f0f0;
-            }
-
-            main {
-                background-color: #444;
-            }
-
-            .product-item {
-                background-color: #555;
-            }
-
-            .footer-container {
-                background-color: #111;
-            }
-
-            main h2 {
-                color: #f9a602;
+            .product-grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
 
@@ -879,6 +882,32 @@
             background-color: #f4f4f4;
             padding: 60px 20px;
             text-align: center;
+        }
+
+        .hakkimizda-bolumu h2 {
+            margin-bottom: 20px;
+            font-size: 38px;
+            font-weight: 600;
+            text-align: center;
+            background: linear-gradient(90deg, #f9a602, #0a2342);
+            background-size: 200% 100%;
+            animation: slideColor 5s ease-in-out infinite;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes slideColor {
+            0% {
+                background-position: 200% 0;
+            }
+
+            50% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
         }
 
         .bolum-baslikhakkimizda {
@@ -1267,7 +1296,7 @@
                             target="_blank"> <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
                     </div>
                     <div class="buttons-container">
-                        <li class="common-button" onclick="tumurunler()">Tüm Ürünlerimiz..</li>
+                        <li class="common-button">Tüm Ürünlerimiz..</li>
                     </div>
                     <!-- Burger Menü -->
                     <div class="burger-menu" onclick="toggleMenu()">
@@ -1460,6 +1489,7 @@
         <main>
             <div class="container-iki">
                 <h2>Beğenilen Ürünler</h2>
+                <br>
                 <div class="product-grid-container">
                     <div class="product-item">
                         <img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ürün 1">
@@ -1694,553 +1724,6 @@
 
 
 
-
-
-
-    <div id="produktcontainerana">
-
-        <br><br><br>
-        <button class="return-button" onclick="anasayfayadon()"><i class="fa-solid fa-angle-left"></i></button>
-        <br><br>
-        <div class="such-container" id="such-container">
-            <input type="text" class="such-input" placeholder="Ürün arama..." oninput="filterProducts()">
-        </div>
-        <div id="produkt-container">
-            <div class="produkt">
-                <img src="images/c9c583ec-c472-475b-bd91-11e0d0a03455.jpg" alt="Dorika Yüzük">
-                <div class="produkt-name">Dorika Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/547ad05e-6ffa-4144-a99e-6394565a6fc0.jpg" alt="Hint İşi Tasarımlı Yüzük">
-                <div class="produkt-name">Hint İşi Tasarımlı Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/7f69386b-7b12-4b69-925a-f804a2c5796f.jpg" alt="Mekik Yüzük">
-                <div class="product-name">Mekik Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/a04a3fc3-e1fe-45c7-8a2f-6a821904cc6a.jpg" alt="6 Sıra Kumlu Dorika Toplu Yüzük">
-                <div class="product-name">6 Sıra Kumlu Dorika Toplu Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/b03187c8-37c1-48d0-af6b-0fac87c048cc.jpg" alt="5 Sıralı Dorika Yüzük">
-                <div class="product-name">5 Sıralı Dorika Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/690797e9-9778-4d32-aba6-160f08052f35.jpg" alt="5 Sıralı Dorika Altın Yüzük">
-                <div class="product-name">5 Sıralı Dorika Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/f21edaf1-7341-481d-9d57-be66319db602.jpg" alt="Dorika Çiçekli Yüzük">
-                <div class="product-name">Dorika Çiçekli Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/93ad9973-bb2d-4248-b1b3-7c5d585f2296.jpg" alt="Zarif Altın Yüzük">
-                <div class="product-name">Zarif Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/c2b09d52-2b40-4f70-a721-c2e42b9caf17.jpg" alt="10 Sıra Dorika Toplu Kaburga Yüzük">
-                <div class="product-name">10 Sıra Dorika Toplu Kaburga Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/852e2546-0f8d-4aca-a0e4-ff25f553e726.jpg" alt="Klasik Model Yüzük">
-                <div class="product-name">Klasik Model Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/cd7de819-6fcb-4619-be1c-87937a215b8a.jpg" alt="Dorika Spor Yüzük">
-                <div class="product-name">Dorika Spor Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/4b52686c-fe3f-4fd5-a449-792f85b5778c.jpg"
-                    alt="Dorika Topları İle Süslenmiş Altın Yüzük">
-                <div class="product-name">Dorika Topları İle Süslenmiş Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/fbfcf193-9cc3-43b7-a467-7f00b05e24d6.jpg" alt="Sarı İşlemeli Yuvarlak Yüzük">
-                <div class="product-name">Sarı İşlemeli Yuvarlak Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/1415d9e8-bff4-46b2-b509-7816bbad0067.jpg" alt="Dorikalı Fantazi Yüzük">
-                <div class="product-name">Dorikalı Fantazi Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/dfc1ba93-85b1-4eef-9e5e-658004f59d98.jpg" alt="Rolex Model Yüzük">
-                <div class="product-name">Rolex Model Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/aa2d6e7c-da7d-4c7c-84fc-d4b7c4192894.jpg" alt="Mekik Altın Yüzük">
-                <div class="product-name">Mekik Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/a0b28d4e-88c5-4246-b976-e8a16b1894e8.jpg" alt="Dorika Şık Yüzük">
-                <div class="product-name">Dorika Şık Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/291b0449-027c-48db-89e9-4bfe4ff8d11a.jpg" alt="Altın Kaburga Yüzük">
-                <div class="product-name">Altın Kaburga Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/bad708f2-c05d-456c-8526-31613c5652dc.jpg" alt="Taşsız Kaburga Yüzük">
-                <div class="product-name">Taşsız Kaburga Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/166c9357-da6e-460f-979f-385e8e8cce9f.jpg" alt="Arap Dubai Tasarım Altın Yüzük">
-                <div class="product-name">Arap Dubai Tasarım Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/b177489e-96f7-4518-837f-c763adf98e6d.jpg" alt="Şık Taşlı Kaburga Yüzük">
-                <div class="product-name">Şık Taşlı Kaburga Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/351953c8-5c48-4584-85d3-40b519924178.jpg" alt="Dorika Toplu Yüzük">
-                <div class="product-name">Dorika Toplu Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/04d2cb7a-5670-4d67-b729-718fb69ada40.jpg" alt="Dorika Toplu Yüzük ikili">
-                <div class="product-name">Dorika Toplu Yüzük ikili</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/933c7050-0d17-4e5b-90b3-71c6ce34d413.jpg" alt="Yöresel İkili Çeyrek Altın Yüzük">
-                <div class="product-name">Yöresel İkili Çeyrek Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/d014ce53-8b38-4b26-b566-31361aec5937.jpg" alt="Yöresel Şık Altın Yüzük">
-                <div class="product-name">Yöresel Şık Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/0ff9acbc-1b7c-4c23-bbd3-e718bad86be2.jpg" alt="Dorika Toplu Yüzük">
-                <div class="product-name">Dorika Toplu Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/b6b9fb9c-1cf4-432b-a961-eadad2c7d1f5.jpg"
-                    alt="Lüks Dubai Zirkon Arap Tasarım Altın Yüzük">
-                <div class="product-name">Lüks Dubai Zirkon Arap Tasarım Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/c34009f0-d8bb-4458-a84e-a09ebff31e32.jpg" alt="Altın Dorika Toplu Yüzük">
-                <div class="product-name">Altın Dorika Toplu Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/309ff5db-08cb-48f2-aa54-7113337ffc7c.jpg" alt="Taşsız Dorika Toplu Yüzük">
-                <div class="product-name">Taşsız Dorika Toplu Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/00a27dc3-7fed-4878-92cd-17b587e69404.jpg"
-                    alt="Dorika Topları İle Süsleniş Altın Yüzük">
-                <div class="product-name">Dorika Topları İle Süsleniş Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/86905307-3fcd-4594-9fd8-2ae7744e90ba.jpg" alt="Dorikalı Şık Tasarım Altın Yüzük">
-                <div class="product-name">Dorikalı Şık Tasarım Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/3598293d-cf1c-4a02-9fa7-74c3757f5c33.jpg" alt="Özel Tasarım Şık Altın Yüzük">
-                <div class="product-name">Özel Tasarım Şık Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/34460ded-5e5c-4e64-9ce7-f1f372de48bc.jpg" alt="Özel Tasarım Eşsiz Altın Yüzük">
-                <div class="product-name">Özel Tasarım Eşsiz Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/ef60ca10-899c-42d1-a025-412713ea7321.jpg" alt="Varsaceli Dorika Altın Yüzük">
-                <div class="product-name">Varsaceli Dorika Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/3def7d08-8ef7-4413-a1db-84f5060f2b52.jpg" alt="Eşsiz Tasarım Altın Yüzük">
-                <div class="product-name">Eşsiz Tasarım Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/2171781d-9d5e-4083-8370-fbba8963ad0d.jpg" alt="Dorika Toplu Mekik Altın Yüzük">
-                <div class="product-name">Dorika Toplu Mekik Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/1f50a011-9b82-4950-9db4-dabb34fadea5.jpg" alt="Taşsız Dorika Toplu Altın Yüzük">
-                <div class="product-name">Taşsız Dorika Toplu Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/3c41d869-2814-4358-aaf9-f88a16b7ea2e.jpg" alt="Dorika Toplu Yöresel Şık Altın Yüzük">
-                <div class="product-name">Dorika Toplu Yöresel Şık Altın Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/18b8d6f8-05ae-4803-acc3-5d51f48787b5.jpg" alt="Yazı Yazılabilen Altın Alyans Yüzük">
-                <div class="product-name">Yazı Yazılabilen Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/0b9b9797-2830-4095-8a8b-22f0a671d850.jpg" alt="Bombeli Klasik Altın Alyans Yüzük">
-                <div class="product-name">Bombeli Klasik Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/4f4cf571-ae03-49d1-a723-deb254c9d370.jpg" alt="Çizgili Tırtıllı Altın Alyans Yüzük">
-                <div class="product-name">Çizgili Tırtıllı Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/6b1937ef-5c22-4efa-9555-d0244b4e758b.jpg" alt="Çivili Alyans Yüzük">
-                <div class="product-name">Çivili Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/6d0f5960-6a1f-41ed-8a63-a3866b29bc0a.jpg" alt="İçi Dolu Alyans Yüzük">
-                <div class="product-name">İçi Dolu Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/91fa3fb7-e51f-4213-a5d0-b61408a5f9df.jpg" alt="Adana Burması Alyans Yüzük">
-                <div class="product-name">Adana Burması Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/194cb664-117f-48e7-b231-34a725f5a65b.jpg" alt="Desenli Alyans Yüzük">
-                <div class="product-name">Desenli Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/234f4be8-bc1c-4363-b4c7-149356d02f58.jpg" alt="Modern Tasarım Altın Alyans Yüzük">
-                <div class="product-name">Modern Tasarım Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/502e9b11-4b2b-4e8d-b103-c0eecee19db9.jpg" alt="Klasik Altın Alyans Yüzük">
-                <div class="product-name">Klasik Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/702c7a5b-6473-4240-9bc7-176c3973636e.jpg" alt="Taşsız Şık Altın Alyans Yüzük">
-                <div class="product-name">Taşsız Şık Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/2005fa19-267f-483e-9d36-c6c17ede956a.jpg" alt="Şık Yöresel Altın Alyans Yüzük">
-                <div class="product-name">Şık Yöresel Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/aa4d3d7c-0a52-420b-9600-3d8518e1b335.jpg" alt="Klasik Görünüm Alyans Yüzük">
-                <div class="product-name">Klasik Görünüm Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/bbc5e7c2-75ae-47ac-a429-9b3a6dea5cb5.jpg" alt="Taşsız Şık Alyans Yüzük">
-                <div class="product-name">Taşsız Şık Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/bc09eb68-8e19-40d2-8aad-b30e05413d65.jpg" alt="Burma Alyans Yüzük">
-                <div class="product-name">Burma Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/c663edfc-950f-4cc6-b20c-59ad621337aa.jpg" alt="Prizma Altın Alyans Yüzük">
-                <div class="product-name">Prizma Altın Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/d35bcbdf-96cb-4ba9-b292-f9a6802a206b.jpg" alt="Şık Tasarım Alyans Yüzük">
-                <div class="product-name">Şık Tasarım Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/e7fbba73-b4a0-49f6-9c71-b1bb9f1f420e.jpg" alt="Kumlu Desenli Alyans Yüzük">
-                <div class="product-name">Kumlu Desenli Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-            <div class="produkt">
-                <img src="images/f41f1be6-a927-4996-8c58-600c0b1373d7.jpg" alt="Noktalı Desenli Alyans Yüzük">
-                <div class="product-name">Noktalı Desenli Alyans Yüzük</div>
-                <a href="https://wa.me/905372770430?text=Merhaba%2C%20web%20sitenizden%20geldim.%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                    class="kontakt">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                    Bilgi Alın
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Reklam Modalı -->
     <div id="reklamModal" class="reklam-modal">
         <div class="reklam-icerik">
@@ -2308,176 +1791,6 @@
 
 
 
-        function filterProducts() {
-            const searchInput = document.querySelector('.such-input').value.toLowerCase();
-            const products = document.querySelectorAll('.produkt');
-
-            products.forEach(product => {
-                const productName = product.querySelector('.produkt-name, .produkt-infobir').textContent.toLowerCase();
-                if (productName.includes(searchInput)) {
-                    product.classList.remove('hidden');
-                } else {
-                    product.classList.add('hidden');
-                }
-            });
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        function changeImagebir(imageUrl) {
-            document.getElementById("mainImagebir").src = imageUrl;
-        }
-        function changeImageiki(imageUrl) {
-            document.getElementById("mainImageiki").src = imageUrl;
-        }
-        function changeImageuc(imageUrl) {
-            document.getElementById("mainImageuc").src = imageUrl;
-        }
-        function changeImagedort(imageUrl) {
-            document.getElementById("mainImagedort").src = imageUrl;
-        }
-        function changeImagebes(imageUrl) {
-            document.getElementById("mainImagebes").src = imageUrl;
-        }
-        function changeImagealti(imageUrl) {
-            document.getElementById("mainImagealti").src = imageUrl;
-        }
-        function changeImageyedi(imageUrl) {
-            document.getElementById("mainImageyedi").src = imageUrl;
-        }
-        function changeImagesekiz(imageUrl) {
-            document.getElementById("mainImagesekiz").src = imageUrl;
-        }
-        function changeImagedokuz(imageUrl) {
-            document.getElementById("mainImagedokuz").src = imageUrl;
-        }
-        function changeImageon(imageUrl) {
-            document.getElementById("mainImageon").src = imageUrl;
-        }
-        function changeImageonbir(imageUrl) {
-            document.getElementById("mainImageonbir").src = imageUrl;
-        }
-        function changeImageoniki(imageUrl) {
-            document.getElementById("mainImageoniki").src = imageUrl;
-        }
-
-
-
-
-
-
-
-
-
-        function setuc() {
-            document.getElementById("uruntanitimuc").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-
-        function setdort() {
-            document.getElementById("uruntanitimdort").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setbes() {
-            document.getElementById("uruntanitimbes").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setalti() {
-            document.getElementById("uruntanitimalti").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setyedi() {
-            document.getElementById("uruntanitimyedi").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setsekiz() {
-            document.getElementById("uruntanitimsekiz").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setdokuz() {
-            document.getElementById("uruntanitimdokuz").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function seton() {
-            document.getElementById("uruntanitimon").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setonbir() {
-            document.getElementById("uruntanitimonbir").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-        function setoniki() {
-            document.getElementById("uruntanitimoniki").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        function alyans() {
-            document.getElementById("ana").style.display = "none";
-            document.getElementById("containeralyansana").style.display = "block";
-        }
-
-
-
-
-        function yuzuk() {
-            document.getElementById("ana").style.display = "none";
-            document.getElementById("containeryuzukana").style.display = "block";
-        }
-
-
-
-
-
-        function blog() {
-            document.getElementById("ana").style.display = "none";
-            document.getElementById("blog").style.display = "block";
-        }
-
-
-
-
-
-        function tumurunler() {
-            document.getElementById("produktcontainerana").style.display = "block";
-            document.getElementById("ana").style.display = "none";
-        }
-
-
-
-
-
-
-
 
 
         // Modal otomatik gösterim ve kaydırma
@@ -2495,57 +1808,6 @@
         window.onload = function () {
             setTimeout(reklamModalGoster, 10000);
         };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        function anasayfayadon() {
-            document.getElementById("ana").style.display = "block";
-            document.getElementById("uruntanitimbir").style.display = "none";
-            document.getElementById("uruntanitimiki").style.display = "none";
-            document.getElementById("uruntanitimuc").style.display = "none";
-            document.getElementById("uruntanitimdort").style.display = "none";
-            document.getElementById("uruntanitimbes").style.display = "none";
-            document.getElementById("uruntanitimalti").style.display = "none";
-            document.getElementById("uruntanitimyedi").style.display = "none";
-            document.getElementById("uruntanitimsekiz").style.display = "none";
-            document.getElementById("uruntanitimdokuz").style.display = "none";
-            document.getElementById("uruntanitimon").style.display = "none";
-            document.getElementById("uruntanitimonbir").style.display = "none";
-            document.getElementById("uruntanitimoniki").style.display = "none";
-            document.getElementById("blog").style.display = "none";
-            document.getElementById("containeryuzukana").style.display = "none";
-            document.getElementById("produktcontainerana").style.display = "none";
-            document.getElementById("containeralyansana").style.display = "none";
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
