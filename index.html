@@ -2429,6 +2429,52 @@
                     alert("Bir hata oluştu, lütfen tekrar deneyin.");
                 });
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Reklamları engelleme fonksiyonu
+function blockAds() {
+    // Reklam iframe'lerini engelle
+    const iframes = document.querySelectorAll('iframe');
+    iframes.forEach(iframe => {
+        const src = iframe.getAttribute('src');
+        if (src && (src.includes('ads') || src.includes('advertisement'))) {
+            iframe.remove(); // Reklam içeren iframe'leri sil
+        }
+    });
+
+    // Reklam içerikli div'leri engelle
+    const adDivs = document.querySelectorAll('div');
+    adDivs.forEach(div => {
+        if (div.classList.contains('ad') || div.id.includes('ad') || div.id.includes('banner')) {
+            div.remove(); // Reklam içeren div'leri sil
+        }
+    });
+
+    // Reklam içeren script'leri engelle
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => {
+        if (script.src && (script.src.includes('ads') || script.src.includes('advertisement'))) {
+            script.remove(); // Reklam içeren script'leri sil
+        }
+    });
+}
+
+// Sayfa yüklendiğinde reklamları engelle
+window.addEventListener('load', function() {
+    blockAds();
+});
+
     </script>
 </body>
 
