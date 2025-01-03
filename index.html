@@ -86,28 +86,57 @@
             }
         }
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            ;
-            align-items: center;
-            max-width: 30000px;
-            padding: 10px 20px;
-        }
-
         .header-container {
             background: linear-gradient(90deg, #0a2342, #1a436b);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 10000000;
+            height: 150px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            padding: 0 20px;
         }
 
         .logo img {
             width: 150px;
             filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
         }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .burger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .burger-menu.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger-menu.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+
+
+
+
 
         .common-button {
             background: none;
@@ -155,35 +184,6 @@
             list-style-type: none;
         }
 
-        /* Burger Menü */
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            margin-right: 30px;
-        }
-
-        .burger-menu div {
-            width: 40px;
-            height: 4px;
-            background-color: white;
-            border-radius: 2px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .burger-menu.active div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .burger-menu.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .burger-menu.active div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
         .nav-links {
             display: none;
             flex-direction: column;
@@ -225,33 +225,60 @@
 
 
 
-        /* Arama kutusunun genel stili */
-        #searchInput {
-            width: 100%;
-            padding: 10px 40px 10px 15px;
-            /* Sağ tarafa ikon için padding */
-            font-size: 16px;
-            border-radius: 25px;
-            border: 1px solid #ccc;
-            background-color: #f8f8f8;
-            position: relative;
-        }
 
-        /* Arama kutusunun içinde Font Awesome ikonunun sağa yerleşmesi */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #searchInput-container {
             position: relative;
-            min-width: 97px;
         }
 
-        /* Arama ikonunun sağ tarafa yerleşmesi */
+        #searchInput {
+            padding: 10px 40px 10px 15px;
+            /* Sağ tarafta daha fazla boşluk */
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
         #searchInput-container .fa-magnifying-glass {
             position: absolute;
-            right: 15px;
             top: 50%;
+            right: 10px;
+            /* İkona sağda yer açar */
             transform: translateY(-50%);
             color: #999;
-            font-size: 20px;
+            pointer-events: none;
+            /* İkon üzerine tıklanamaz */
         }
+
+
+
+
+
+
+
+
+
 
 
         .search-box {
@@ -280,13 +307,121 @@
 
         @media (max-width: 995px) {
             .product-list {
-                margin-top: 150px;
+                margin-top: 0px;
             }
         }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width: 995px) {
+            .header-container {
+                justify-content: center;
+                position: relative;
+            }
+
+            .logo {
+                position: absolute;
+                left: 50%;
+                bottom: 15px;
+                transform: translateX(-50%);
+            }
+
+            .burger-menu {
+                display: flex;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #searchInput-container {
+                position: absolute;
+                right: 20px;
+                /* Sağ tarafa hizalar */
+                top: 50%;
+                transform: translateY(-50%);
+                /* Yatayda ortalar */
+                width: 240px;
+                /* Genişlik, isteğe göre ayar yapabilirsiniz */
+            }
+
+            #searchInput {
+                padding: 10px 40px 10px 15px;
+                /* Sağ tarafta daha fazla boşluk */
+                border: 1px solid #ccc;
+                border-radius: 25px;
+                font-size: 16px;
+                width: 240px;
+                /* Input'un genişliğini kapsayıcıya uyumlu yapar */
+            }
+
+            #searchInput-container .fa-magnifying-glass {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                /* İkona sağda yer açar */
+                transform: translateY(-50%);
+                /* Yatayda ortalar */
+                color: #999;
+                pointer-events: none;
+            }
+        }
+
+
+        @media (max-width: 910px) {
+            #searchInput-container {
+                width: 120px;
+            }
+
+            #searchInput {
+                width: 120px;
+            }
+
+        }
+
+
+
+        @media (max-width: 730px) {
+            #searchInput-container {
+                width: 110px;
+            }
+
+            #searchInput {
+                width: 110px;
+            }
+
+        }
 
 
 
@@ -354,7 +489,7 @@
         .kaydirma-menusu {
             display: none;
             position: fixed;
-            top: 140px;
+            top: 150px;
             left: -250px;
             width: 250px;
             height: 100%;
@@ -390,12 +525,9 @@
 
         @media (max-width: 995px) {
             .carouselExampleana {
-                margin-top: 150px;
+                margin-top: 30px;
             }
 
-            .logo img {
-                margin-right: 150px;
-            }
 
             .ustbilgi {
                 display: none;
@@ -413,64 +545,6 @@
                 display: block;
             }
         }
-
-        @media (max-width: 650px) {
-            .logo img {
-
-                margin-right: 130px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .logo img {
-
-                margin-right: 125px;
-            }
-        }
-
-        @media (max-width: 595px) {
-            .logo img {
-                margin-right: 130px;
-            }
-        }
-
-        @media (max-width: 540px) {
-            .logo img {
-                margin-right: 100px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .logo img {
-                margin-right: 80px;
-            }
-        }
-
-        @media (max-width: 485px) {
-            .logo img {
-                margin-right: 60px;
-            }
-        }
-
-        @media (max-width: 445px) {
-            .logo img {
-                margin-right: 40px;
-            }
-        }
-
-        @media (max-width: 415px) {
-            .logo img {
-                margin-right: 20px;
-            }
-        }
-
-        @media (max-width: 405px) {
-            .logo img {
-                margin-right: 40px;
-            }
-        }
-
-
 
 
 
@@ -1549,26 +1623,23 @@
     <div id="ana">
         <div class="header-containerana">
             <header class="header-container">
-                <div class="container">
-                    <div class="buttons-container">
-                        <div id="searchInput-container">
-                            <input type="text" id="searchInput" placeholder="Ürün veya içerik ara..." />
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-
+                <div class="buttons-container">
+                    <div id="searchInput-container">
+                        <input type="text" id="searchInput" placeholder="Ürün veya içerik ara..." />
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
 
+                </div>
 
-                    <div class="logo">
-                        <a href="https://wa.me/904824622607?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20daha%20fazla%20bilgi%20almak%20istiyorum."
-                            target="_blank"> <img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
-                    </div>
-                    <!-- Burger Menü -->
-                    <div class="burger-menu" onclick="toggleMenu()">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+
+                <div class="logo">
+                    <a href="index.html"><img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
+                </div>
+                <!-- Burger Menü -->
+                <div class="burger-menu" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </header>
 
@@ -1591,7 +1662,6 @@
 
             </div>
         </div>
-
 
         <ul class="product-list">
             <main>
@@ -1982,6 +2052,19 @@
                 </div>
             </main>
         </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2418,6 +2501,14 @@
             kaplama.classList.toggle('acik');
             menuDugmesi.classList.toggle('aktif');
         }
+
+
+
+
+
+
+
+
 
 
 
