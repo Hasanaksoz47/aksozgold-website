@@ -838,7 +838,7 @@
 
     <script>
         function changeImageiki(imageUrl) {
-            document.getElementById("mainImageiki").src = imageUrl;
+            document.getElementById("mainImagebir").src = imageUrl;
         }
 
 
@@ -859,37 +859,6 @@
             kaplama.classList.toggle('acik');
             menuDugmesi.classList.toggle('aktif');
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        document.getElementById("searchInput").addEventListener("keyup", function () {
-            const filter = this.value.toLowerCase();
-            const items = document.querySelectorAll(".product-items");
-
-            items.forEach((item) => {
-                const text = item.textContent.toLowerCase();
-
-                // Eşleşme olup olmadığını kontrol et
-                if (filter && text.indexOf(filter) !== -1) {
-                    item.style.display = "block";  // Eşleşen ürünleri göster
-                    item.classList.add("visible"); // Görünürlük sınıfını ekle
-                } else {
-                    item.style.display = "none";   // Eşleşmeyen ürünleri gizle
-                    item.classList.remove("visible"); // Görünürlük sınıfını kaldır
-                }
-            });
-        });
-
 
 
 
