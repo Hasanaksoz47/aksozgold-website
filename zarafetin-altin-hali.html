@@ -1,34 +1,603 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sayfa Başlığı -->
     <title>Aksoz Gold - Zarafetin Altın Hâli: Işıltılı Bileziklerle Tarzınıza Değer Katın</title>
+
+    <!-- Sayfa Açıklaması (Meta Description) -->
     <meta name="description"
-        content="Aksoz Gold, Mardin Midyat'ta en kaliteli kuyumculuk ürünleri ve takılarla hizmet veriyor. Müşteri memnuniyetini ön planda tutarak Pazartesi-Cumartesi 08:00-17:30 saatleri arasında açık.">
-    <meta name="keywords"
-        content="Aksoz Gold, kuyumculuk, altın takılar, Mardin kuyumculuk, değerli takılar, kaliteli altın, güvenilir kuyumcu, altın, takı, Mardin">
+        content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri sunuyor. Yüksek kaliteli ve şık tasarımlar için hemen keşfedin.">
+
+    <!-- Anahtar Kelimeler (Meta Keywords) -->
+    <meta name="keywords" content="altın takı, kuyumculuk, Mardin kuyumculuk, altın, takı, Aksoz Gold">
+
+    <!-- Karakter Seti -->
+    <meta charset="UTF-8">
+
+    <!-- Mobil Uyumluluk (Viewport) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sayfa Yazar Bilgisi -->
+    <meta name="author" content="Aksoz Gold">
+
+    <!-- Robotlara Yönelik Talimatlar (Google'a ve diğer arama motorlarına sayfayı nasıl indekslemesi gerektiğini söyler) -->
     <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aksozgold.online/">
+
+    <!-- Sosyal Medya Paylaşımı için Open Graph Etiketleri (Facebook ve diğer platformlar için) -->
+    <meta property="og:title" content="Aksoz Gold - Mardin'in En İyi Kuyumculuk Ürünleri">
+    <meta property="og:description"
+        content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri ile hizmet vermektedir.">
+    <meta property="og:image" content="https://aksozgold.online/images/takilar.jpg">
+    <meta property="og:url" content="https://aksozgold.online/">
+
+    <!-- Twitter Card Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aksoz Gold - Mardin'in En İyi Kuyumculuk Ürünleri">
+    <meta name="twitter:description" content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri sunuyor.">
+    <meta name="twitter:image" content="https://aksozgold.online/images/takilar.jpg">
+
+
+    <meta property="og:title" content="Aksoz Gold - Mardin Kuyumculuk">
+    <meta property="og:description" content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri sunmaktadır.">
+    <meta property="og:url" content="https://aksozgold.online/">
+    <meta property="og:image" content="https://aksozgold.online/images/logo.jpg">
+    <meta property="og:site_name" content="Aksoz Gold">
+    <meta property="og:locale" content="tr_TR">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" type="image/x-icon">
-
     <style>
         * {
-            padding: 0px;
-            margin: 0px;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
+
+
+
 
         body {
             font-family: 'Poppins', sans-serif;
             background-color: white;
-            color: #020d2b;
-            overflow-x: hidden;
-            /* Yatay kaydırmayı engeller */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease-in-out;
+            animation: fadeIn 4s forwards;
         }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .header-container {
+            background: linear-gradient(90deg, #0a2342, #1a436b);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            top: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row-reverse;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            width: 150px;
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+        }
+
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .burger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .burger-menu.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger-menu.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+
+
+
+        .ustbilgi {
+            display: none;
+        }
+
+
+
+
+
+
+
+        .common-button {
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 20px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .common-button::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #d4af37;
+            transition: width 0.4s ease;
+        }
+
+        .common-button:hover {
+            color: white;
+        }
+
+        .common-button:hover::after {
+            width: 100%;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 10px;
+            background-color: #1a436b;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Düzen */
+        @media (max-width: 995px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            .nav-links.active {
+                display: flex;
+                background: linear-gradient(90deg, #0a2342, #1a436b);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #searchInput-container {
+            position: relative;
+        }
+
+        #searchInput {
+            padding: 10px 40px 10px 15px;
+            /* Sağ tarafta daha fazla boşluk */
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        #searchInput-container .fa-magnifying-glass {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            /* İkona sağda yer açar */
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+            /* İkon üzerine tıklanamaz */
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .search-box {
+            margin: 20px;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 00px;
+        }
+
+        .product-items {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+            /* Ürünler başlangıçta gizlenir */
+        }
+
+        .visible {
+            display: block;
+            /* Arama eşleşirse ürün görünür */
+        }
+
+        @media (max-width: 995px) {
+            .product-list {
+                margin-top: 0px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width: 995px) {
+            .header-container {
+                justify-content: space-around;
+                position: relative;
+                min-width: 250px;
+            }
+
+            .logo {
+                position: absolute;
+                right: 1px;
+                bottom: 15px;
+            }
+
+            .burger-menu {
+                display: flex;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #searchInput-container {
+                position: absolute;
+                right: 20px;
+                /* Sağ tarafa hizalar */
+                top: 50%;
+                transform: translateY(-50%);
+                /* Yatayda ortalar */
+                width: 240px;
+                /* Genişlik, isteğe göre ayar yapabilirsiniz */
+            }
+
+            #searchInput {
+                padding: 10px 40px 10px 15px;
+                /* Sağ tarafta daha fazla boşluk */
+                border: 1px solid #ccc;
+                border-radius: 25px;
+                font-size: 16px;
+                width: 240px;
+                /* Input'un genişliğini kapsayıcıya uyumlu yapar */
+            }
+
+            #searchInput-container .fa-magnifying-glass {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                /* İkona sağda yer açar */
+                transform: translateY(-50%);
+                /* Yatayda ortalar */
+                color: #999;
+                pointer-events: none;
+            }
+        }
+
+
+        @media (max-width: 910px) {
+            #searchInput-container {
+                width: 120px;
+            }
+
+            #searchInput {
+                width: 120px;
+            }
+
+        }
+
+
+
+        @media (max-width: 730px) {
+            #searchInput-container {
+                width: 110px;
+            }
+
+            #searchInput {
+                width: 110px;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+        /* Üstbilgi */
+        .ustbilgi {
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Ortalamayı sağlar */
+            padding: 15px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid white;
+            color: rgb(0, 0, 0);
+            width: 100%;
+            margin-top: 160px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            /* Tam genişlik için */
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: transparent;
+            padding: 5px 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #d4af37;
+            color: #000000;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Kaydırma Menüsü */
+        .kaydirma-menusu {
+            display: none;
+            position: fixed;
+            top: 150px;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(95deg, #0a2342, #1a436b);
+            z-index: 1000;
+            transition: left 0.3s ease;
+        }
+
+
+        .kaydirma-menusu a {
+            display: block;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+            color: #ffffff;
+            font-size: 22px;
+            margin: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+
+        .kaydirma-menusu a:hover {
+            color: #f1c40f;
+        }
+
+        /* Mobil Ayarlar */
+        .menu-dugmesi {
+            display: none;
+        }
+
+        .kaydirma-menusu {
+            display: none;
+        }
+
+
+
+
+        @media (max-width: 20000px) {
+            .ustbilgi {
+                display: none;
+            }
+        }
+
+
+
+
+        @media (max-width: 995px) {
+            .carouselExampleana {
+                margin-top: 30px;
+            }
+
+
+            .ustbilgi nav {
+                display: none;
+            }
+
+            .menu-dugmesi {
+                display: flex;
+            }
+
+            .kaydirma-menusu {
+                display: block;
+            }
+        }
+
+
+
+
+
+
+
+        .kaydirma-menusu.acik {
+            left: 0;
+        }
+
+        .kaplama {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .kaplama.acik {
+            display: block;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
         .containerbir {
             display: flex;
@@ -150,6 +719,59 @@
 
 <body>
 
+    <div class="header-containerana">
+        <header class="header-container">
+            <div class="buttons-container">
+                <div id="searchInput-container">
+
+                </div>
+
+            </div>
+
+
+            <div class="logo">
+                <a href="index.html"><img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
+            </div>
+            <!-- Burger Menü -->
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </header>
+
+        <header class="ustbilgi">
+            <nav>
+                <div class="nav-links">
+                </div>
+                <a href="alyanslar.html">alyanslar</a>
+                <a href="yuzukler.html">Yüzükler</a>
+                <a href="kupeler.html">Küpeler</a>
+            </nav>
+        </header>
+
+        <div class="kaydirma-menusu">
+            <ul>
+                <a href="alyanslar.html">alyanslar</a>
+                <a href="yuzukler.html">Yüzükler</a>
+                <a href="kupeler.html">Küpeler</a>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="uruntanitimdort">
         <div class="containerbir">
@@ -184,6 +806,70 @@
         function changeImagedort(imageUrl) {
             document.getElementById("mainImagedort").src = imageUrl;
         }
+
+
+
+
+
+
+
+
+
+        // Burger Menü Açma/Kapama
+        function toggleMenu() {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navLinks = document.querySelector('.nav-links');
+            burgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            const menu = document.querySelector('.kaydirma-menusu');
+            const kaplama = document.querySelector('.kaplama');
+            const menuDugmesi = document.querySelector('.menu-dugmesi');
+
+            menu.classList.toggle('acik');
+            kaplama.classList.toggle('acik');
+            menuDugmesi.classList.toggle('aktif');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            const filter = this.value.toLowerCase();
+            const items = document.querySelectorAll(".product-items");
+
+            items.forEach((item) => {
+                const text = item.textContent.toLowerCase();
+
+                // Eşleşme olup olmadığını kontrol et
+                if (filter && text.indexOf(filter) !== -1) {
+                    item.style.display = "block";  // Eşleşen ürünleri göster
+                    item.classList.add("visible"); // Görünürlük sınıfını ekle
+                } else {
+                    item.style.display = "none";   // Eşleşmeyen ürünleri gizle
+                    item.classList.remove("visible"); // Görünürlük sınıfını kaldır
+                }
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 
