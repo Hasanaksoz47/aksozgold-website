@@ -105,6 +105,7 @@
             filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
         }
 
+
         .burger-menu {
             display: none;
             flex-direction: column;
@@ -131,6 +132,14 @@
         .burger-menu.active div:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
+
+
+
+
+        .ustbilgi {
+            display: none;
+        }
+
 
 
 
@@ -522,15 +531,23 @@
             display: none;
         }
 
+
+
+
+        @media (max-width: 20000px) {
+            .ustbilgi {
+                display: none;
+            }
+        }
+
+
+
+
         @media (max-width: 995px) {
             .carouselExampleana {
                 margin-top: 30px;
             }
 
-
-            .ustbilgi {
-                display: none;
-            }
 
             .ustbilgi nav {
                 display: none;
@@ -734,6 +751,14 @@
 
     <div class="header-containerana">
         <header class="header-container">
+            <div class="buttons-container">
+                <div id="searchInput-container">
+
+                </div>
+
+            </div>
+
+
             <div class="logo">
                 <a href="index.html"><img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
             </div>
@@ -745,6 +770,16 @@
             </div>
         </header>
 
+        <header class="ustbilgi">
+            <nav>
+                <div class="nav-links">
+                </div>
+                <a href="alyanslar.html">alyanslar</a>
+                <a href="yuzukler.html">Yüzükler</a>
+                <a href="kupeler.html">Küpeler</a>
+            </nav>
+        </header>
+
         <div class="kaydirma-menusu">
             <ul>
                 <a href="alyanslar.html">alyanslar</a>
@@ -754,6 +789,15 @@
 
         </div>
     </div>
+
+
+
+
+
+
+
+
+
 
     <ul class="product-list">
         <main>
