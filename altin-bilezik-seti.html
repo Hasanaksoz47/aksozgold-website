@@ -1,33 +1,616 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sayfa Başlığı -->
     <title>Aksoz Gold - Altın Bilezik Seti</title>
+
+    <!-- Sayfa Açıklaması (Meta Description) -->
     <meta name="description"
-        content="Aksoz Gold, Mardin Midyat'ta en kaliteli kuyumculuk ürünleri ve takılarla hizmet veriyor. Müşteri memnuniyetini ön planda tutarak Pazartesi-Cumartesi 08:00-17:30 saatleri arasında açık.">
-    <meta name="keywords"
-        content="Aksoz Gold, kuyumculuk, altın takılar, Mardin kuyumculuk, değerli takılar, kaliteli altın, güvenilir kuyumcu, altın, takı, Mardin">
+        content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri sunuyor. Yüksek kaliteli ve şık tasarımlar için hemen keşfedin.">
+
+    <!-- Anahtar Kelimeler (Meta Keywords) -->
+    <meta name="keywords" content="altın takı, kuyumculuk, Mardin kuyumculuk, altın, takı, Aksoz Gold">
+
+    <!-- Karakter Seti -->
+    <meta charset="UTF-8">
+
+    <!-- Mobil Uyumluluk (Viewport) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sayfa Yazar Bilgisi -->
+    <meta name="author" content="Aksoz Gold">
+
+    <!-- Robotlara Yönelik Talimatlar (Google'a ve diğer arama motorlarına sayfayı nasıl indekslemesi gerektiğini söyler) -->
     <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aksozgold.online/">
+
+    <!-- Sosyal Medya Paylaşımı için Open Graph Etiketleri (Facebook ve diğer platformlar için) -->
+    <meta property="og:title" content="Aksoz Gold - Mardin'in En İyi Kuyumculuk Ürünleri">
+    <meta property="og:description"
+        content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri ile hizmet vermektedir.">
+    <meta property="og:image" content="https://aksozgold.online/images/takilar.jpg">
+    <meta property="og:url" content="https://aksozgold.online/">
+
+    <!-- Twitter Card Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aksoz Gold - Mardin'in En İyi Kuyumculuk Ürünleri">
+    <meta name="twitter:description" content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri sunuyor.">
+    <meta name="twitter:image" content="https://aksozgold.online/images/takilar.jpg">
+
+
+    <meta property="og:title" content="Aksoz Gold - Mardin Kuyumculuk">
+    <meta property="og:description" content="Aksoz Gold, Mardin'de altın takı ve kuyumculuk ürünleri sunmaktadır.">
+    <meta property="og:url" content="https://aksozgold.online/">
+    <meta property="og:image" content="https://aksozgold.online/images/logo.jpg">
+    <meta property="og:site_name" content="Aksoz Gold">
+    <meta property="og:locale" content="tr_TR">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" type="image/x-icon">
     <style>
-       * {
-            padding: 0px;
-            margin: 0px;
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
+
+
+
 
         body {
             font-family: 'Poppins', sans-serif;
             background-color: white;
-            color: #020d2b;
-            overflow-x: hidden;
-            /* Yatay kaydırmayı engeller */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease-in-out;
+            animation: fadeIn 4s forwards;
         }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .header-container {
+            background: linear-gradient(90deg, #0a2342, #1a436b);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            top: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row-reverse;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            width: 150px;
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .burger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .burger-menu.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger-menu.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+
+
+
+
+
+        .common-button {
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 20px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .common-button::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #d4af37;
+            transition: width 0.4s ease;
+        }
+
+        .common-button:hover {
+            color: white;
+        }
+
+        .common-button:hover::after {
+            width: 100%;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 10px;
+            background-color: #1a436b;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Düzen */
+        @media (max-width: 995px) {
+            .burger-menu {
+                display: flex;
+            }
+
+            .nav-links.active {
+                display: flex;
+                background: linear-gradient(90deg, #0a2342, #1a436b);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #searchInput-container {
+            position: relative;
+        }
+
+        #searchInput {
+            padding: 10px 40px 10px 15px;
+            /* Sağ tarafta daha fazla boşluk */
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        #searchInput-container .fa-magnifying-glass {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            /* İkona sağda yer açar */
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+            /* İkon üzerine tıklanamaz */
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .search-box {
+            margin: 20px;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 00px;
+        }
+
+        .product-items {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+            /* Ürünler başlangıçta gizlenir */
+        }
+
+        .visible {
+            display: block;
+            /* Arama eşleşirse ürün görünür */
+        }
+
+        @media (max-width: 995px) {
+            .product-list {
+                margin-top: 0px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width: 995px) {
+            .header-container {
+                justify-content: space-around;
+                position: relative;
+                min-width: 250px;
+            }
+
+            .logo {
+                position: absolute;
+                right: 1px;
+                bottom: 15px;
+            }
+
+            .burger-menu {
+                display: flex;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #searchInput-container {
+                position: absolute;
+                right: 20px;
+                /* Sağ tarafa hizalar */
+                top: 50%;
+                transform: translateY(-50%);
+                /* Yatayda ortalar */
+                width: 240px;
+                /* Genişlik, isteğe göre ayar yapabilirsiniz */
+            }
+
+            #searchInput {
+                padding: 10px 40px 10px 15px;
+                /* Sağ tarafta daha fazla boşluk */
+                border: 1px solid #ccc;
+                border-radius: 25px;
+                font-size: 16px;
+                width: 240px;
+                /* Input'un genişliğini kapsayıcıya uyumlu yapar */
+            }
+
+            #searchInput-container .fa-magnifying-glass {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                /* İkona sağda yer açar */
+                transform: translateY(-50%);
+                /* Yatayda ortalar */
+                color: #999;
+                pointer-events: none;
+            }
+        }
+
+
+        @media (max-width: 910px) {
+            #searchInput-container {
+                width: 120px;
+            }
+
+            #searchInput {
+                width: 120px;
+            }
+
+        }
+
+
+
+        @media (max-width: 730px) {
+            #searchInput-container {
+                width: 110px;
+            }
+
+            #searchInput {
+                width: 110px;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+        /* Üstbilgi */
+        .ustbilgi {
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Ortalamayı sağlar */
+            padding: 15px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid white;
+            color: rgb(0, 0, 0);
+            width: 100%;
+            margin-top: 160px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            /* Tam genişlik için */
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: transparent;
+            padding: 5px 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #d4af37;
+            color: #000000;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Kaydırma Menüsü */
+        .kaydirma-menusu {
+            display: none;
+            position: fixed;
+            top: 150px;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(95deg, #0a2342, #1a436b);
+            z-index: 1000;
+            transition: left 0.3s ease;
+        }
+
+
+        .kaydirma-menusu a {
+            display: block;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+            color: #ffffff;
+            font-size: 22px;
+            margin: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+
+        .kaydirma-menusu a:hover {
+            color: #f1c40f;
+        }
+
+        /* Mobil Ayarlar */
+        .menu-dugmesi {
+            display: none;
+        }
+
+        .kaydirma-menusu {
+            display: none;
+        }
+
+        @media (max-width: 995px) {
+            .carouselExampleana {
+                margin-top: 30px;
+            }
+
+
+            .ustbilgi {
+                display: none;
+            }
+
+            .ustbilgi nav {
+                display: none;
+            }
+
+            .menu-dugmesi {
+                display: flex;
+            }
+
+            .kaydirma-menusu {
+                display: block;
+            }
+        }
+
+
+
+
+
+
+
+        .kaydirma-menusu.acik {
+            left: 0;
+        }
+
+        .kaplama {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .kaplama.acik {
+            display: block;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         .containerbir {
             display: flex;
@@ -149,6 +732,424 @@
 
 <body>
 
+    <div class="header-containerana">
+        <header class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/101ef05c-b5b8-4ce3-a06c-11bb8a870610.ico" alt="Logo"></a>
+            </div>
+            <!-- Burger Menü -->
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </header>
+
+        <div class="kaydirma-menusu">
+            <ul>
+                <a href="alyanslar.html">alyanslar</a>
+                <a href="yuzukler.html">Yüzükler</a>
+                <a href="kupeler.html">Küpeler</a>
+            </ul>
+
+        </div>
+    </div>
+
+    <ul class="product-list">
+        <main>
+            <div class="product-grid-container">
+                <div class="product-items">
+                    <img src="images/41eb0b24-2720-4c8d-8a7f-fa99a559ee1e.jpg" alt="Ürün 1">
+                    <a href="gozde-altin-set.html" class="product-infobir">
+                        Gözde Altın Set
+                    </a>
+                </div>
+                <div class="product-items">
+                    <img src="images/69d1d5fd-174c-4160-8a46-d1aba00d39c8.jpg" alt="Ürün 2">
+                    <a href="altin-bilezik-seti.html" class="product-infobir">
+                        Altın Bilezik Seti
+                    </a>
+                </div>
+                <div class="product-items">
+                    <img src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" alt="Ürün 3">
+                    <a href="altin-islemeli-bileklik.html" class="product-infobir">
+                        Altın İşlemeli Bileklik
+                    </a>
+                </div>
+                <div class="product-items">
+                    <img src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" alt="Ürün 4">
+                    <a href="zarafetin-altin-hali.html" class="product-infobir">
+                        Zarafetin Altın Hâli
+                    </a>
+                </div>
+                <div class="product-items">
+                    <img src="images/535fee17-7a76-40c5-af84-a9adebecc74b.jpg" alt="Ürün 4">
+                    <a href="goz-alici-gerdanlik.html" class="product-infobir">
+                        Göz Alıcı Gerdanlık
+                    </a>
+                </div>
+                <div class="product-items">
+                    <img src="images/7954d8e1-8a30-4c47-9d90-a8cb89d7d4f5.jpg" alt="Ürün 4">
+                    <a href="ozel-tasarim-hint-isi-kolye.html" class="product-infobir">
+                        Özel Tasarım Hint İşi Kolye
+                    </a>
+                </div>
+                <div class="product-items">
+                    <img src="images/586866bc-8af2-4ed7-b41c-a3e09faa7db9.jpg" alt="Ürün 4">
+                    <a href="ceyrekli-halep-isi-kolye.html" class="product-infobir">
+                        Çeyrekli Halep İşi Kolye
+                    </a>
+                </div>
+                <div class="product-items">
+                    <img src="images/4cb589ac-fc66-465b-a54d-19cd6302d668.jpg" alt="Mega Hint Otantik Altın Küpe">
+                    <div class="product-name">Mega Hint Otantik Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/3a0ce9a1-f5cc-424b-a21f-b03eb5d698c1.jpg" alt="Şık Tasarım Altın Küpe">
+                    <div class="product-name">Şık Tasarım Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/c33455ea-10b1-41db-906e-9313b297083b.jpg" alt="Benzersiz Altın Küpe">
+                    <div class="product-name">Benzersiz Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/5ec0b58c-7541-4bb3-b1ef-6e63f9f738d4.jpg" alt="Yonca Altın Küpe">
+                    <div class="product-name">Yonca Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/0b6937b7-1ce2-40bf-b64e-8943a2b19d33.jpg" alt="Turalı Şık Altın küpe">
+                    <div class="product-name">Turalı Şık Altın küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/4c68a6f0-88d2-424b-8b57-4cd88f13d4f8.jpg" alt="Hint İşi Tasarım Altın Küpe">
+                    <div class="product-name">Hint İşi Tasarım Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/9df85e13-9ae7-418a-9a2c-22c22e896b46.jpg" alt="Çeyrekli Altın Küpe">
+                    <div class="product-name">Çeyrekli Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/38a08c47-cea2-4fef-8b12-f668514e16e4.jpg" alt="Benzersiz Hint İşi Küpe">
+                    <div class="product-name">Benzersiz Hint İşi Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/ef361325-f306-47d3-8ac7-d45a30d23bee.jpg" alt="Kenarı Pullu Çeyrekli Altın Küpe">
+                    <div class="product-name">Kenarı Pullu Çeyrekli Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/5262bf3c-caff-4f34-a771-cb41d72f6ba7.jpg"
+                        alt="Papatya Motifli Şık Tasarım Altın Küpe">
+                    <div class="product-name">Papatya Motifli Şık Tasarım Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/861f83c6-ac9a-43c6-814f-29c9be441568.jpg"
+                        alt="Çiçek Motifli Sallantılı Altın Küpe">
+                    <div class="product-name">Çiçek Motifli Sallantılı Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/fd466119-7bda-4f72-a6b5-04ece895f088.jpg" alt="Nohut Toplu Altın Küpe">
+                    <div class="product-name">Nohut Toplu Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/9b248353-ddf1-4a7c-b8e1-ab8d0e14ab3f.jpg" alt="Şık Tasarım Hint İşi Altın Küpe">
+                    <div class="product-name">Şık Tasarım Hint İşi Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/8948f2d1-6c60-4332-9f58-e81ff8c78dd3.jpg" alt="Eşsiz Tasarım Şık Altın Küpe">
+                    <div class="product-name">Eşsiz Tasarım Şık Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/dfbdd2ef-d0ee-42d0-82bb-ed2dd5505222.jpg"
+                        alt="Hint İşlemeli Şık Tasarım Altın Küpe">
+                    <div class="product-name">Hint İşlemeli Şık Tasarım Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/f3c8d9b3-6738-483d-b753-e975293e892e.jpg" alt="Kalpli Altın Küpe">
+                    <div class="product-name">Kalpli Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/62aef73a-32b5-4e90-97c7-8a6e91415a34.jpg" alt="Hint İşi Altın Küpe">
+                    <div class="product-name">Hint İşi Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/411b48bc-1ee1-4676-ac3b-003148dc49cd.jpg"
+                        alt="Benzersiz Geleneksel Tasarım Altın Küpe">
+                    <div class="product-name">Benzersiz Geleneksel Tasarım Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/43b3d853-3cae-4d96-bb51-9392c2c587e7.jpg" alt="Dorika Toplu Altın Küpe">
+                    <div class="product-name">Dorika Toplu Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/254c32d5-9b5c-42c4-ab21-622c845481f7.jpg" alt="Hint İşi Dorika Toplu Altın Küpe">
+                    <div class="product-name">Hint İşi Dorika Toplu Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/9ee805ae-017f-41cb-aa88-ff16add1be90.jpg" alt="Kartanesi Altın Küpe">
+                    <div class="product-name">Kartanesi Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/cb64cb4d-67c2-4e10-ab97-bd11f5afb761.jpg" alt="Dorika toplu Halka Altın Küpe">
+                    <div class="product-name">Dorika toplu Halka Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/d4fddc9f-21b7-4d2f-90dd-d7fbd8661579.jpg" alt="Hint İşi Sallantılı Altın Küpe">
+                    <div class="product-name">Hint İşi Sallantılı Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/0c93c001-5947-42fc-8755-82517fe13652.jpg"
+                        alt="Dorika Toplu Halkalı Tasarım Altın Küpe">
+                    <div class="product-name">Dorika Toplu Halkalı Tasarım Altın Küpe</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/18b8d6f8-05ae-4803-acc3-5d51f48787b5.jpg"
+                        alt="Yazı Yazılabilen Altın Alyans Yüzük">
+                    <div class="product-name">Yazı Yazılabilen Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/0b9b9797-2830-4095-8a8b-22f0a671d850.jpg" alt="Bombeli Klasik Altın Alyans Yüzük">
+                    <div class="product-name">Bombeli Klasik Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/4f4cf571-ae03-49d1-a723-deb254c9d370.jpg"
+                        alt="Çizgili Tırtıllı Altın Alyans Yüzük">
+                    <div class="product-name">Çizgili Tırtıllı Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/6b1937ef-5c22-4efa-9555-d0244b4e758b.jpg" alt="Çivili Alyans Yüzük">
+                    <div class="product-name">Çivili Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/6d0f5960-6a1f-41ed-8a63-a3866b29bc0a.jpg" alt="İçi Dolu Alyans Yüzük">
+                    <div class="product-name">İçi Dolu Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/91fa3fb7-e51f-4213-a5d0-b61408a5f9df.jpg" alt="Adana Burması Alyans Yüzük">
+                    <div class="product-name">Adana Burması Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/194cb664-117f-48e7-b231-34a725f5a65b.jpg" alt="Desenli Alyans Yüzük">
+                    <div class="product-name">Desenli Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/234f4be8-bc1c-4363-b4c7-149356d02f58.jpg" alt="Modern Tasarım Altın Alyans Yüzük">
+                    <div class="product-name">Modern Tasarım Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/502e9b11-4b2b-4e8d-b103-c0eecee19db9.jpg" alt="Klasik Altın Alyans Yüzük">
+                    <div class="product-name">Klasik Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/702c7a5b-6473-4240-9bc7-176c3973636e.jpg" alt="Taşsız Şık Altın Alyans Yüzük">
+                    <div class="product-name">Taşsız Şık Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/2005fa19-267f-483e-9d36-c6c17ede956a.jpg" alt="Şık Yöresel Altın Alyans Yüzük">
+                    <div class="product-name">Şık Yöresel Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/aa4d3d7c-0a52-420b-9600-3d8518e1b335.jpg" alt="Klasik Görünüm Alyans Yüzük">
+                    <div class="product-name">Klasik Görünüm Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/bbc5e7c2-75ae-47ac-a429-9b3a6dea5cb5.jpg" alt="Taşsız Şık Alyans Yüzük">
+                    <div class="product-name">Taşsız Şık Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/bc09eb68-8e19-40d2-8aad-b30e05413d65.jpg" alt="Burma Alyans Yüzük">
+                    <div class="product-name">Burma Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/c663edfc-950f-4cc6-b20c-59ad621337aa.jpg" alt="Prizma Altın Alyans Yüzük">
+                    <div class="product-name">Prizma Altın Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/d35bcbdf-96cb-4ba9-b292-f9a6802a206b.jpg" alt="Şık Tasarım Alyans Yüzük">
+                    <div class="product-name">Şık Tasarım Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/e7fbba73-b4a0-49f6-9c71-b1bb9f1f420e.jpg" alt="Kumlu Desenli Alyans Yüzük">
+                    <div class="product-name">Kumlu Desenli Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/f41f1be6-a927-4996-8c58-600c0b1373d7.jpg" alt="Noktalı Desenli Alyans Yüzük">
+                    <div class="product-name">Noktalı Desenli Alyans Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/c9c583ec-c472-475b-bd91-11e0d0a03455.jpg" alt="Dorika Yüzük">
+                    <div class="product-name">Dorika Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/547ad05e-6ffa-4144-a99e-6394565a6fc0.jpg" alt="Hint İşi Tasarımlı Yüzük">
+                    <div class="product-name">Hint İşi Tasarımlı Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/7f69386b-7b12-4b69-925a-f804a2c5796f.jpg" alt="Mekik Yüzük">
+                    <div class="product-name">Mekik Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/a04a3fc3-e1fe-45c7-8a2f-6a821904cc6a.jpg" alt="6 Sıra Kumlu Dorika Toplu Yüzük">
+                    <div class="product-name">6 Sıra Kumlu Dorika Toplu Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/b03187c8-37c1-48d0-af6b-0fac87c048cc.jpg" alt="5 Sıralı Dorika Yüzük">
+                    <div class="product-name">5 Sıralı Dorika Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/690797e9-9778-4d32-aba6-160f08052f35.jpg" alt="5 Sıralı Dorika Altın Yüzük">
+                    <div class="product-name">5 Sıralı Dorika Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/f21edaf1-7341-481d-9d57-be66319db602.jpg" alt="Dorika Çiçekli Yüzük">
+                    <div class="product-name">Dorika Çiçekli Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/93ad9973-bb2d-4248-b1b3-7c5d585f2296.jpg" alt="Zarif Altın Yüzük">
+                    <div class="product-name">Zarif Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/c2b09d52-2b40-4f70-a721-c2e42b9caf17.jpg" alt="10 Sıra Dorika Toplu Kaburga Yüzük">
+                    <div class="product-name">10 Sıra Dorika Toplu Kaburga Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/852e2546-0f8d-4aca-a0e4-ff25f553e726.jpg" alt="Klasik Model Yüzük">
+                    <div class="product-name">Klasik Model Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/cd7de819-6fcb-4619-be1c-87937a215b8a.jpg" alt="Dorika Spor Yüzük">
+                    <div class="product-name">Dorika Spor Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/4b52686c-fe3f-4fd5-a449-792f85b5778c.jpg"
+                        alt="Dorika Topları İle Süslenmiş Altın Yüzük">
+                    <div class="product-name">Dorika Topları İle Süslenmiş Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/fbfcf193-9cc3-43b7-a467-7f00b05e24d6.jpg" alt="Sarı İşlemeli Yuvarlak Yüzük">
+                    <div class="product-name">Sarı İşlemeli Yuvarlak Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/1415d9e8-bff4-46b2-b509-7816bbad0067.jpg" alt="Dorikalı Fantazi Yüzük">
+                    <div class="product-name">Dorikalı Fantazi Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/dfc1ba93-85b1-4eef-9e5e-658004f59d98.jpg" alt="Rolex Model Yüzük">
+                    <div class="product-name">Rolex Model Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/aa2d6e7c-da7d-4c7c-84fc-d4b7c4192894.jpg" alt="Mekik Altın Yüzük">
+                    <div class="product-name">Mekik Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/a0b28d4e-88c5-4246-b976-e8a16b1894e8.jpg" alt="Dorika Şık Yüzük">
+                    <div class="product-name">Dorika Şık Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/291b0449-027c-48db-89e9-4bfe4ff8d11a.jpg" alt="Altın Kaburga Yüzük">
+                    <div class="product-name">Altın Kaburga Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/bad708f2-c05d-456c-8526-31613c5652dc.jpg" alt="Taşsız Kaburga Yüzük">
+                    <div class="product-name">Taşsız Kaburga Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/166c9357-da6e-460f-979f-385e8e8cce9f.jpg" alt="Arap Dubai Tasarım Altın Yüzük">
+                    <div class="product-name">Arap Dubai Tasarım Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/b177489e-96f7-4518-837f-c763adf98e6d.jpg" alt="Şık Taşlı Kaburga Yüzük">
+                    <div class="product-name">Şık Taşlı Kaburga Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/351953c8-5c48-4584-85d3-40b519924178.jpg" alt="Dorika Toplu Yüzük">
+                    <div class="product-name">Dorika Toplu Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/04d2cb7a-5670-4d67-b729-718fb69ada40.jpg" alt="Dorika Toplu Yüzük ikili">
+                    <div class="product-name">Dorika Toplu Yüzük ikili</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/933c7050-0d17-4e5b-90b3-71c6ce34d413.jpg" alt="Yöresel İkili Çeyrek Altın Yüzük">
+                    <div class="product-name">Yöresel İkili Çeyrek Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/d014ce53-8b38-4b26-b566-31361aec5937.jpg" alt="Yöresel Şık Altın Yüzük">
+                    <div class="product-name">Yöresel Şık Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/0ff9acbc-1b7c-4c23-bbd3-e718bad86be2.jpg" alt="Dorika Toplu Yüzük">
+                    <div class="product-name">Dorika Toplu Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/b6b9fb9c-1cf4-432b-a961-eadad2c7d1f5.jpg"
+                        alt="Lüks Dubai Zirkon Arap Tasarım Altın Yüzük">
+                    <div class="product-name">Lüks Dubai Zirkon Arap Tasarım Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/c34009f0-d8bb-4458-a84e-a09ebff31e32.jpg" alt="Altın Dorika Toplu Yüzük">
+                    <div class="product-name">Altın Dorika Toplu Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/309ff5db-08cb-48f2-aa54-7113337ffc7c.jpg" alt="Taşsız Dorika Toplu Yüzük">
+                    <div class="product-name">Taşsız Dorika Toplu Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/00a27dc3-7fed-4878-92cd-17b587e69404.jpg"
+                        alt="Dorika Topları İle Süsleniş Altın Yüzük">
+                    <div class="product-name">Dorika Topları İle Süsleniş Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/86905307-3fcd-4594-9fd8-2ae7744e90ba.jpg" alt="Dorikalı Şık Tasarım Altın Yüzük">
+                    <div class="product-name">Dorikalı Şık Tasarım Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/3598293d-cf1c-4a02-9fa7-74c3757f5c33.jpg" alt="Özel Tasarım Şık Altın Yüzük">
+                    <div class="product-name">Özel Tasarım Şık Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/34460ded-5e5c-4e64-9ce7-f1f372de48bc.jpg" alt="Özel Tasarım Eşsiz Altın Yüzük">
+                    <div class="product-name">Özel Tasarım Eşsiz Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/ef60ca10-899c-42d1-a025-412713ea7321.jpg" alt="Varsaceli Dorika Altın Yüzük">
+                    <div class="product-name">Varsaceli Dorika Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/3def7d08-8ef7-4413-a1db-84f5060f2b52.jpg" alt="Eşsiz Tasarım Altın Yüzük">
+                    <div class="product-name">Eşsiz Tasarım Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/2171781d-9d5e-4083-8370-fbba8963ad0d.jpg" alt="Dorika Toplu Mekik Altın Yüzük">
+                    <div class="product-name">Dorika Toplu Mekik Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/1f50a011-9b82-4950-9db4-dabb34fadea5.jpg" alt="Taşsız Dorika Toplu Altın Yüzük">
+                    <div class="product-name">Taşsız Dorika Toplu Altın Yüzük</div>
+                </div>
+                <div class="product-items">
+                    <img src="images/3c41d869-2814-4358-aaf9-f88a16b7ea2e.jpg"
+                        alt="Dorika Toplu Yöresel Şık Altın Yüzük">
+                    <div class="product-name">Dorika Toplu Yöresel Şık Altın Yüzük</div>
+                </div>
+            </div>
+        </main>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <div id="uruntanitimiki">
@@ -185,6 +1186,60 @@
         function changeImageiki(imageUrl) {
             document.getElementById("mainImageiki").src = imageUrl;
         }
+
+
+
+
+
+        // Burger Menü Açma/Kapama
+        function toggleMenu() {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navLinks = document.querySelector('.nav-links');
+            burgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            const menu = document.querySelector('.kaydirma-menusu');
+            const kaplama = document.querySelector('.kaplama');
+            const menuDugmesi = document.querySelector('.menu-dugmesi');
+
+            menu.classList.toggle('acik');
+            kaplama.classList.toggle('acik');
+            menuDugmesi.classList.toggle('aktif');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            const filter = this.value.toLowerCase();
+            const items = document.querySelectorAll(".product-items");
+
+            items.forEach((item) => {
+                const text = item.textContent.toLowerCase();
+
+                // Eşleşme olup olmadığını kontrol et
+                if (filter && text.indexOf(filter) !== -1) {
+                    item.style.display = "block";  // Eşleşen ürünleri göster
+                    item.classList.add("visible"); // Görünürlük sınıfını ekle
+                } else {
+                    item.style.display = "none";   // Eşleşmeyen ürünleri gizle
+                    item.classList.remove("visible"); // Görünürlük sınıfını kaldır
+                }
+            });
+        });
+
+
+
+
+
     </script>
 </body>
 
