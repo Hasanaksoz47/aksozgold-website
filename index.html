@@ -101,6 +101,7 @@
             padding: 0 20px;
         }
 
+
         .logo img {
             width: 150px;
             filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
@@ -347,7 +348,6 @@
         @media (max-width: 995px) {
             .header-container {
                 justify-content: center;
-                position: relative;
             }
 
             .logo {
@@ -431,21 +431,30 @@
 
 
 
-
         /* Üstbilgi */
         .ustbilgi {
-            position: sticky;
-            top: 0;
+            position: fixed;
+            /* Sticky yerine fixed kullanıyoruz */
+            top: 150px;
+            /* Başlangıçta gizli olacak şekilde pozisyonu ayarlıyoruz */
+            left: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Ortalamayı sağlar */
             padding: 15px 20px;
-            background-color: #ffffff;
-            border-top: 1px solid white;
+            background-color: white;
+            border-bottom: 1px solid rgb(223, 218, 218);
             color: rgb(0, 0, 0);
             width: 100%;
-            margin-top: 160px;
+            transition: top 0.3s ease-in-out;
+            /* Kaydırma animasyonu */
+            z-index: 999;
+        }
+
+        .ustbilgi.active {
+            top: 0;
+            z-index: -30000;
+            /* Yukarı kaydırıldığında görünür hale gelir */
         }
 
         nav {
@@ -454,7 +463,6 @@
             gap: 10px;
             flex-wrap: wrap;
             width: 100%;
-            /* Tam genişlik için */
         }
 
         nav a {
@@ -472,9 +480,6 @@
             background-color: #d4af37;
             color: #000000;
         }
-
-
-
 
 
 
@@ -524,10 +529,6 @@
         }
 
         @media (max-width: 995px) {
-            .carouselExampleana {
-                margin-top: 30px;
-            }
-
 
             .ustbilgi {
                 display: none;
@@ -597,6 +598,7 @@
         .carouselExampleana {
             display: flex;
             justify-content: center;
+            margin-top: 205px;
         }
 
         .carouselExampleanaic {
@@ -1651,7 +1653,7 @@
                 </div>
             </header>
 
-            <header class="ustbilgi">
+            <header class="ustbilgi" id="ustbilgi">
                 <nav>
                     <div class="nav-links">
                     </div>
@@ -2513,6 +2515,22 @@
 
 
 
+
+
+
+        const header = document.getElementById('ustbilgi');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // Aşağı kaydırıldığında, header'ı gösteriyoruz
+                header.classList.add('active');
+            } else {
+                // Yukarı kaydırıldığında, header'ı gizliyoruz
+                header.classList.remove('active');
+            }
+            lastScrollY = window.scrollY;
+        });
 
 
 
