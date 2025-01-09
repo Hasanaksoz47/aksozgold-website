@@ -602,12 +602,13 @@
         }
 
         .carouselExampleanaic {
-            width: 95%;
+            width: 100%;
         }
 
         .carousel-item img {
             object-fit: cover;
-            height: 60vh;
+            width: 100%;
+            height: auto;
         }
 
         .carousel-caption {
@@ -618,6 +619,24 @@
         .carousel-control-next-icon {
             background-color: rgba(0, 0, 0, 0.5);
         }
+
+        #kucuksilider {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            #buyuksilider {
+                display: none;
+                margin-top: 10px;
+            }
+
+            #kucuksilider {
+                display: block;
+            }
+        }
+
+
+
 
 
 
@@ -2079,39 +2098,22 @@
 
 
 
-        <div class="carouselExampleana">
+        <div class="carouselExampleana" id="buyuksilider">
             <div class="carouselExampleanaic">
+
                 <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/2f3104ad-c3d1-41e2-88d7-b5b91fcae6e8.jpg" class="d-block w-100"
-                                alt="Resim 1">
+                            <img src="images/silider1 (1).jpg" class="d-block w-100" alt="Resim 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/1be22878-0823-4367-8143-322dea222ed3.jpg" class="d-block w-100"
-                                alt="Resim 2">
+                            <img src="images/silider2 (2).jpg" class="d-block w-100" alt="Resim 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/151304bb-bf03-42d5-9c3a-332c8b791d3f.jpg" class="d-block w-100"
-                                alt="Resim 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/488d4252-0ae4-4297-8633-ef7ee54264af.jpg" class="d-block w-100"
-                                alt="Resim 4">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/349639a5-4e16-473b-82ed-f9843f90e573.jpg" class="d-block w-100"
-                                alt="Resim 5">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/d4206c04-2280-4b60-b875-64871e6ceefc.jpg" class="d-block w-100"
-                                alt="Resim 6">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/38e86fe1-990c-4487-8151-40e399a147ae.jpg" class="d-block w-100"
-                                alt="Resim 7">
+                            <img src="images/silider3.jpg" class="d-block w-100" alt="Resim 3">
                         </div>
                     </div>
+
 
                     <!-- Önceki buton -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
@@ -2139,6 +2141,46 @@
 
 
 
+
+
+
+
+
+
+        <div class="carouselExampleana" id="kucuksilider">
+            <div class="carouselExampleanaic">
+
+                <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/kucuksilider1 (1).jpg" class="d-block w-100" alt="Resim 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/kucuksilider2 (2).jpg" class="d-block w-100" alt="Resim 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/kucuksilider3.jpg" class="d-block w-100" alt="Resim 3">
+                        </div>
+                    </div>
+
+
+                    <!-- Önceki buton -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Önceki</span>
+                    </button>
+
+                    <!-- Sonraki buton -->
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Sonraki</span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
 
 
